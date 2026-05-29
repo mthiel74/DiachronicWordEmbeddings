@@ -1,0 +1,23 @@
+# ---- Bulk / regenerable data (NOT committed) ----
+data/raw/                 # HistWords zip + unzipped .npy/.pkl + intermediate matrices
+*.zip
+*.npy
+*.pkl
+*.f32
+*.bin
+
+# ---- OS / editor cruft ----
+.DS_Store
+*.swp
+*~
+
+# ---- Python ----
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ---- Wolfram ----
+*.mx
+# Front-end autosave / build scratch
+community/.img-cache/
