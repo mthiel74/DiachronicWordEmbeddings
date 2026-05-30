@@ -203,4 +203,21 @@ Export[FileNameJoin[{dataDir, "laws.json"}], <|
      "polyVsFreqSpearman" -> r3@spPF, "partialSpearman" -> r3@partial|>
 |>, "JSON"];
 Print["Wrote data/laws.json"];
+
+(* ---- export the scatter points + trend lines so the notebook package can
+   REDRAW both law figures live from committed data (the raw embeddings are
+   not committed). Downsample the cloud deterministically to keep it small. *)
+SeedRandom[1];
+samp = Sort @ RandomSample[Range[nC], Min[4000, nC]];
+r4[x_] := Round[x, 0.001];
+Export[FileNameJoin[{dataDir, "laws_points.json"}], <|
+   "conformity" -> <|
+      "x" -> r4 @ lx[[samp]], "y" -> r4 @ ly[[samp]],
+      "bin" -> (r4 /@ # & /@ binC), "slope" -> r3@slopeC, "spearman" -> r3@spCF|>,
+   "innovation" -> <|
+      "poly" -> poly[[samp]], "resid" -> r4 @ residRate[[samp]],
+      "binRaw" -> (r4 /@ # & /@ binRaw), "binResid" -> (r4 /@ # & /@ binResid),
+      "maxP" -> maxP, "rawSpearman" -> r3@spRP, "partialSpearman" -> r3@partial|>
+|>, "JSON"];
+Print["Wrote data/laws_points.json (", Length@samp, " sampled points)"];
 Print["\nDONE."];
