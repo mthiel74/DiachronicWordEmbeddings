@@ -303,12 +303,18 @@ manipCode = StringJoin[
   "  )]"
 ];
 
-push @ imgCell["explorer_preview.png", 560];
-push @ caption[{"One state of the \[Section]5 explorer (", ital["gay"],
-   ", full 1800s\[Dash]1990s path). The code cell below reproduces the full interactive ",
-   mono["Manipulate"], " when evaluated."}];
-push @ Cell[manipCode, "Input", CellMargins -> {{50, 30}, {6, 6}}, FontSize -> 11,
-   Evaluatable -> True, InitializationCell -> False];
+push @ caption[{"The \[Section]5 explorer. In the live notebook the cell below renders ",
+   "as an interactive ", mono["Manipulate"], " (choose a word, scrub the decade slider, ",
+   "toggle neighbour labels); a static preview is shown here for the PDF / web view."}];
+(* This Input cell is converted to proper input boxes (so it is a clean,
+   syntax-highlighted, evaluatable cell) and then evaluated on build by
+   NotebookEvaluate, so the rendered notebook shows the live Manipulate
+   rather than an unevaluated red-bracketed box. *)
+manipCellBoxes = ToExpression[
+   "FrontEndExecute@FrontEnd`ReparseBoxStructurePacket[" <>
+   ToString[manipCode, InputForm] <> "][[1]]"];
+push @ Cell[BoxData[manipCellBoxes], "Input", CellMargins -> {{50, 30}, {6, 6}},
+   FontSize -> 11];
 
 (* ---- 6 ---- *)
 push @ hd1["6. Nearest-neighbour drift tables"];
@@ -441,16 +447,17 @@ push @ refItem[{"J.-B. Michel et al. (2011). ",
    ital["Quantitative Analysis of Culture Using Millions of Digitized Books."],
    " Science 331. (The Google N-grams corpus.)"}];
 
-(* ---- save: real notebook via the front end; evaluate so the Manipulate
-   in \[Section]5 is baked in live. ---- *)
+(* ---- save: real notebook via the front end. NotebookEvaluate runs the one
+   \[Section]5 Manipulate Input cell (now proper input boxes, not a raw string,
+   which is what previously triggered Syntax::sntxi) so the saved notebook shows
+   the LIVE interactive Manipulate as output rather than an unevaluated
+   red-bracketed box. The 21 figure/table Output cells are already boxed and
+   are not re-run. ---- *)
 Print["assembled ", Length@$cells, " cells; building notebook ..."];
-(* No NotebookEvaluate: every figure + table is already boxed at build time,
-   and the \[Section]5 Manipulate is left as runnable source (its result is
-   previewed by explorer_preview.png). This avoids the Syntax::sntxi that
-   NotebookEvaluate raised on the long Manipulate Input cell. *)
 UsingFrontEnd @ Module[{doc},
    doc = CreateDocument[$cells, Visible -> False,
       StyleDefinitions -> "Default.nb", WindowSize -> {840, 900}];
+   NotebookEvaluate[doc, InsertResults -> True];
    NotebookSave[doc, outNb];
    Export[outPdf, doc, "PDF"];
    NotebookClose[doc];
