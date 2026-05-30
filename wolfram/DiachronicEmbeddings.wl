@@ -71,13 +71,17 @@ deCol[t_] := Blend[{RGBColor[0.13, 0.34, 0.68], RGBColor[0.85, 0.16, 0.11]}, t];
 frac[d_] := (ToExpression[d] - 1800)/190.;
 decLabel[d_] := StringTake[d, -2] <> "s";
 
-(* a neighbour label: small grey dot at the true position + the word offset
-   up-and-right on a translucent white panel, so it never sits on the path *)
-nbMark[xy_] := {GrayLevel[0.7], Disk[xy, Offset[1.7]]};
+(* a neighbour label sits EXACTLY at the word's projected position (centred),
+   on a translucent white panel so it stays legible over the path and other
+   labels. Placing the word at its true coordinate -- rather than offset away
+   from a separate dot -- is what makes the words "line up" with the geometry. *)
+nbMark[xy_] := {};
 nbLabel[word_, xy_] := Text[
-   Framed[Style[word, Italic, 9, GrayLevel[0.4]],
-     Background -> Directive[White, Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0],
-   xy, {-1.1, -0.6}];
+   Framed[Style[word, Italic, 8.5, GrayLevel[0.45]],
+     Background -> Directive[White, Opacity[0.75]],
+     FrameStyle -> Directive[GrayLevel[0.85], Thickness[0.4]], FrameMargins -> 1,
+     RoundingRadius -> 2],
+   xy];
 
 (* ---------- trajectory ---------- *)
 trajRec[w_] := <|

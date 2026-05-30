@@ -10,25 +10,25 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    370014,       8668]
-NotebookOptionsPosition[    361177,       8529]
-NotebookOutlinePosition[    361590,       8546]
-CellTagsIndexPosition[    361547,       8543]
+NotebookDataLength[    360365,       8405]
+NotebookOptionsPosition[    351528,       8266]
+NotebookOutlinePosition[    351941,       8283]
+CellTagsIndexPosition[    351898,       8280]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["Diachronic Word Embeddings", "Title",ExpressionUUID->"6c6ab9ee-a738-4973-acbb-cea6cce99c07"],
+Cell["Diachronic Word Embeddings", "Title",ExpressionUUID->"ce5e86f6-d2c4-4de6-938c-176302878542"],
 
 Cell["\<\
 200 Years of Semantic Drift, Traced Through a Word-Embedding Space\
-\>", "Subtitle",ExpressionUUID->"dd5aadfa-d769-4f03-b044-22ae3f705add"],
+\>", "Subtitle",ExpressionUUID->"bc2d4975-59cd-4194-a0de-3af36c96598b"],
 
 Cell[CellGroupData[{
 
-Cell["Setup", "Section",ExpressionUUID->"2a27d028-1e77-403a-8caf-a22be6004c14"],
+Cell["Setup", "Section",ExpressionUUID->"77d1a198-920c-4dab-b139-e01a209dbf63"],
 
 Cell[TextData[{
  "All of this notebook's code lives in the package ",
@@ -44,7 +44,7 @@ Cell[TextData[{
 function."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"9a97352f-24b6-4921-89d4-e23d8c75c16b"],
+  6}},ExpressionUUID->"b7af817c-9c64-4152-8d5c-6f77eba33ba4"],
 
 Cell[BoxData[
  RowBox[{"Get", "[", 
@@ -64,244 +64,198 @@ Cell[BoxData[
      ",", "\"\<wolfram\>\"", ",", "\"\<DiachronicEmbeddings.wl\>\""}], "}"}], 
    "]"}], "]"}]], "Input",
  CellMargins->{{50, 30}, {8, 8}},
- FontSize->12,ExpressionUUID->"036557e0-30bc-45c1-9b52-c9ccd0ca094f"],
+ FontSize->12,ExpressionUUID->"3be8b2e2-1871-485f-9a11-62a9f0d5e2fa"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"deHero", "[", "]"}]], "Input",
  CellMargins->{{50, 30}, {8, 8}},
- FontSize->12,ExpressionUUID->"26de92a6-f6e7-4a05-acce-480c45740d29"],
+ FontSize->12,ExpressionUUID->"065ae00a-3d18-48e1-8750-06b65b2cba03"],
 
 Cell[BoxData[
  TemplateBox[{
    TagBox[
     GridBox[{{
-       GraphicsBox[{{{
-           GrayLevel[0.7], 
-           DiskBox[{0.15052863937202138`, 0.39862715278085703`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.1889634674181932, 0.5421390272537723}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.08783331689039464, 0.3044624357725822}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.14821191958197716`, 0.43961518315371545`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.04979562119154216, 0.41056264329096487`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.035257890504666725`, 0.5243594877475638}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.04128937053939618, 0.050069746913620095`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.6442429750618753, 0.06567687194469772}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.6456784246346127, -0.07557059255473489}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.6383018889784897, -0.03296132103358074}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.5339224748250322, -0.28156760592332597`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.6365412768907452, 0.014778013708907543`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.6549603995768971, 0.08559205602577982}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.6184558241461774, -0.014875417344381425`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.03973972805559788, 0.24566558027339658`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.12449399027210932`, -0.00969850717064981}, 
-            Offset[1.7]]}}, {
+       GraphicsBox[{{{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, \
+{}, {}}, {
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"sprightly\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"sprightly\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.15052863937202138`, 
-           0.39862715278085703`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.39862715278085703`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"gaiety\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"gaiety\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.1889634674181932, 
-           0.5421390272537723}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.5421390272537723}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"dresses\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"dresses\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.08783331689039464, 
-           0.3044624357725822}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.3044624357725822}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"jollity\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"jollity\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.14821191958197716`, 
-           0.43961518315371545`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.43961518315371545`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"amorous\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"amorous\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.04979562119154216, 
-           0.41056264329096487`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.41056264329096487`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"comic\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"comic\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.035257890504666725`,
-            0.5243594877475638}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.5243594877475638}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"witty\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"witty\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.04128937053939618, 
-           0.050069746913620095`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.050069746913620095`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"lesbian\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"lesbian\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.6442429750618753, 
-           0.06567687194469772}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.06567687194469772}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"lesbians\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"lesbians\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.6456784246346127, -0.07557059255473489}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.6456784246346127, -0.07557059255473489}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"bisexual\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"bisexual\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.6383018889784897, -0.03296132103358074}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.6383018889784897, -0.03296132103358074}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"gays\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"gays\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.5339224748250322, -0.28156760592332597`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.5339224748250322, -0.28156760592332597`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"homosexual\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"homosexual\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.6365412768907452, 
-           0.014778013708907543`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.014778013708907543`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"heterosexual\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"heterosexual\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.6549603995768971, 
-           0.08559205602577982}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.08559205602577982}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"women\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"women\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.6184558241461774, -0.014875417344381425`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.6184558241461774, -0.014875417344381425`}], 
+          
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"queer\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"queer\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.03973972805559788, 
-           0.24566558027339658`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.24566558027339658`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"cheerful\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"cheerful\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {
-           0.12449399027210932`, -0.00969850717064981}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]]}, {{
+           0.12449399027210932`, -0.00969850717064981}]}, {{
            RGBColor[0.13, 0.34, 0.68], 
            Opacity[0.5], 
            Thickness[0.006], 
@@ -560,231 +514,184 @@ Cell[BoxData[
           0.4426481721664387}, {-0.38041240190457776`, 0.640983823235024}}, 
          ImageSize -> 560, AspectRatio -> 0.85, Background -> GrayLevel[1]}], 
        
-       GraphicsBox[{{{
-           GrayLevel[0.7], 
-           DiskBox[{0.44012453059217577`, 0.3309624290640214}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.5494803378970626, 0.21755404429144262`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.5406889955234927, 0.37720023667640634`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.43175506063235486`, 0.38686823529773245`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.3281788597580402, -0.04352994773612371}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.5256113592841527, 0.39754346762303433`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.43018878024629387`, 0.04713889326606284}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.40624198806303086`, -0.00796218684776393}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.5395516374827044, 0.1700565650042496}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.25594312568823613`, 0.07268737181486162}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.4725001153997031, 0.15449835978066218`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.4137020200346171, 0.2564431793816729}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.3996255723981309, 0.03398523899987528}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.31240760870016365`, 0.0073991229806877135`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.3807277078600401, 0.27692119105503055`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.21893729175917917`, -0.5546965365950464}, 
-            Offset[1.7]]}}, {
+       GraphicsBox[{{{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, \
+{}, {}}, {
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"drills\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"drills\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.44012453059217577`, 
-           0.3309624290640214}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.3309624290640214}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"sown\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"sown\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.5494803378970626, 
-           0.21755404429144262`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.21755404429144262`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"sows\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"sows\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.5406889955234927, 
-           0.37720023667640634`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.37720023667640634`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"sowing\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"sowing\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.43175506063235486`, 
-           0.38686823529773245`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.38686823529773245`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"scatter\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"scatter\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {
-           0.3281788597580402, -0.04352994773612371}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.3281788597580402, -0.04352994773612371}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"sow\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"sow\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.5256113592841527, 
-           0.39754346762303433`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.39754346762303433`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"seed\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"seed\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.43018878024629387`, 
-           0.04713889326606284}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.04713889326606284}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"sowed\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"sowed\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {
-           0.40624198806303086`, -0.00796218684776393}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.40624198806303086`, -0.00796218684776393}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"radio\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"radio\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.5395516374827044, 
-           0.1700565650042496}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.1700565650042496}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"broadcasts\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"broadcasts\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.25594312568823613`,
-            0.07268737181486162}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.07268737181486162}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"broadcasting\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"broadcasting\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.4725001153997031, 
-           0.15449835978066218`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.15449835978066218`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"television\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"television\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.4137020200346171, 
-           0.2564431793816729}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.2564431793816729}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"bbc\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"bbc\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.3996255723981309, 
-           0.03398523899987528}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.03398523899987528}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"stations\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"stations\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.31240760870016365`,
-            0.0073991229806877135`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.0073991229806877135`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"tv\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"tv\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.3807277078600401, 
-           0.27692119105503055`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.27692119105503055`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"scattered\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"scattered\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {
-           0.21893729175917917`, -0.5546965365950464}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]]}, {{
+           0.21893729175917917`, -0.5546965365950464}]}, {{
            RGBColor[0.3194736842105263, 0.29263157894736846`, 0.53], 
            Opacity[0.5], 
            Thickness[0.006], 
@@ -990,231 +897,186 @@ Cell[BoxData[
           0.6801641749426347}, {-0.6689653371012161, 0.511812268129204}}, 
          ImageSize -> 560, AspectRatio -> 0.85, Background -> GrayLevel[1]}], 
        
-       GraphicsBox[{{{
-           GrayLevel[0.7], 
-           DiskBox[{0.5961432041275201, 0.14564671633193024`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.7144981837022332, -0.0035594532892891636`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.601162355831682, -0.010027977949275577`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.2767546462193694, 0.010528696337891968`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.6739146315165346, 0.1436165055837678}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.6553518766259007, 0.09009546874764277}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.1153116221040085, -0.4832491981598929}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.31460974780088524`, 0.03272809601491442}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.27144535729262953`, 0.30652818122989056`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.2002438140410541, -0.44256918347648}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.32330133879488726`, 0.5424183185153275}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.19802235462689147`, 0.10297694515447384`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.20507772490691467`, 0.5265634625625206}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.07719056517070993, -0.40857616987038853`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.06605850960673788, 0.0466437635122747}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.0806362968867804, -0.35394969375671853`}, 
-            Offset[1.7]]}}, {
+       GraphicsBox[{{{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, \
+{}, {}}, {
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"williams\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"williams\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.5961432041275201, 
-           0.14564671633193024`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.14564671633193024`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"cush\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"cush\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {
-           0.7144981837022332, -0.0035594532892891636`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.7144981837022332, -0.0035594532892891636`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"burt\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"burt\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {
-           0.601162355831682, -0.010027977949275577`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.601162355831682, -0.010027977949275577`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"dietary\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"dietary\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.2767546462193694, 
-           0.010528696337891968`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.010528696337891968`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"barney\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"barney\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.6739146315165346, 
-           0.1436165055837678}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.1436165055837678}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"goodwin\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"goodwin\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.6553518766259007, 
-           0.09009546874764277}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.09009546874764277}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"computers\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"computers\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.1153116221040085, -0.4832491981598929}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.1153116221040085, -0.4832491981598929}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"software\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"software\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.31460974780088524`,
-            0.03272809601491442}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.03272809601491442}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"database\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"database\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.27144535729262953`,
-            0.30652818122989056`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.30652818122989056`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"digital\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"digital\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.2002438140410541, -0.44256918347648}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.2002438140410541, -0.44256918347648}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"server\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"server\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.32330133879488726`,
-            0.5424183185153275}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.5424183185153275}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"computing\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"computing\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.19802235462689147`,
-            0.10297694515447384`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.10297694515447384`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"internet\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"internet\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.20507772490691467`,
-            0.5265634625625206}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.5265634625625206}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"programmed\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"programmed\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.07719056517070993, -0.40857616987038853`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.07719056517070993, -0.40857616987038853`}], 
+          
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"ibm\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"ibm\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.06605850960673788, 
-           0.0466437635122747}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.0466437635122747}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"electronic\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"electronic\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.0806362968867804, -0.35394969375671853`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]]}, {{
+            TraditionalForm], {-0.0806362968867804, -0.35394969375671853`}]}, \
+{{
            RGBColor[
            0.5089473684210526, 0.24526315789473685`, 0.38000000000000006`], 
            Opacity[0.5], 
@@ -1325,231 +1187,185 @@ Cell[BoxData[
           0.8608279585134925}, {-0.6063293001609193, 0.665498420516354}}, 
          ImageSize -> 560, AspectRatio -> 0.85, Background -> 
          GrayLevel[1]}]}, {
-       GraphicsBox[{{{
-           GrayLevel[0.7], 
-           DiskBox[{0.4846897030738778, 0.37078337543964796`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.5438721562134512, 0.4324258545872934}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.5000437017060525, 0.35773254084929934`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.42527990104354035`, 0.2908631413766531}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.5627854777256078, 0.35494838538516726`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.4591971524220446, 0.3973901441037415}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.49757741146143003`, 0.01205945279964709}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.5926758517531092, 0.08865194211069138}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.5718703703912434, 0.11291841389349272`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.5026581970990137, 0.13593964074151157`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.6898941357154139, 0.07798336494741122}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.5895305697083847, 0.13834815142979726`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.02210990408969047, -0.18628703463202478`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.31610347423719876`, 0.05329903899312407}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.16086161712271377`, -0.3260504708119169}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.11451166697639878`, -0.19348182277335013`}, 
-            Offset[1.7]]}}, {
+       GraphicsBox[{{{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, \
+{}, {}}, {
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"montgomery\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"montgomery\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.4846897030738778, 
-           0.37078337543964796`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.37078337543964796`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"angus\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"angus\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.5438721562134512, 
-           0.4324258545872934}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.4324258545872934}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"clare\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"clare\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.5000437017060525, 
-           0.35773254084929934`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.35773254084929934`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"ralph\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"ralph\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.42527990104354035`, 
-           0.2908631413766531}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.2908631413766531}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"albemarle\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"albemarle\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.5627854777256078, 
-           0.35494838538516726`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.35494838538516726`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"blois\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"blois\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.4591971524220446, 
-           0.3973901441037415}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.3973901441037415}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"guys\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"guys\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.49757741146143003`,
-            0.01205945279964709}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.01205945279964709}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"hey\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"hey\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.5926758517531092, 
-           0.08865194211069138}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.08865194211069138}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"yeah\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"yeah\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.5718703703912434, 
-           0.11291841389349272`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.11291841389349272`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"kid\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"kid\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.5026581970990137, 
-           0.13593964074151157`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.13593964074151157`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"gonna\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"gonna\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.6898941357154139, 
-           0.07798336494741122}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.07798336494741122}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"nice\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"nice\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.5895305697083847, 
-           0.13834815142979726`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.13834815142979726`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"mannering\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"mannering\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.02210990408969047, -0.18628703463202478`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.02210990408969047, -0.18628703463202478`}], 
+          
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"carleton\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"carleton\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.31610347423719876`, 
-           0.05329903899312407}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.05329903899312407}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"hospital\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"hospital\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {
-           0.16086161712271377`, -0.3260504708119169}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.16086161712271377`, -0.3260504708119169}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"maupassant\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"maupassant\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {
-           0.11451166697639878`, -0.19348182277335013`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]]}, {{
+           0.11451166697639878`, -0.19348182277335013`}]}, {{
            RGBColor[0.13, 0.34, 0.68], 
            Opacity[0.5], 
            Thickness[0.006], 
@@ -1814,232 +1630,184 @@ Cell[BoxData[
           0.7131070313385304}, {-0.5130323776919887, 0.5337249509029307}}, 
          ImageSize -> 560, AspectRatio -> 0.85, Background -> GrayLevel[1]}], 
        
-       GraphicsBox[{{{
-           GrayLevel[0.7], 
-           DiskBox[{0.1971319947323389, 0.3337650855677399}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.0787505815107744, 0.09856666450799198}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.044911713015893286`, 0.00718506690315799}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.09913538136543346, 0.18714669016612615`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.05645688059118654, 0.002784633543353989}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.2616849983740942, -0.0841077194360006}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.12854212803582565`, 0.2684779055680437}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.14575156709850146`, 0.2431730295000718}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.5978896518583178, 0.3646376850001424}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.13842026329279147`, 0.3997676865052891}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.540609360827956, 0.08517437871523427}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.06527765919362484, -0.018636247210452813`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.488042285089694, 0.24503853796256173`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.1815399895416666, -0.21357111998876133`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.22237218826498606`, 0.31023855007769296`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.021379223484376545`, -0.11190097340588485`}, 
-            Offset[1.7]]}}, {
+       GraphicsBox[{{{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, \
+{}, {}}, {
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"appalling\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"appalling\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.1971319947323389, 
-           0.3337650855677399}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.3337650855677399}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"terrible\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"terrible\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.0787505815107744, 
-           0.09856666450799198}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.09856666450799198}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"crash\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"crash\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.044911713015893286`,
-            0.00718506690315799}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.00718506690315799}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"dreadful\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"dreadful\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.09913538136543346, 
-           0.18714669016612615`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.18714669016612615`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"yell\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"yell\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.05645688059118654, 
-           0.002784633543353989}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.002784633543353989}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"tremendous\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"tremendous\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {
-           0.2616849983740942, -0.0841077194360006}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.2616849983740942, -0.0841077194360006}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"hideous\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"hideous\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.12854212803582565`,
-            0.2684779055680437}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.2684779055680437}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"portentous\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"portentous\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.14575156709850146`, 
-           0.2431730295000718}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.2431730295000718}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"weird\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"weird\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.5978896518583178, 
-           0.3646376850001424}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.3646376850001424}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"awful\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"awful\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.13842026329279147`, 
-           0.3997676865052891}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.3997676865052891}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"sounded\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"sounded\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.540609360827956, 
-           0.08517437871523427}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.08517437871523427}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"thunder\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"thunder\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.06527765919362484, -0.018636247210452813`}, 
-           
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.06527765919362484, -0.018636247210452813`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"sounds\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"sounds\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.488042285089694, 
-           0.24503853796256173`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.24503853796256173`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"furious\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"furious\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.1815399895416666, -0.21357111998876133`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.1815399895416666, -0.21357111998876133`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"frightful\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"frightful\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.22237218826498606`, 
-           0.31023855007769296`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.31023855007769296`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"tempest\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"tempest\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {
-           0.021379223484376545`, -0.11190097340588485`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]]}, {{
+           0.021379223484376545`, -0.11190097340588485`}]}, {{
            RGBColor[0.20578947368421052`, 0.32105263157894737`, 0.62], 
            Opacity[0.5], 
            Thickness[0.006], 
@@ -2050,6 +1818,7 @@ Cell[BoxData[
            0.24368421052631578`, 0.31157894736842107`, 0.5900000000000001], 
            Opacity[0.5], 
            Thickness[0.006], 
+           
            LineBox[{{0.2634912698220672, 0.14793074723121824`}, {
             0.2398790345342782, 0.09329262203180698}}]}, {
            RGBColor[0.28157894736842104`, 0.30210526315789477`, 0.56], 
@@ -2277,232 +2046,186 @@ Cell[BoxData[
          PlotRange -> {{-0.7063500371355969, 
           0.41440727739628713`}, {-0.4663850630333858, 0.49256976681300424`}},
           ImageSize -> 560, AspectRatio -> 0.85, Background -> GrayLevel[1]}], 
-       GraphicsBox[{{{
-           GrayLevel[0.7], 
-           DiskBox[{0.6892920622853472, 0.20557295933462463`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.6771228218246531, 0.20689153154002624`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.7171630168828782, 0.2599054423607484}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.6400597891584412, 0.21142927388076552`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.584764632861183, 0.0717627596211225}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.6765563774960185, 0.23570339361904974`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.4027798917692745, 0.24614959262928532`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.28660536502681117`, 0.5989460106720975}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.23130357818481906`, -0.02200669314908118}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.16610177423103126`, 0.3416755399707924}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.12708413555523515`, 0.3457605812573912}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.14200553817726766`, -0.2253385832575371}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.22142304261416057`, -0.2637009238207409}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.3705023362349937, -0.1100781798953143}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{0.41172312849627796`, -0.011496610674839418`}, 
-            Offset[1.7]]}, {
-           GrayLevel[0.7], 
-           DiskBox[{-0.16100428217345875`, -0.28316703427975204`}, 
-            Offset[1.7]]}}, {
+       GraphicsBox[{{{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, \
+{}, {}}, {
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"armenia\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"armenia\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.6892920622853472, 
-           0.20557295933462463`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.20557295933462463`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"pontus\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"pontus\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.6771228218246531, 
-           0.20689153154002624`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.20689153154002624`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"cappadocia\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"cappadocia\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.7171630168828782, 
-           0.2599054423607484}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.2599054423607484}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"mesopotamia\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"mesopotamia\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.6400597891584412, 
-           0.21142927388076552`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.21142927388076552`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"finland\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"finland\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.584764632861183, 
-           0.0717627596211225}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.0717627596211225}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"bithynia\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"bithynia\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {0.6765563774960185, 
-           0.23570339361904974`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.23570339361904974`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"television\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"television\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.4027798917692745, 
-           0.24614959262928532`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.24614959262928532`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"newspapers\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"newspapers\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.28660536502681117`,
-            0.5989460106720975}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.5989460106720975}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"otitis\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"otitis\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.23130357818481906`, -0.02200669314908118}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.23130357818481906`, -0.02200669314908118}], 
+          
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"mass\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"mass\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.16610177423103126`,
-            0.3416755399707924}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.3416755399707924}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"culture\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"culture\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {-0.12708413555523515`,
-            0.3457605812573912}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            0.3457605812573912}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"intima\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"intima\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.14200553817726766`, -0.2253385832575371}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.14200553817726766`, -0.2253385832575371}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"refractive\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"refractive\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.22142304261416057`, -0.2637009238207409}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.22142304261416057`, -0.2637009238207409}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"medium\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"medium\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.3705023362349937, -0.1100781798953143}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+            TraditionalForm], {-0.3705023362349937, -0.1100781798953143}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"persia\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"persia\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], TraditionalForm], {
-           0.41172312849627796`, -0.011496610674839418`}, 
-           ImageScaled[{-0.050000000000000044`, 0.2}]], 
+           0.41172312849627796`, -0.011496610674839418`}], 
           InsetBox[
            FormBox[
             FrameBox[
-             StyleBox["\"opacities\"", Italic, 9, 
-              GrayLevel[0.4], StripOnInput -> False], Background -> 
-             Directive[
+             StyleBox["\"opacities\"", Italic, 8.5, 
+              GrayLevel[0.45], StripOnInput -> False], Background -> Directive[
                GrayLevel[1], 
-               Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0, 
+               Opacity[0.75]], FrameStyle -> Directive[
+               GrayLevel[0.85], 
+               Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2, 
              StripOnInput -> False], 
-            TraditionalForm], {-0.16100428217345875`, -0.28316703427975204`}, 
-           
-           ImageScaled[{-0.050000000000000044`, 0.2}]]}, {{
+            TraditionalForm], {-0.16100428217345875`, \
+-0.28316703427975204`}]}, {{
            RGBColor[0.13, 0.34, 0.68], 
            Opacity[0.5], 
            Thickness[0.006], 
@@ -2837,7 +2560,7 @@ Cell[BoxData[
      RowBox[{#, ",", #2, ",", "Bottom", ",", 
        RowBox[{"{", "}"}]}], "]"}]& )]], "Output",
  CellMargins->{{50, 30}, {8, 14}},
- ShowCellLabel->False,ExpressionUUID->"0937be97-8da8-4a9b-b29e-6248ae9423ef"]
+ ShowCellLabel->False,ExpressionUUID->"af2a214f-80dc-42d2-b46a-a114f22b8d42"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -2851,7 +2574,7 @@ words ",
  "interactively."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"867d3583-6513-4329-a95f-dc7310405e97"],
+  16}},ExpressionUUID->"824d995f-305b-44ad-944f-7aef9ec96fc6"],
 
 Cell[TextData[{
  "Word meanings move. ",
@@ -2885,7 +2608,7 @@ frame ",
  CellMargins->{{60, 60}, {8, 10}},
  FontSize->14,
  Background->RGBColor[
-  0.96, 0.97, 1.],ExpressionUUID->"2c849406-e976-49e8-8ed6-c3eee04c8ea0"],
+  0.96, 0.97, 1.],ExpressionUUID->"135bfd62-d554-415c-82be-e9f3ecca4930"],
 
 Cell[TextData[{
  "The drifting paths are the heart of the post (and \[Section]5 turns ",
@@ -2908,12 +2631,12 @@ the companion ",
  CellMargins->{{60, 60}, {8, 10}},
  FontSize->14,
  Background->RGBColor[
-  0.96, 0.97, 1.],ExpressionUUID->"c74a5495-c695-4883-bc22-3bdbd38853f7"]
+  0.96, 0.97, 1.],ExpressionUUID->"28609562-4b24-4ad0-a899-af8c15d043c9"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["1. The idea: words as moving points", "Section",ExpressionUUID->"533546bd-d2b0-49e9-92e9-4821c708c6b6"],
+Cell["1. The idea: words as moving points", "Section",ExpressionUUID->"4f2973a4-d60f-47af-8b33-ab9d21f4fc65"],
 
 Cell[TextData[{
  "A ",
@@ -2939,7 +2662,7 @@ similarity of ",
  "."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"92eebdf6-51f6-44b4-a54d-a714e9effacd"],
+  6}},ExpressionUUID->"a08a8934-af0d-4283-8eff-179045ec987b"],
 
 Cell[TextData[{
  "Now train one embedding on text from the 1850s and another on text from ",
@@ -2959,7 +2682,7 @@ displacement we ",
  "can draw \[Dash] and across twenty decades, a path."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"225466d7-1aff-46ea-9a0d-ad9f45088c39"],
+  6}},ExpressionUUID->"3c2e669c-49f1-4d9e-b8bf-bd6105fa707b"],
 
 Cell[TextData[{
  StyleBox["Takeaway.  ",
@@ -2976,12 +2699,12 @@ measuring and ",
  CellFrameColor->RGBColor[0.35, 0.6, 0.4],
  FontSize->12,
  Background->RGBColor[
-  0.93, 0.97, 0.93],ExpressionUUID->"bea3ab0f-3067-471b-9b30-ee0abe8d0704"]
+  0.93, 0.97, 0.93],ExpressionUUID->"eb598f42-20c3-43ed-b273-1f4040e75281"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["2. The data: HistWords decade embeddings", "Section",ExpressionUUID->"ace4cfe6-e4a7-4b8e-9b82-408782515037"],
+Cell["2. The data: HistWords decade embeddings", "Section",ExpressionUUID->"bcc31035-aa08-4b89-acf8-398067d56a7c"],
 
 Cell[TextData[{
  "We use the ",
@@ -3005,7 +2728,7 @@ downstream ",
  "is Wolfram Language."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"beb5f28b-8eb0-43e1-ace5-1302f0f4ec36"],
+  6}},ExpressionUUID->"1e418040-7747-40d5-aba7-e00737f3067c"],
 
 Cell[TextData[{
  "Coverage varies by word. Of the fourteen we track, ",
@@ -3045,12 +2768,12 @@ segments. ",
  "."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"8be1c698-9d6d-42d2-814e-461cdf53aeaa"]
+  6}},ExpressionUUID->"275edb23-c39f-47a4-80f3-d62bff691417"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["3. Why the decades must be aligned", "Section",ExpressionUUID->"69ff00f1-a375-4a8e-a5cb-0b85f49d0749"],
+Cell["3. Why the decades must be aligned", "Section",ExpressionUUID->"3a2667e8-5751-40ee-996c-827545b41553"],
 
 Cell["\<\
 Each decade's embedding is trained independently, so its coordinate axes are \
@@ -3061,7 +2784,7 @@ space, so nothing pins down a shared orientation.) Before a word can be \
 tracked through time, the decades must be rotated into a common frame.\
 \>", "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"25978cf0-5dd0-4ec3-a3f4-ec34b08d2b49"],
+  6}},ExpressionUUID->"58cf246e-57af-4f8f-b644-f69c8d4c7779"],
 
 Cell[TextData[{
  "We use ",
@@ -3082,7 +2805,7 @@ decade, for ",
  " minimising"
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"91894b58-78c6-4661-8e08-69b46258bc59"],
+  6}},ExpressionUUID->"24896804-a03c-45e5-9eb5-b78a0339b317"],
 
 Cell[BoxData[
  FormBox[
@@ -3099,7 +2822,7 @@ Cell[BoxData[
     SuperscriptBox["R", "T"], "R", "=", "I"}]}], 
   TraditionalForm]], "DisplayFormula",
  CellMargins->{{80, 50}, {8, 
-  8}},ExpressionUUID->"adf5fe12-631b-45b3-8536-24047d8e4a49"],
+  8}},ExpressionUUID->"08130276-db1d-4fc3-b416-5fe3102360c2"],
 
 Cell[TextData[{
  "This has a closed form from a singular value decomposition: if ",
@@ -3134,14 +2857,14 @@ each ",
  "decade's own native space; alignment is needed only to compare frames.)"
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"1149c4f9-bec2-4bdb-b4e8-0eecc29eec84"],
+  6}},ExpressionUUID->"92fc3c3c-bf5d-42af-8e76-8cf85adf090d"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"deAlignmentPlot", "[", "]"}]], "Input",
  CellMargins->{{50, 30}, {8, 8}},
- FontSize->12,ExpressionUUID->"36b98489-2c78-4e34-a2e5-40caf6f8fee5"],
+ FontSize->12,ExpressionUUID->"7bc3d6c0-4e26-4a14-b5f9-d869d318e407"],
 
 Cell[BoxData[
  TagBox[
@@ -4020,7 +3743,7 @@ high-frequency anchor words)", 13],
   SelectWithContents->False,
   Selectable->True]], "Output",
  CellMargins->{{50, 30}, {8, 14}},
- ShowCellLabel->False,ExpressionUUID->"73b9a171-61b4-443f-9339-c2cab0083286"]
+ ShowCellLabel->False,ExpressionUUID->"9c0da398-afc8-4b24-b533-e74ede0de703"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -4032,7 +3755,7 @@ curve at ",
  "every decade; both necessarily reach 1.0 at the 1990s reference."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"e276612b-9202-4204-bb6b-876e2c8bca9c"],
+  16}},ExpressionUUID->"c1d90a01-ab09-4bc6-b96e-7bb84cd7e44e"],
 
 Cell["\<\
 How far from comparable are the raw spaces? The rotation that best aligns the \
@@ -4046,7 +3769,7 @@ essential, not cosmetic \[Dash] and the required rotation then shrinks \
 smoothly toward the present.\
 \>", "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"f132e962-92ea-4f19-901f-0d199b65e3e0"],
+  6}},ExpressionUUID->"d1ac550a-5ebc-4d5c-bd66-6e063730a81a"],
 
 Cell[TextData[{
  "Aligning lifts the mean anchor-word cosine to the 1990s at every decade ",
@@ -4072,7 +3795,7 @@ re-aligned. The ",
  "."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"74cff653-834e-4774-92d6-855738f07afd"],
+  6}},ExpressionUUID->"bb084d99-2836-43b6-be09-88be27ea3b08"],
 
 Cell[TextData[{
  StyleBox["Takeaway.  ",
@@ -4087,12 +3810,12 @@ makes them ",
  CellFrameColor->RGBColor[0.35, 0.6, 0.4],
  FontSize->12,
  Background->RGBColor[
-  0.93, 0.97, 0.93],ExpressionUUID->"65380ee4-83cb-4c0f-8c6d-d2a35bb2a3ef"]
+  0.93, 0.97, 0.93],ExpressionUUID->"760cd7f7-e4aa-4636-890f-e1146297fea7"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["4. How to read a trajectory", "Section",ExpressionUUID->"4281f1d0-1866-4bac-9f01-ff1961063c83"],
+Cell["4. How to read a trajectory", "Section",ExpressionUUID->"77c5ceb5-072a-4dee-ac0a-226e1bed793e"],
 
 Cell["\<\
 For one word we collect its aligned vector in every decade it occurs, gather \
@@ -4102,322 +3825,337 @@ threads between an early-meaning cluster and a late-meaning cluster; colour \
 runs from blue (1800s) to red (1990s). One call draws any word:\
 \>", "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"06e26873-4261-4c9d-aa27-68d720921d62"],
+  6}},ExpressionUUID->"99c01aa2-9750-4d31-84f3-2e14fa2752d4"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"deTrajectoryPlot", "[", "\"\<gay\>\"", "]"}]], "Input",
  CellMargins->{{50, 30}, {8, 8}},
- FontSize->12,ExpressionUUID->"8241a8c5-8f30-4628-881f-a1e565ddacc7"],
+ FontSize->12,ExpressionUUID->"d79a1c77-be12-466e-8468-0d2311366760"],
 
 Cell[BoxData[
- GraphicsBox[{{
-    {GrayLevel[0.7], 
-     DiskBox[{0.15052863937202138`, 0.39862715278085703`}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{0.1889634674181932, 0.5421390272537723}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{0.08783331689039464, 0.3044624357725822}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{0.14821191958197716`, 0.43961518315371545`}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{0.04979562119154216, 0.41056264329096487`}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{0.035257890504666725`, 0.5243594877475638}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{0.04128937053939618, 0.050069746913620095`}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{-0.6442429750618753, 0.06567687194469772}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{-0.6456784246346127, -0.07557059255473489}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{-0.6383018889784897, -0.03296132103358074}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{-0.5339224748250322, -0.28156760592332597`}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{-0.6365412768907452, 0.014778013708907543`}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{-0.6549603995768971, 0.08559205602577982}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{-0.6184558241461774, -0.014875417344381425`}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{-0.03973972805559788, 0.24566558027339658`}, Offset[1.7]]}, 
-    {GrayLevel[0.7], 
-     DiskBox[{0.12449399027210932`, -0.00969850717064981}, Offset[1.7]]}}, {
-    InsetBox[
+ GraphicsBox[{{{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, \
+{}}, {InsetBox[
      FrameBox[
       StyleBox["\<\"sprightly\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {0.15052863937202138, 0.39862715278085703}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {0.15052863937202138, 0.39862715278085703}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"gaiety\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {0.1889634674181932, 0.5421390272537723}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {0.1889634674181932, 0.5421390272537723}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"dresses\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {0.08783331689039464, 0.3044624357725822}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {0.08783331689039464, 0.3044624357725822}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"jollity\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {0.14821191958197716, 0.43961518315371545}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {0.14821191958197716, 0.43961518315371545}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"amorous\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {0.04979562119154216, 0.41056264329096487}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {0.04979562119154216, 0.41056264329096487}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"comic\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {0.035257890504666725, 0.5243594877475638}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {0.035257890504666725, 0.5243594877475638}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"witty\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {0.04128937053939618, 0.050069746913620095}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {0.04128937053939618, 0.050069746913620095}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"lesbian\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {-0.6442429750618753, 0.06567687194469772}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {-0.6442429750618753, 0.06567687194469772}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"lesbians\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {-0.6456784246346127, -0.07557059255473489}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {-0.6456784246346127, -0.07557059255473489}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"bisexual\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {-0.6383018889784897, -0.03296132103358074}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {-0.6383018889784897, -0.03296132103358074}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"gays\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {-0.5339224748250322, -0.28156760592332597}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {-0.5339224748250322, -0.28156760592332597}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"homosexual\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {-0.6365412768907452, 0.014778013708907543}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {-0.6365412768907452, 0.014778013708907543}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"heterosexual\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {-0.6549603995768971, 0.08559205602577982}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {-0.6549603995768971, 0.08559205602577982}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"women\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {-0.6184558241461774, -0.014875417344381425}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {-0.6184558241461774, -0.014875417344381425}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"queer\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {-0.03973972805559788, 0.24566558027339658}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]], InsetBox[
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {-0.03973972805559788, 0.24566558027339658}], 
+    InsetBox[
      FrameBox[
       StyleBox["\<\"cheerful\"\>",
        StripOnInput->False,
-       LineColor->GrayLevel[0.4],
-       FrontFaceColor->GrayLevel[0.4],
-       BackFaceColor->GrayLevel[0.4],
-       GraphicsColor->GrayLevel[0.4],
-       FontSize->9,
+       LineColor->GrayLevel[0.45],
+       FrontFaceColor->GrayLevel[0.45],
+       BackFaceColor->GrayLevel[0.45],
+       GraphicsColor->GrayLevel[0.45],
+       FontSize->8.5,
        FontSlant->Italic,
-       FontColor->GrayLevel[0.4]],
+       FontColor->GrayLevel[0.45]],
       Background->Directive[
         GrayLevel[1], 
-        Opacity[0.8]],
-      FrameMargins->0,
-      FrameStyle->None,
-      StripOnInput->False], {0.12449399027210932, -0.00969850717064981}, 
-     ImageScaled[{-0.050000000000000044, 0.2}]]}, {
+        Opacity[0.75]],
+      FrameMargins->1,
+      FrameStyle->Directive[
+        GrayLevel[0.85], 
+        Thickness[0.4]],
+      RoundingRadius->2,
+      StripOnInput->False], {0.12449399027210932, -0.00969850717064981}]}, {
     {RGBColor[0.13, 0.34, 0.68], Thickness[0.006], Opacity[0.5], 
      LineBox[{{0.24693893980366108`, 0.2060540565334073}, {0.188191278044698, 
       0.10867949988492638`}}]}, 
@@ -4592,7 +4330,7 @@ Cell[BoxData[
    0.4426481721664387}, {-0.38041240190457776`, 
    0.640983823235024}}]], "Output",
  CellMargins->{{50, 30}, {8, 14}},
- ShowCellLabel->False,ExpressionUUID->"67831771-94aa-407a-967b-44277a852dc2"]
+ ShowCellLabel->False,ExpressionUUID->"c07b2691-07dc-43f6-a8ff-182504e0723c"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -4611,7 +4349,7 @@ Cell[TextData[{
 sweep."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"cdcbcf42-cdf2-4594-8165-017a2cf33174"],
+  16}},ExpressionUUID->"c9df1afd-e146-417f-92f6-92d9365b5c05"],
 
 Cell[TextData[{
  StyleBox["What the projection does and does not say.",
@@ -4633,7 +4371,7 @@ signal is ",
  "from the high-dimensional cosine geometry, not the projection."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"96331e2c-cb45-4789-bbef-6d86ee930a55"],
+  6}},ExpressionUUID->"acd5a3b1-a6a9-4f79-b591-9999eb1cf294"],
 
 Cell[TextData[{
  StyleBox["Takeaway.  ",
@@ -4650,12 +4388,12 @@ curve is ",
  CellFrameColor->RGBColor[0.35, 0.6, 0.4],
  FontSize->12,
  Background->RGBColor[
-  0.93, 0.97, 0.93],ExpressionUUID->"85bc4b5a-fbd5-49b1-8212-a8df0cec80ea"]
+  0.93, 0.97, 0.93],ExpressionUUID->"a78e8e4e-36c3-4d27-8ba0-8aab4df47e44"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["5. Explore all fourteen words", "Section",ExpressionUUID->"d7d9fb57-69b9-40eb-b048-dfa0ce4985ff"],
+Cell["5. Explore all fourteen words", "Section",ExpressionUUID->"0e44d8d5-9390-4167-8254-6c1c3517fc18"],
 
 Cell[TextData[{
  "Rather than print fourteen separate plots, the same construction is wired \
@@ -4672,14 +4410,14 @@ live ",
  " with its full path.)"
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"2938f8c3-71c2-424f-bf7e-fd5101dd89ae"],
+  6}},ExpressionUUID->"7b8202b3-6fd3-43da-be13-bd40774c580a"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"deExplorer", "[", "]"}]], "Input",
  CellMargins->{{50, 30}, {8, 8}},
- FontSize->12,ExpressionUUID->"d7019d18-b2b3-4149-8e38-fed88f5b4e69"],
+ FontSize->12,ExpressionUUID->"cfab49c9-05b6-4757-a047-6ad7e1a5d13a"],
 
 Cell[BoxData[
  TagBox[
@@ -5536,19 +5274,18 @@ O/VYrL/U98V9UdPRv4JcVPu1yuS/r4MtUGIktL/MDK6i
               "xy" -> {0.29384980270932765`, 0.130700190553665}|>}|>|>, 
        DiachronicEmbeddings`Private`nbMark[
          Pattern[DiachronicEmbeddings`Private`xy, 
-          Blank[]]] := {
-         GrayLevel[0.7], 
-         Disk[DiachronicEmbeddings`Private`xy, 
-          Offset[1.7]]}, DiachronicEmbeddings`Private`nbLabel[
+          Blank[]]] := {}, DiachronicEmbeddings`Private`nbLabel[
          Pattern[DiachronicEmbeddings`Private`word, 
           Blank[]], 
          Pattern[DiachronicEmbeddings`Private`xy, 
           Blank[]]] := Text[
          Framed[
-          Style[DiachronicEmbeddings`Private`word, Italic, 9, 
-           GrayLevel[0.4]], Background -> Directive[White, 
-            Opacity[0.8]], FrameStyle -> None, FrameMargins -> 0], 
-         DiachronicEmbeddings`Private`xy, {-1.1, -0.6}], 
+          Style[DiachronicEmbeddings`Private`word, Italic, 8.5, 
+           GrayLevel[0.45]], Background -> Directive[White, 
+            Opacity[0.75]], FrameStyle -> Directive[
+            GrayLevel[0.85], 
+            Thickness[0.4]], FrameMargins -> 1, RoundingRadius -> 2], 
+         DiachronicEmbeddings`Private`xy], 
        DiachronicEmbeddings`Private`deCol[
          Pattern[DiachronicEmbeddings`Private`t, 
           Blank[]]] := Blend[{
@@ -5569,7 +5306,7 @@ O/VYrL/U98V9UdPRv4JcVPu1yuS/r4MtUGIktL/MDK6i
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
  CellMargins->{{50, 30}, {8, 14}},
- ShowCellLabel->False,ExpressionUUID->"e292c5e6-f2ab-4ac6-b978-cfaed6a41241"]
+ ShowCellLabel->False,ExpressionUUID->"99a2c5a8-16c3-4dee-9736-5e08285dbf03"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -5621,12 +5358,12 @@ Cell[TextData[{
  ")."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"18a51b53-10a6-4213-9c1e-476657995911"]
+  6}},ExpressionUUID->"a51abcb3-48f6-4c39-bb82-945b0551c5a7"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["6. Nearest-neighbour drift tables", "Section",ExpressionUUID->"4463b99a-5749-4b5f-a0ea-8d559602f0b3"],
+Cell["6. Nearest-neighbour drift tables", "Section",ExpressionUUID->"1383238e-3d4b-4f9c-b3dd-6f63139b3a8e"],
 
 Cell["\<\
 The trajectories are the geometry of a simpler fact: the list of a word's \
@@ -5635,7 +5372,7 @@ by cosine similarity in each decade's own native space. Sampled every fifty \
 years:\
 \>", "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"e519144e-1c20-4392-af1c-767d833449e9"],
+  6}},ExpressionUUID->"f171cd03-a31a-4999-9975-439a079a240c"],
 
 Cell[CellGroupData[{
 
@@ -5646,7 +5383,7 @@ Cell[BoxData[
     ",", "\"\<computer\>\"", ",", "\"\<guy\>\"", ",", "\"\<terrific\>\"", 
     ",", "\"\<media\>\"", ",", "\"\<queer\>\""}], "}"}], "]"}]], "Input",
  CellMargins->{{50, 30}, {8, 8}},
- FontSize->12,ExpressionUUID->"0244d1f9-f350-4d51-99c4-ef689ede4510"],
+ FontSize->12,ExpressionUUID->"7dcda4f4-f686-4931-9650-98ef8628d811"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -5747,7 +5484,7 @@ curious\"\>", "\<\"strange, funny, lesbian, perverse, gay\"\>"}
    GridBoxSpacings->{"Columns" -> {{1}}, "Rows" -> {{0.8}}}],
   "Grid"]], "Output",
  CellMargins->{{50, 30}, {8, 14}},
- ShowCellLabel->False,ExpressionUUID->"6358fb6a-5cf9-45fc-ba1c-a9c407266ed9"]
+ ShowCellLabel->False,ExpressionUUID->"8668998c-3507-4d83-b1ac-ca96d4b72da9"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -5762,7 +5499,7 @@ Cell[TextData[{
  "."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"b06b51d5-22a2-4932-ba0b-05ff08d34899"],
+  16}},ExpressionUUID->"763b04be-9c08-4965-b2ff-84ee25d9ed51"],
 
 Cell[TextData[{
  StyleBox["Takeaway.  ",
@@ -5784,12 +5521,12 @@ Cell[TextData[{
  CellFrameColor->RGBColor[0.35, 0.6, 0.4],
  FontSize->12,
  Background->RGBColor[
-  0.93, 0.97, 0.93],ExpressionUUID->"6e3558e1-33f9-4df9-973f-3d0be225e4eb"]
+  0.93, 0.97, 0.93],ExpressionUUID->"50c509df-1cf7-4264-893b-d8d15d9d1dfe"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["7. Two statistical laws of semantic change", "Section",ExpressionUUID->"f6c34c94-6bb2-4b37-a984-ec95399394c2"],
+Cell["7. Two statistical laws of semantic change", "Section",ExpressionUUID->"307650dc-06b6-4959-9f79-7e703882223a"],
 
 Cell[TextData[{
  "Hamilton, Leskovec & Jurafsky (2016) propose two regularities of semantic \
@@ -5820,11 +5557,11 @@ also a good ",
  ".)"
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"93102e46-d488-416f-af93-d8a876b4d3eb"],
+  6}},ExpressionUUID->"40152d33-dbb6-48e3-b768-3c2b4d3c1165"],
 
 Cell[CellGroupData[{
 
-Cell["The law of conformity \[Dash] holds", "Subsection",ExpressionUUID->"624ef9d2-1e78-4ea9-9187-b90f3a226b4a"],
+Cell["The law of conformity \[Dash] holds", "Subsection",ExpressionUUID->"614c569c-5c38-4043-b5c4-0fa198f8f50d"],
 
 Cell[TextData[{
  StyleBox["More frequent words change more slowly.",
@@ -5848,14 +5585,14 @@ is ",
  " like they move more \[Dash] which is itself worth stating plainly."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"ca147ae9-7ac7-45b5-865a-559a756704c4"],
+  6}},ExpressionUUID->"cf79ecf8-ddb8-4366-8156-b7eb1d788514"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"deConformityPlot", "[", "]"}]], "Input",
  CellMargins->{{50, 30}, {8, 8}},
- FontSize->12,ExpressionUUID->"91bd47d5-be44-42ec-8746-e623db9b57bd"],
+ FontSize->12,ExpressionUUID->"5d6f1f7e-6a2b-4e68-a8f1-f955c8b8c7f9"],
 
 Cell[BoxData[
  GraphicsBox[{{{}, 
@@ -6615,7 +6352,7 @@ KPGI857kK9qvLX5g/mA8g96upV7hfYXWR53fYT77/wOBeQ9B
      Scaled[0.02]}},
   Ticks->{Automatic, Automatic}]], "Output",
  CellMargins->{{50, 30}, {8, 14}},
- ShowCellLabel->False,ExpressionUUID->"68b307ef-8a00-4553-8074-9de354c3a63f"]
+ ShowCellLabel->False,ExpressionUUID->"2d19f56b-d2ce-445b-9ffc-01298c2ae83c"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -6625,12 +6362,12 @@ Cell[TextData[{
  "markers are decile means."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"a77b6797-4a8c-4449-8299-00139183f5d5"]
+  16}},ExpressionUUID->"121afb6e-3637-44fa-96a6-5109332c363c"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["The law of innovation \[Dash] a cautionary tale", "Subsection",ExpressionUUID->"c01d6ac8-02ce-46b2-9697-5776525e27a1"],
+Cell["The law of innovation \[Dash] a cautionary tale", "Subsection",ExpressionUUID->"6ace68b0-a1fd-44df-9e35-a5054efc9a66"],
 
 Cell[TextData[{
  "The published law says ",
@@ -6653,7 +6390,7 @@ frequency ",
  "effect simply dominates \[Dash] a textbook Simpson's paradox."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"9ee3931f-9750-4027-bae5-f2747b1779f1"],
+  6}},ExpressionUUID->"066fe81b-b00f-43a7-a10d-c9e8f55cec56"],
 
 Cell[TextData[{
  "Controlling for frequency (partial Spearman correlation, holding frequency ",
@@ -6672,14 +6409,14 @@ original ",
  "authors' frequency-and-polysemy-matched controls to surface."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"4058e12a-4d48-47cc-839c-788105c33158"],
+  6}},ExpressionUUID->"24aa6e58-9bb0-455e-bdec-5376020701d3"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"deInnovationPlot", "[", "]"}]], "Input",
  CellMargins->{{50, 30}, {8, 8}},
- FontSize->12,ExpressionUUID->"9ad5deb6-b64f-4511-8f2b-ca2f45b3a3f6"],
+ FontSize->12,ExpressionUUID->"ba303487-f96e-4f77-9c49-425be57ae411"],
 
 Cell[BoxData[
  TagBox[
@@ -7537,7 +7274,7 @@ polysemy effect is a frequency artifact)", 12.5],
   SelectWithContents->False,
   Selectable->True]], "Output",
  CellMargins->{{50, 30}, {8, 14}},
- ShowCellLabel->False,ExpressionUUID->"b49970f8-d49b-449e-8f0f-b0b822d20e5b"]
+ ShowCellLabel->False,ExpressionUUID->"3464354b-4d59-49bb-949d-e3c396480bbe"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -7553,7 +7290,7 @@ flat. Raw ",
  "."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"6bdba1b8-7f21-4024-be10-5c5035ba2d64"],
+  16}},ExpressionUUID->"169be9e7-184e-454e-9469-7c1f6e08366c"],
 
 Cell[TextData[{
  StyleBox["Takeaway.  ",
@@ -7568,13 +7305,13 @@ Cell[TextData[{
  CellFrameColor->RGBColor[0.35, 0.6, 0.4],
  FontSize->12,
  Background->RGBColor[
-  0.93, 0.97, 0.93],ExpressionUUID->"d4f3e65e-8b97-4622-be63-f6004e8e5bf4"]
+  0.93, 0.97, 0.93],ExpressionUUID->"b4f5738e-6c66-4543-85ee-4d8ad35979a4"]
 }, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["8. The most-drifted words \[Dash] and a caveat", "Section",ExpressionUUID->"3b6d34ea-6ca2-41ee-9551-070baa70b8bc"],
+Cell["8. The most-drifted words \[Dash] and a caveat", "Section",ExpressionUUID->"5a483fa2-5d23-41cc-89c3-ce9e0a4c504d"],
 
 Cell[TextData[{
  "Ranking every stable content word by how far it moved between its 1800s and \
@@ -7607,14 +7344,14 @@ end and ",
  "lexicography begins."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"fb13155e-e743-4ae8-931c-ca8b482b3c95"],
+  6}},ExpressionUUID->"48ac8082-3f72-48fc-9a52-b0568e2a100a"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"deDriftChart", "[", "25", "]"}]], "Input",
  CellMargins->{{50, 30}, {8, 8}},
- FontSize->12,ExpressionUUID->"6777d1c8-b29f-4dd9-a074-5fed17bed5bc"],
+ FontSize->12,ExpressionUUID->"67f518d8-575d-4675-8fac-8490f859bbaa"],
 
 Cell[BoxData[
  GraphicsBox[{
@@ -8357,7 +8094,7 @@ a word's own 1800 vs 1990 aligned vector)\"", 13, StripOnInput -> False],
      Scaled[0.05]}},
   Ticks->{Automatic, None}]], "Output",
  CellMargins->{{50, 30}, {8, 14}},
- ShowCellLabel->False,ExpressionUUID->"ab4a6bc5-337b-434d-8e9f-92adaed2d277"]
+ ShowCellLabel->False,ExpressionUUID->"b13a6afd-69e8-44ac-978f-0d1e627d075c"]
 }, Open  ]],
 
 Cell[TextData[{
@@ -8370,7 +8107,7 @@ Cell[TextData[{
  "."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"058d1ce8-1a4b-43e4-b6ff-7f6881cb7b6d"],
+  16}},ExpressionUUID->"ca6d8b9f-6577-4711-a529-a721ba551ed4"],
 
 Cell[TextData[{
  StyleBox["Takeaway.  ",
@@ -8389,12 +8126,12 @@ judgement."
  CellFrameColor->RGBColor[0.35, 0.6, 0.4],
  FontSize->12,
  Background->RGBColor[
-  0.93, 0.97, 0.93],ExpressionUUID->"1a7f2662-9e0e-445f-89ff-2b116ba6b356"]
+  0.93, 0.97, 0.93],ExpressionUUID->"a40332cd-4c44-42b1-8d8f-0942e57fc975"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["9. Methods and reproduction", "Section",ExpressionUUID->"8cfe6193-9e57-46b8-b441-f939de699ed6"],
+Cell["9. Methods and reproduction", "Section",ExpressionUUID->"bdfd2d89-d00c-4c56-b16a-a6830a01617f"],
 
 Cell[TextData[{
  "All notebook code is in ",
@@ -8411,7 +8148,7 @@ NumPy/pickle ",
  "format shim):"
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"41624e09-48ef-4c3b-ae6f-6f01b570912c"],
+  6}},ExpressionUUID->"5eb6954e-9b7b-43a5-bd67-e2cbb8b1ef63"],
 
 Cell[TextData[{
  StyleBox["wolframscript -file wolfram/fetch_data.wls",
@@ -8419,7 +8156,7 @@ Cell[TextData[{
  "  \[Dash] download + unzip the HistWords eng-all SGNS embeddings"
 }], "Item",
  CellMargins->{{66, 50}, {3, 
-  3}},ExpressionUUID->"fe7f5adb-8407-42ce-a488-8b6d423d1216"],
+  3}},ExpressionUUID->"6ad0392c-1906-4c95-982c-fabe8e3f3cd4"],
 
 Cell[TextData[{
  StyleBox["python3 src/convert_histwords.py",
@@ -8428,7 +8165,7 @@ Cell[TextData[{
 pools)"
 }], "Item",
  CellMargins->{{66, 50}, {3, 
-  3}},ExpressionUUID->"005cf903-a9b2-4c16-a04d-18428421ae14"],
+  3}},ExpressionUUID->"f5384b38-b22b-4227-9285-da2eb55432d8"],
 
 Cell[TextData[{
  StyleBox["wolframscript -file wolfram/trajectories.wls",
@@ -8437,7 +8174,7 @@ Cell[TextData[{
 neighbors.json"
 }], "Item",
  CellMargins->{{66, 50}, {3, 
-  3}},ExpressionUUID->"cfdc72e1-ac47-44db-8ef4-586e65436bcd"],
+  3}},ExpressionUUID->"1cee0626-ced0-4b7c-aecc-46e9743ae7a3"],
 
 Cell[TextData[{
  StyleBox["wolframscript -file wolfram/laws_and_drift.wls",
@@ -8446,7 +8183,7 @@ Cell[TextData[{
 laws_points.json, drift_ranking.json"
 }], "Item",
  CellMargins->{{66, 50}, {3, 
-  3}},ExpressionUUID->"c959fee4-8ed9-4501-a784-105b5338b9d8"],
+  3}},ExpressionUUID->"f18ce1b5-304b-4125-b1ae-e23fae10f3cb"],
 
 Cell[TextData[{
  StyleBox["wolframscript -file wolfram/alignment.wls",
@@ -8454,7 +8191,7 @@ Cell[TextData[{
  "  \[Dash] the alignment diagnostic \[Rule] alignment.json"
 }], "Item",
  CellMargins->{{66, 50}, {3, 
-  3}},ExpressionUUID->"51e36a26-3450-4145-a6b1-2921d0808d20"],
+  3}},ExpressionUUID->"e44b4b50-68d5-4ce0-9c62-81a7a8585820"],
 
 Cell[TextData[{
  "Repository: ",
@@ -8463,12 +8200,12 @@ Cell[TextData[{
  "."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"88a028e2-a3dc-4890-a34b-e91943dba9a6"]
+  6}},ExpressionUUID->"f8a09588-301e-45bd-a9a1-6fda2d17a3e3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["10. References", "Section",ExpressionUUID->"f933fcf3-9403-4e2d-8bf3-4ea6e35a9e47"],
+Cell["10. References", "Section",ExpressionUUID->"0f46c914-25e4-4740-a654-80e8209fde2d"],
 
 Cell[TextData[{
  "W. L. Hamilton, J. Leskovec, D. Jurafsky (2016). ",
@@ -8478,14 +8215,14 @@ Change.",
  " ACL 2016. arXiv:1605.09096."
 }], "Text",
  CellMargins->{{60, 50}, {3, 3}},
- FontSize->11,ExpressionUUID->"e056d1ca-f2bf-41ad-9831-48f25adf6b0c"],
+ FontSize->11,ExpressionUUID->"03eae28b-0555-4bf8-b22e-5c9f3e6c7ba0"],
 
 Cell["\<\
 HistWords project and data: https://nlp.stanford.edu/projects/histwords/ \
 (Stanford NLP).\
 \>", "Text",
  CellMargins->{{60, 50}, {3, 3}},
- FontSize->11,ExpressionUUID->"d25811a4-539b-480c-a817-3eb976cfd19c"],
+ FontSize->11,ExpressionUUID->"8fc7d85a-4004-4193-8ff2-bf40ae425dc9"],
 
 Cell[TextData[{
  "P. H. Sch\[ODoubleDot]nemann (1966). ",
@@ -8494,7 +8231,7 @@ Cell[TextData[{
  " Psychometrika 31(1). (The SVD alignment used in \[Section]3.)"
 }], "Text",
  CellMargins->{{60, 50}, {3, 3}},
- FontSize->11,ExpressionUUID->"fc3cab77-d9b3-471d-8110-f4b0236e0dc0"],
+ FontSize->11,ExpressionUUID->"d9ba8c20-9fd0-4b31-87fb-be6ffce825e6"],
 
 Cell[TextData[{
  "T. Mikolov et al. (2013). ",
@@ -8504,7 +8241,7 @@ Compositionality.",
  " NeurIPS 2013. (word2vec / SGNS.)"
 }], "Text",
  CellMargins->{{60, 50}, {3, 3}},
- FontSize->11,ExpressionUUID->"d56c82d4-54bd-4b4f-9926-434b2191e96d"],
+ FontSize->11,ExpressionUUID->"e8e25b2c-fdaa-4a1f-874e-e9c3520cb598"],
 
 Cell[TextData[{
  "V. Kulkarni et al. (2015). ",
@@ -8513,7 +8250,7 @@ Cell[TextData[{
  " WWW 2015."
 }], "Text",
  CellMargins->{{60, 50}, {3, 3}},
- FontSize->11,ExpressionUUID->"6ba84c94-7881-411a-9810-ccae5c7faa95"],
+ FontSize->11,ExpressionUUID->"cd6b2ef1-788f-4369-94d2-83b7a9ae520f"],
 
 Cell[TextData[{
  "J.-B. Michel et al. (2011). ",
@@ -8523,7 +8260,7 @@ Books.",
  " Science 331. (The Google N-grams corpus.)"
 }], "Text",
  CellMargins->{{60, 50}, {3, 3}},
- FontSize->11,ExpressionUUID->"d3bf9bec-c27b-4477-a456-455175f8606c"]
+ FontSize->11,ExpressionUUID->"fa589c3d-228d-4c34-96b3-bdc41c4b8521"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -8532,7 +8269,7 @@ WindowMargins->{{444, Automatic}, {49, Automatic}},
 Visible->False,
 FrontEndVersion->"15.0 for Mac OS X ARM (64-bit) (October 27, 2025)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"f02abec2-e43c-4b05-93a3-28212398992e"
+ExpressionUUID->"c09b921b-0dc0-46fb-8e84-49dc50fb93b1"
 ]
 (* End of Notebook Content *)
 
@@ -8546,128 +8283,128 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[576, 22, 98, 0, 70, "Title",ExpressionUUID->"6c6ab9ee-a738-4973-acbb-cea6cce99c07"],
-Cell[677, 24, 149, 2, 70, "Subtitle",ExpressionUUID->"dd5aadfa-d769-4f03-b044-22ae3f705add"],
+Cell[576, 22, 98, 0, 70, "Title",ExpressionUUID->"ce5e86f6-d2c4-4de6-938c-176302878542"],
+Cell[677, 24, 149, 2, 70, "Subtitle",ExpressionUUID->"bc2d4975-59cd-4194-a0de-3af36c96598b"],
 Cell[CellGroupData[{
-Cell[851, 30, 79, 0, 70, "Section",ExpressionUUID->"2a27d028-1e77-403a-8caf-a22be6004c14"],
-Cell[933, 32, 571, 14, 70, "Text",ExpressionUUID->"9a97352f-24b6-4921-89d4-e23d8c75c16b"],
-Cell[1507, 48, 703, 18, 70, "Input",ExpressionUUID->"036557e0-30bc-45c1-9b52-c9ccd0ca094f"],
+Cell[851, 30, 79, 0, 70, "Section",ExpressionUUID->"77d1a198-920c-4dab-b139-e01a209dbf63"],
+Cell[933, 32, 571, 14, 70, "Text",ExpressionUUID->"b7af817c-9c64-4152-8d5c-6f77eba33ba4"],
+Cell[1507, 48, 703, 18, 70, "Input",ExpressionUUID->"3be8b2e2-1871-485f-9a11-62a9f0d5e2fa"],
 Cell[CellGroupData[{
-Cell[2235, 70, 158, 3, 70, "Input",ExpressionUUID->"26de92a6-f6e7-4a05-acce-480c45740d29"],
-Cell[2396, 75, 116709, 2764, 70, "Output",ExpressionUUID->"0937be97-8da8-4a9b-b29e-6248ae9423ef"]
+Cell[2235, 70, 158, 3, 70, "Input",ExpressionUUID->"065ae00a-3d18-48e1-8750-06b65b2cba03"],
+Cell[2396, 75, 107844, 2487, 70, "Output",ExpressionUUID->"af2a214f-80dc-42d2-b46a-a114f22b8d42"]
 }, Open  ]],
-Cell[119120, 2842, 435, 11, 70, "Caption",ExpressionUUID->"867d3583-6513-4329-a95f-dc7310405e97"],
-Cell[119558, 2855, 1004, 32, 70, "Text",ExpressionUUID->"2c849406-e976-49e8-8ed6-c3eee04c8ea0"],
-Cell[120565, 2889, 842, 21, 70, "Text",ExpressionUUID->"c74a5495-c695-4883-bc22-3bdbd38853f7"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[121444, 2915, 109, 0, 70, "Section",ExpressionUUID->"533546bd-d2b0-49e9-92e9-4821c708c6b6"],
-Cell[121556, 2917, 637, 24, 70, "Text",ExpressionUUID->"92eebdf6-51f6-44b4-a54d-a714e9effacd"],
-Cell[122196, 2943, 670, 18, 70, "Text",ExpressionUUID->"225466d7-1aff-46ea-9a0d-ad9f45088c39"],
-Cell[122869, 2963, 498, 15, 70, "Text",ExpressionUUID->"bea3ab0f-3067-471b-9b30-ee0abe8d0704"]
+Cell[110255, 2565, 435, 11, 70, "Caption",ExpressionUUID->"824d995f-305b-44ad-944f-7aef9ec96fc6"],
+Cell[110693, 2578, 1004, 32, 70, "Text",ExpressionUUID->"135bfd62-d554-415c-82be-e9f3ecca4930"],
+Cell[111700, 2612, 842, 21, 70, "Text",ExpressionUUID->"28609562-4b24-4ad0-a899-af8c15d043c9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[123404, 2983, 114, 0, 70, "Section",ExpressionUUID->"ace4cfe6-e4a7-4b8e-9b82-408782515037"],
-Cell[123521, 2985, 816, 22, 70, "Text",ExpressionUUID->"beb5f28b-8eb0-43e1-ace5-1302f0f4ec36"],
-Cell[124340, 3009, 933, 38, 70, "Text",ExpressionUUID->"8be1c698-9d6d-42d2-814e-461cdf53aeaa"]
+Cell[112579, 2638, 109, 0, 70, "Section",ExpressionUUID->"4f2973a4-d60f-47af-8b33-ab9d21f4fc65"],
+Cell[112691, 2640, 637, 24, 70, "Text",ExpressionUUID->"a08a8934-af0d-4283-8eff-179045ec987b"],
+Cell[113331, 2666, 670, 18, 70, "Text",ExpressionUUID->"3c2e669c-49f1-4d9e-b8bf-bd6105fa707b"],
+Cell[114004, 2686, 498, 15, 70, "Text",ExpressionUUID->"eb598f42-20c3-43ed-b273-1f4040e75281"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[125310, 3052, 108, 0, 70, "Section",ExpressionUUID->"69ff00f1-a375-4a8e-a5cb-0b85f49d0749"],
-Cell[125421, 3054, 569, 9, 70, "Text",ExpressionUUID->"25978cf0-5dd0-4ec3-a3f4-ec34b08d2b49"],
-Cell[125993, 3065, 519, 19, 70, "Text",ExpressionUUID->"91894b58-78c6-4661-8e08-69b46258bc59"],
-Cell[126515, 3086, 511, 15, 70, "DisplayFormula",ExpressionUUID->"adf5fe12-631b-45b3-8536-24047d8e4a49"],
-Cell[127029, 3103, 956, 33, 70, "Text",ExpressionUUID->"1149c4f9-bec2-4bdb-b4e8-0eecc29eec84"],
-Cell[CellGroupData[{
-Cell[128010, 3140, 167, 3, 70, "Input",ExpressionUUID->"36b98489-2c78-4e34-a2e5-40caf6f8fee5"],
-Cell[128180, 3145, 37355, 877, 70, "Output",ExpressionUUID->"73b9a171-61b4-443f-9339-c2cab0083286"]
-}, Open  ]],
-Cell[165550, 4025, 396, 9, 70, "Caption",ExpressionUUID->"e276612b-9202-4204-bb6b-876e2c8bca9c"],
-Cell[165949, 4036, 748, 12, 70, "Text",ExpressionUUID->"f132e962-92ea-4f19-901f-0d199b65e3e0"],
-Cell[166700, 4050, 744, 24, 70, "Text",ExpressionUUID->"74cff653-834e-4774-92d6-855738f07afd"],
-Cell[167447, 4076, 524, 13, 70, "Text",ExpressionUUID->"65380ee4-83cb-4c0f-8c6d-d2a35bb2a3ef"]
+Cell[114539, 2706, 114, 0, 70, "Section",ExpressionUUID->"bcc31035-aa08-4b89-acf8-398067d56a7c"],
+Cell[114656, 2708, 816, 22, 70, "Text",ExpressionUUID->"1e418040-7747-40d5-aba7-e00737f3067c"],
+Cell[115475, 2732, 933, 38, 70, "Text",ExpressionUUID->"275edb23-c39f-47a4-80f3-d62bff691417"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[168008, 4094, 101, 0, 70, "Section",ExpressionUUID->"4281f1d0-1866-4bac-9f01-ff1961063c83"],
-Cell[168112, 4096, 492, 8, 70, "Text",ExpressionUUID->"06e26873-4261-4c9d-aa27-68d720921d62"],
+Cell[116445, 2775, 108, 0, 70, "Section",ExpressionUUID->"3a2667e8-5751-40ee-996c-827545b41553"],
+Cell[116556, 2777, 569, 9, 70, "Text",ExpressionUUID->"58cf246e-57af-4f8f-b644-f69c8d4c7779"],
+Cell[117128, 2788, 519, 19, 70, "Text",ExpressionUUID->"24896804-a03c-45e5-9eb5-b78a0339b317"],
+Cell[117650, 2809, 511, 15, 70, "DisplayFormula",ExpressionUUID->"08130276-db1d-4fc3-b416-5fe3102360c2"],
+Cell[118164, 2826, 956, 33, 70, "Text",ExpressionUUID->"92fc3c3c-bf5d-42af-8e76-8cf85adf090d"],
 Cell[CellGroupData[{
-Cell[168629, 4108, 183, 3, 70, "Input",ExpressionUUID->"8241a8c5-8f30-4628-881f-a1e565ddacc7"],
-Cell[168815, 4113, 19812, 481, 70, "Output",ExpressionUUID->"67831771-94aa-407a-967b-44277a852dc2"]
+Cell[119145, 2863, 167, 3, 70, "Input",ExpressionUUID->"7bc3d6c0-4e26-4a14-b5f9-d869d318e407"],
+Cell[119315, 2868, 37355, 877, 70, "Output",ExpressionUUID->"9c0da398-afc8-4b24-b533-e74ede0de703"]
 }, Open  ]],
-Cell[188642, 4597, 545, 16, 70, "Caption",ExpressionUUID->"cdcbcf42-cdf2-4594-8165-017a2cf33174"],
-Cell[189190, 4615, 787, 20, 70, "Text",ExpressionUUID->"96331e2c-cb45-4789-bbef-6d86ee930a55"],
-Cell[189980, 4637, 507, 15, 70, "Text",ExpressionUUID->"85bc4b5a-fbd5-49b1-8212-a8df0cec80ea"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[190524, 4657, 103, 0, 70, "Section",ExpressionUUID->"d7d9fb57-69b9-40eb-b048-dfa0ce4985ff"],
-Cell[190630, 4659, 535, 15, 70, "Text",ExpressionUUID->"2938f8c3-71c2-424f-bf7e-fd5101dd89ae"],
-Cell[CellGroupData[{
-Cell[191190, 4678, 162, 3, 70, "Input",ExpressionUUID->"d7019d18-b2b3-4149-8e38-fed88f5b4e69"],
-Cell[191355, 4683, 46454, 888, 70, "Output",ExpressionUUID->"e292c5e6-f2ab-4ac6-b978-cfaed6a41241"]
-}, Open  ]],
-Cell[237824, 5574, 1177, 49, 70, "Text",ExpressionUUID->"18a51b53-10a6-4213-9c1e-476657995911"]
+Cell[156685, 3748, 396, 9, 70, "Caption",ExpressionUUID->"c1d90a01-ab09-4bc6-b96e-7bb84cd7e44e"],
+Cell[157084, 3759, 748, 12, 70, "Text",ExpressionUUID->"d1ac550a-5ebc-4d5c-bd66-6e063730a81a"],
+Cell[157835, 3773, 744, 24, 70, "Text",ExpressionUUID->"bb084d99-2836-43b6-be09-88be27ea3b08"],
+Cell[158582, 3799, 524, 13, 70, "Text",ExpressionUUID->"760cd7f7-e4aa-4636-890f-e1146297fea7"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[239038, 5628, 107, 0, 70, "Section",ExpressionUUID->"4463b99a-5749-4b5f-a0ea-8d559602f0b3"],
-Cell[239148, 5630, 355, 7, 70, "Text",ExpressionUUID->"e519144e-1c20-4392-af1c-767d833449e9"],
+Cell[159143, 3817, 101, 0, 70, "Section",ExpressionUUID->"77c5ceb5-072a-4dee-ac0a-226e1bed793e"],
+Cell[159247, 3819, 492, 8, 70, "Text",ExpressionUUID->"99c01aa2-9750-4d31-84f3-2e14fa2752d4"],
 Cell[CellGroupData[{
-Cell[239528, 5641, 391, 7, 70, "Input",ExpressionUUID->"0244d1f9-f350-4d51-99c4-ef689ede4510"],
-Cell[239922, 5650, 3738, 99, 70, "Output",ExpressionUUID->"6358fb6a-5cf9-45fc-ba1c-a9c407266ed9"]
+Cell[159764, 3831, 183, 3, 70, "Input",ExpressionUUID->"d79a1c77-be12-466e-8468-0d2311366760"],
+Cell[159950, 3836, 19050, 496, 70, "Output",ExpressionUUID->"c07b2691-07dc-43f6-a8ff-182504e0723c"]
 }, Open  ]],
-Cell[243675, 5752, 360, 12, 70, "Caption",ExpressionUUID->"b06b51d5-22a2-4932-ba0b-05ff08d34899"],
-Cell[244038, 5766, 607, 20, 70, "Text",ExpressionUUID->"6e3558e1-33f9-4df9-973f-3d0be225e4eb"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[244682, 5791, 116, 0, 70, "Section",ExpressionUUID->"f6c34c94-6bb2-4b37-a984-ec95399394c2"],
-Cell[244801, 5793, 1026, 29, 70, "Text",ExpressionUUID->"93102e46-d488-416f-af93-d8a876b4d3eb"],
-Cell[CellGroupData[{
-Cell[245852, 5826, 112, 0, 70, "Subsection",ExpressionUUID->"624ef9d2-1e78-4ea9-9187-b90f3a226b4a"],
-Cell[245967, 5828, 759, 22, 70, "Text",ExpressionUUID->"ca147ae9-7ac7-45b5-865a-559a756704c4"],
-Cell[CellGroupData[{
-Cell[246751, 5854, 168, 3, 70, "Input",ExpressionUUID->"91bd47d5-be44-42ec-8746-e623db9b57bd"],
-Cell[246922, 5859, 40047, 758, 70, "Output",ExpressionUUID->"68b307ef-8a00-4553-8074-9de354c3a63f"]
-}, Open  ]],
-Cell[286984, 6620, 267, 7, 70, "Caption",ExpressionUUID->"a77b6797-4a8c-4449-8299-00139183f5d5"]
+Cell[179015, 4335, 545, 16, 70, "Caption",ExpressionUUID->"c9df1afd-e146-417f-92f6-92d9365b5c05"],
+Cell[179563, 4353, 787, 20, 70, "Text",ExpressionUUID->"acd5a3b1-a6a9-4f79-b591-9999eb1cf294"],
+Cell[180353, 4375, 507, 15, 70, "Text",ExpressionUUID->"a78e8e4e-36c3-4d27-8ba0-8aab4df47e44"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[287288, 6632, 124, 0, 70, "Subsection",ExpressionUUID->"c01d6ac8-02ce-46b2-9697-5776525e27a1"],
-Cell[287415, 6634, 692, 21, 70, "Text",ExpressionUUID->"9ee3931f-9750-4027-bae5-f2747b1779f1"],
-Cell[288110, 6657, 783, 17, 70, "Text",ExpressionUUID->"4058e12a-4d48-47cc-839c-788105c33158"],
+Cell[180897, 4395, 103, 0, 70, "Section",ExpressionUUID->"0e44d8d5-9390-4167-8254-6c1c3517fc18"],
+Cell[181003, 4397, 535, 15, 70, "Text",ExpressionUUID->"7b8202b3-6fd3-43da-be13-bd40774c580a"],
 Cell[CellGroupData[{
-Cell[288918, 6678, 168, 3, 70, "Input",ExpressionUUID->"9ad5deb6-b64f-4511-8f2b-ca2f45b3a3f6"],
-Cell[289089, 6683, 36676, 856, 70, "Output",ExpressionUUID->"b49970f8-d49b-449e-8f0f-b0b822d20e5b"]
+Cell[181563, 4416, 162, 3, 70, "Input",ExpressionUUID->"cfab49c9-05b6-4757-a047-6ad7e1a5d13a"],
+Cell[181728, 4421, 46432, 887, 70, "Output",ExpressionUUID->"99a2c5a8-16c3-4dee-9736-5e08285dbf03"]
 }, Open  ]],
-Cell[325780, 7542, 383, 13, 70, "Caption",ExpressionUUID->"6bdba1b8-7f21-4024-be10-5c5035ba2d64"],
-Cell[326166, 7557, 533, 13, 70, "Text",ExpressionUUID->"d4f3e65e-8b97-4622-be63-f6004e8e5bf4"]
+Cell[228175, 5311, 1177, 49, 70, "Text",ExpressionUUID->"a51abcb3-48f6-4c39-bb82-945b0551c5a7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[229389, 5365, 107, 0, 70, "Section",ExpressionUUID->"1383238e-3d4b-4f9c-b3dd-6f63139b3a8e"],
+Cell[229499, 5367, 355, 7, 70, "Text",ExpressionUUID->"f171cd03-a31a-4999-9975-439a079a240c"],
+Cell[CellGroupData[{
+Cell[229879, 5378, 391, 7, 70, "Input",ExpressionUUID->"7dcda4f4-f686-4931-9650-98ef8628d811"],
+Cell[230273, 5387, 3738, 99, 70, "Output",ExpressionUUID->"8668998c-3507-4d83-b1ac-ca96d4b72da9"]
+}, Open  ]],
+Cell[234026, 5489, 360, 12, 70, "Caption",ExpressionUUID->"763b04be-9c08-4965-b2ff-84ee25d9ed51"],
+Cell[234389, 5503, 607, 20, 70, "Text",ExpressionUUID->"50c509df-1cf7-4264-893b-d8d15d9d1dfe"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[235033, 5528, 116, 0, 70, "Section",ExpressionUUID->"307650dc-06b6-4959-9f79-7e703882223a"],
+Cell[235152, 5530, 1026, 29, 70, "Text",ExpressionUUID->"40152d33-dbb6-48e3-b768-3c2b4d3c1165"],
+Cell[CellGroupData[{
+Cell[236203, 5563, 112, 0, 70, "Subsection",ExpressionUUID->"614c569c-5c38-4043-b5c4-0fa198f8f50d"],
+Cell[236318, 5565, 759, 22, 70, "Text",ExpressionUUID->"cf79ecf8-ddb8-4366-8156-b7eb1d788514"],
+Cell[CellGroupData[{
+Cell[237102, 5591, 168, 3, 70, "Input",ExpressionUUID->"5d6f1f7e-6a2b-4e68-a8f1-f955c8b8c7f9"],
+Cell[237273, 5596, 40047, 758, 70, "Output",ExpressionUUID->"2d19f56b-d2ce-445b-9ffc-01298c2ae83c"]
+}, Open  ]],
+Cell[277335, 6357, 267, 7, 70, "Caption",ExpressionUUID->"121afb6e-3637-44fa-96a6-5109332c363c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[277639, 6369, 124, 0, 70, "Subsection",ExpressionUUID->"6ace68b0-a1fd-44df-9e35-a5054efc9a66"],
+Cell[277766, 6371, 692, 21, 70, "Text",ExpressionUUID->"066fe81b-b00f-43a7-a10d-c9e8f55cec56"],
+Cell[278461, 6394, 783, 17, 70, "Text",ExpressionUUID->"24aa6e58-9bb0-455e-bdec-5376020701d3"],
+Cell[CellGroupData[{
+Cell[279269, 6415, 168, 3, 70, "Input",ExpressionUUID->"ba303487-f96e-4f77-9c49-425be57ae411"],
+Cell[279440, 6420, 36676, 856, 70, "Output",ExpressionUUID->"3464354b-4d59-49bb-949d-e3c396480bbe"]
+}, Open  ]],
+Cell[316131, 7279, 383, 13, 70, "Caption",ExpressionUUID->"169be9e7-184e-454e-9469-7c1f6e08366c"],
+Cell[316517, 7294, 533, 13, 70, "Text",ExpressionUUID->"b4f5738e-6c66-4543-85ee-4d8ad35979a4"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[326748, 7576, 120, 0, 70, "Section",ExpressionUUID->"3b6d34ea-6ca2-41ee-9551-070baa70b8bc"],
-Cell[326871, 7578, 1072, 31, 70, "Text",ExpressionUUID->"fb13155e-e743-4ae8-931c-ca8b482b3c95"],
+Cell[317099, 7313, 120, 0, 70, "Section",ExpressionUUID->"5a483fa2-5d23-41cc-89c3-ce9e0a4c504d"],
+Cell[317222, 7315, 1072, 31, 70, "Text",ExpressionUUID->"48ac8082-3f72-48fc-9a52-b0568e2a100a"],
 Cell[CellGroupData[{
-Cell[327968, 7613, 170, 3, 70, "Input",ExpressionUUID->"6777d1c8-b29f-4dd9-a074-5fed17bed5bc"],
-Cell[328141, 7618, 27858, 741, 70, "Output",ExpressionUUID->"ab4a6bc5-337b-434d-8e9f-92adaed2d277"]
+Cell[318319, 7350, 170, 3, 70, "Input",ExpressionUUID->"67f518d8-575d-4675-8fac-8490f859bbaa"],
+Cell[318492, 7355, 27858, 741, 70, "Output",ExpressionUUID->"b13a6afd-69e8-44ac-978f-0d1e627d075c"]
 }, Open  ]],
-Cell[356014, 8362, 328, 10, 70, "Caption",ExpressionUUID->"058d1ce8-1a4b-43e4-b6ff-7f6881cb7b6d"],
-Cell[356345, 8374, 559, 17, 70, "Text",ExpressionUUID->"1a7f2662-9e0e-445f-89ff-2b116ba6b356"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[356941, 8396, 101, 0, 70, "Section",ExpressionUUID->"8cfe6193-9e57-46b8-b441-f939de699ed6"],
-Cell[357045, 8398, 534, 15, 70, "Text",ExpressionUUID->"41624e09-48ef-4c3b-ae6f-6f01b570912c"],
-Cell[357582, 8415, 269, 6, 70, "Item",ExpressionUUID->"fe7f5adb-8407-42ce-a488-8b6d423d1216"],
-Cell[357854, 8423, 275, 7, 70, "Item",ExpressionUUID->"005cf903-a9b2-4c16-a04d-18428421ae14"],
-Cell[358132, 8432, 294, 7, 70, "Item",ExpressionUUID->"cfdc72e1-ac47-44db-8ef4-586e65436bcd"],
-Cell[358429, 8441, 309, 7, 70, "Item",ExpressionUUID->"c959fee4-8ed9-4501-a784-105b5338b9d8"],
-Cell[358741, 8450, 261, 6, 70, "Item",ExpressionUUID->"51e36a26-3450-4145-a6b1-2921d0808d20"],
-Cell[359005, 8458, 225, 7, 70, "Text",ExpressionUUID->"88a028e2-a3dc-4890-a34b-e91943dba9a6"]
+Cell[346365, 8099, 328, 10, 70, "Caption",ExpressionUUID->"ca6d8b9f-6577-4711-a529-a721ba551ed4"],
+Cell[346696, 8111, 559, 17, 70, "Text",ExpressionUUID->"a40332cd-4c44-42b1-8d8f-0942e57fc975"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[359267, 8470, 88, 0, 70, "Section",ExpressionUUID->"f933fcf3-9403-4e2d-8bf3-4ea6e35a9e47"],
-Cell[359358, 8472, 325, 8, 70, "Text",ExpressionUUID->"e056d1ca-f2bf-41ad-9831-48f25adf6b0c"],
-Cell[359686, 8482, 218, 5, 70, "Text",ExpressionUUID->"d25811a4-539b-480c-a817-3eb976cfd19c"],
-Cell[359907, 8489, 335, 7, 70, "Text",ExpressionUUID->"fc3cab77-d9b3-471d-8110-f4b0236e0dc0"],
-Cell[360245, 8498, 313, 8, 70, "Text",ExpressionUUID->"d56c82d4-54bd-4b4f-9926-434b2191e96d"],
-Cell[360561, 8508, 270, 7, 70, "Text",ExpressionUUID->"6ba84c94-7881-411a-9810-ccae5c7faa95"],
-Cell[360834, 8517, 315, 8, 70, "Text",ExpressionUUID->"d3bf9bec-c27b-4477-a456-455175f8606c"]
+Cell[347292, 8133, 101, 0, 70, "Section",ExpressionUUID->"bdfd2d89-d00c-4c56-b16a-a6830a01617f"],
+Cell[347396, 8135, 534, 15, 70, "Text",ExpressionUUID->"5eb6954e-9b7b-43a5-bd67-e2cbb8b1ef63"],
+Cell[347933, 8152, 269, 6, 70, "Item",ExpressionUUID->"6ad0392c-1906-4c95-982c-fabe8e3f3cd4"],
+Cell[348205, 8160, 275, 7, 70, "Item",ExpressionUUID->"f5384b38-b22b-4227-9285-da2eb55432d8"],
+Cell[348483, 8169, 294, 7, 70, "Item",ExpressionUUID->"1cee0626-ced0-4b7c-aecc-46e9743ae7a3"],
+Cell[348780, 8178, 309, 7, 70, "Item",ExpressionUUID->"f18ce1b5-304b-4125-b1ae-e23fae10f3cb"],
+Cell[349092, 8187, 261, 6, 70, "Item",ExpressionUUID->"e44b4b50-68d5-4ce0-9c62-81a7a8585820"],
+Cell[349356, 8195, 225, 7, 70, "Text",ExpressionUUID->"f8a09588-301e-45bd-a9a1-6fda2d17a3e3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[349618, 8207, 88, 0, 70, "Section",ExpressionUUID->"0f46c914-25e4-4740-a654-80e8209fde2d"],
+Cell[349709, 8209, 325, 8, 70, "Text",ExpressionUUID->"03eae28b-0555-4bf8-b22e-5c9f3e6c7ba0"],
+Cell[350037, 8219, 218, 5, 70, "Text",ExpressionUUID->"8fc7d85a-4004-4193-8ff2-bf40ae425dc9"],
+Cell[350258, 8226, 335, 7, 70, "Text",ExpressionUUID->"d9ba8c20-9fd0-4b31-87fb-be6ffce825e6"],
+Cell[350596, 8235, 313, 8, 70, "Text",ExpressionUUID->"e8e25b2c-fdaa-4a1f-874e-e9c3520cb598"],
+Cell[350912, 8245, 270, 7, 70, "Text",ExpressionUUID->"cd6b2ef1-788f-4369-94d2-83b7a9ae520f"],
+Cell[351185, 8254, 315, 8, 70, "Text",ExpressionUUID->"fa589c3d-228d-4c34-96b3-bdc41c4b8521"]
 }, Open  ]]
 }, Open  ]]
 }

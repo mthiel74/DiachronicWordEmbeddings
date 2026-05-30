@@ -127,13 +127,13 @@ plotWord[w_] := Module[
       Blend[{timeCol[(i - 1)/(n - 1)], timeCol[i/(n - 1)]}], Opacity[0.5],
       Thickness[0.006], Line[{pathXY[[i]], pathXY[[i + 1]]}]}, {i, n - 1}];
   Graphics[{
-     (* neighbour cloud: a small dot at the true position + a white-backed
-        label nudged up-right, so words don't sit on the path or each other *)
-     {GrayLevel[0.7], MapThread[Disk[#2, Offset[1.7]] &, {nbs, nbXY}]},
+     (* neighbour labels sit centred at each word's true projected position,
+        on a translucent white panel, so they line up with the geometry *)
      MapThread[Text[
-         Framed[Style[#1, Italic, 9, GrayLevel[0.4]], Background -> Directive[White, Opacity[0.8]],
-           FrameStyle -> None, FrameMargins -> 0],
-         #2, {-1.1, -0.6}] &, {nbs, nbXY}],
+         Framed[Style[#1, Italic, 8.5, GrayLevel[0.45]], Background -> Directive[White, Opacity[0.75]],
+           FrameStyle -> Directive[GrayLevel[0.85], Thickness[0.4]], FrameMargins -> 1,
+           RoundingRadius -> 2],
+         #2] &, {nbs, nbXY}],
      segs, Opacity[1],
      MapIndexed[{timeCol[(#2[[1]] - 1)/(n - 1)], EdgeForm[White], PointSize[0.024],
         Point[#1]} &, pathXY],
