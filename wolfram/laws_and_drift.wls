@@ -65,22 +65,25 @@ poolVocabs = Association @ Table[d -> deNeighborPool[d]["vocab"], {d, decades}];
 common = Fold[Intersection, poolVocabs[First@decades], Values@poolVocabs];
 
 (* ---- content-word filter + polysemy (one WordData pass) ----
-   WordData's first calls can return unevaluated while the paclet loads; we
-   must NOT memoize that as 0 (a silent failure once produced empty law
-   plots). So: pre-warm, cache only successful integer results, and guard. *)
+   Polysemy = number of WordNet sense-specs WordData[w] returns: a list like
+   {{w,Noun},{w,Adjective,Festive},...} whose Length is the sense count.
+   (There is NO "Senses" property -- that was the earlier bug; and the specs
+   are 2- OR 3-element, so we match {__List}, not {{_,_,_}..}.) WordData's
+   first call loads a paclet ("Initializing WordData indices...") but then
+   returns correct, stable values, so we pre-warm once and guard the count. *)
 Print["Filtering to content words via WordData (", Length@common, " candidates) ..."];
-Do[WordData["computer", "Senses"], 3];   (* pre-warm the paclet *)
-If[! ListQ[WordData["computer", "Senses"]],
-   Print["FATAL: WordData unavailable (computer/Senses not a list). Aborting."];
-   Exit[1]];
-senseCount[w_] := Module[{s = Quiet @ WordData[w, "Senses"]},
-    If[ListQ[s], senseCount[w] = Length[s], 0]];   (* cache hits only *)
+WordData["computer"];   (* pre-warm the paclet *)
+senseCount[w_] := senseCount[w] = Module[{r = Quiet @ WordData[w]},
+    If[MatchQ[r, {__List}], Length[r], 0]];
+If[senseCount["gay"] < 3 || senseCount["computer"] < 1,
+   Print["FATAL: WordData polysemy looks wrong (gay=", senseCount["gay"],
+     ", computer=", senseCount["computer"], "). Aborting."]; Exit[1]];
 alphaQ[w_] := StringMatchQ[w, RegularExpression["[a-z]+"]] && StringLength[w] >= 3;
 contentQ[w_] := alphaQ[w] && ! TrueQ[stopQ[w]] && senseCount[w] > 0;
 content = Select[common, contentQ];
 Print["Content words kept: ", Length@content];
 If[Length[content] < 1000,
-   Print["FATAL: only ", Length@content, " content words (expected ~8800). ",
+   Print["FATAL: only ", Length@content, " content words (expected several thousand). ",
      "WordData likely flaky this run. Aborting so no empty plots are written."];
    Exit[1]];
 
@@ -125,14 +128,17 @@ Export[FileNameJoin[{imgDir, "drift_top.png"}],
    "PNG", ImageResolution -> 130];
 Print["Wrote docs/images/drift_top.png"];
 
+poly = senseCount /@ content;     (* polysemy: WordNet sense count *)
+
 (* ---- 2. law of conformity: rate vs frequency ---- *)
 Print["\nLaw of conformity ..."];
 lx = freqScore; ly = Log10[rate];
 lmC = LinearModelFit[Transpose[{lx, ly}], x, x];
 slopeC = lmC["BestFitParameters"][[2]]; rC = Correlation[lx, ly];
+spCF = SpearmanRho[freqScore, rate];
 Print["  slope(log10 rate vs freqScore) = ", r3@slopeC];
-Print["  Pearson r = ", r3@rC, "   (negative => frequent words change less)"];
-(* decile bins for a clean trend line *)
+Print["  Pearson r = ", r3@rC, ";  Spearman = ", r3@spCF,
+      "   (negative => frequent words change less)"];
 qs = Quantile[lx, Range[0, 10]/10];
 binC = Table[Module[{sel = Pick[Transpose[{lx, ly}], (qs[[k]] <= # < qs[[k + 1]]) & /@ lx]},
      If[Length[sel] >= 5, {Mean[sel[[All, 1]]], Mean[sel[[All, 2]]]}, Nothing]], {k, 10}];
@@ -143,27 +149,58 @@ Export[FileNameJoin[{imgDir, "law_conformity.png"}],
        PlotLabel -> Style["Law of conformity: more frequent words drift more slowly", 13],
        ImageSize -> 640, PlotRange -> All],
      ListLinePlot[binC, PlotStyle -> Directive[Red, Thick], PlotMarkers -> {Automatic, 9}],
-     Epilog -> {Text[Style[Row[{"slope = ", r3@slopeC, ",  r = ", r3@rC}], 13, Red], Scaled[{0.74, 0.92}]]}],
+     Epilog -> {Text[Style[Row[{"Spearman \[Rho] = ", r3@spCF}], 13, Red], Scaled[{0.72, 0.9}]]}],
    "PNG", ImageResolution -> 130];
 Print["Wrote docs/images/law_conformity.png"];
 
-(* ---- 3. law of innovation: rate vs polysemy ---- *)
-Print["\nLaw of innovation ..."];
-poly = senseCount /@ content;
-rI = Correlation[Log[poly], Log[rate]]; sp = SpearmanRho[poly, rate];
-Print["  Pearson r(log polysemy, log rate) = ", r3@rI];
-Print["  Spearman rho = ", r3@sp, "   (positive => polysemous words change faster)"];
+(* ---- 3. law of innovation: rate vs polysemy, controlling for frequency ----
+   The RAW polysemy<->rate correlation is negative, because polysemous words
+   are also frequent and frequency suppresses change (conformity). This is a
+   textbook confound / Simpson's paradox. The law of innovation is a PARTIAL
+   relationship: hold frequency fixed. We compute the partial Spearman
+   correlation rho(rate, polysemy | frequency) and, for the figure,
+   frequency-residualize the (log) change rate before binning by polysemy. *)
+Print["\nLaw of innovation (controlling for frequency) ..."];
+spRP = SpearmanRho[rate, N@poly];               (* raw rate vs polysemy *)
+spRF = SpearmanRho[rate, freqScore];            (* rate vs frequency *)
+spPF = SpearmanRho[N@poly, freqScore];          (* polysemy vs frequency *)
+partial = (spRP - spRF spPF)/Sqrt[(1 - spRF^2) (1 - spPF^2)];
+Print["  raw Spearman(rate, polysemy)      = ", r3@spRP, "  (confounded, negative)"];
+Print["  Spearman(rate, frequency)         = ", r3@spRF];
+Print["  Spearman(polysemy, frequency)     = ", r3@spPF];
+Print["  PARTIAL Spearman(rate,poly|freq)  = ", r3@partial,
+      "   (positive => innovation law holds)"];
+
+(* frequency-residualized log change-rate: regress ly on freqScore, keep resid *)
+residRate = ly - (lmC["BestFitParameters"][[1]] + lmC["BestFitParameters"][[2]] lx);
 maxP = 14;
-binI = Table[Module[{sel = Pick[rate, # == k & /@ poly]},
+(* two trend lines: raw rate vs polysemy (confounded, slopes DOWN) and the
+   frequency-controlled residual (flat) -- the figure's whole point. *)
+binRaw = Table[Module[{sel = Pick[ly, # == k & /@ poly]},
+     If[Length[sel] >= 8, {k, Mean[sel]}, Nothing]], {k, 1, maxP}];
+binResid = Table[Module[{sel = Pick[residRate, # == k & /@ poly]},
      If[Length[sel] >= 8, {k, Mean[sel]}, Nothing]], {k, 1, maxP}];
 Export[FileNameJoin[{imgDir, "law_innovation.png"}],
    Show[
-     ListPlot[Transpose[{poly, rate}], PlotStyle -> Directive[Opacity[0.08], ColorData[97][3], PointSize[0.004]],
-       Frame -> True, FrameLabel -> {"polysemy  (number of WordNet senses)", "mean change rate"},
-       PlotLabel -> Style["Law of innovation: polysemous words drift faster", 13],
+     ListLinePlot[{binRaw, binResid},
+       PlotStyle -> {Directive[ColorData[97][3], Thick], Directive[Red, Thick]},
+       PlotMarkers -> {Automatic, 9},
+       Frame -> True, GridLines -> {None, {0}}, GridLinesStyle -> GrayLevel[0.8],
+       FrameLabel -> {"polysemy  (number of WordNet senses)", "mean log\:2081\:2080 change rate"},
+       PlotLabel -> Style["Law of innovation does NOT survive a frequency control\n(the raw polysemy effect is a frequency artifact)", 12.5],
+       PlotLegends -> Placed[{"raw mean rate", "frequency-controlled (residual)"}, {0.7, 0.78}],
        ImageSize -> 640, PlotRange -> {{0, maxP + 1}, All}],
-     ListLinePlot[binI, PlotStyle -> Directive[Red, Thick], PlotMarkers -> {Automatic, 9}],
-     Epilog -> {Text[Style[Row[{"Spearman \[Rho] = ", r3@sp}], 13, Red], Scaled[{0.72, 0.12}]]}],
+     Epilog -> {Text[Style[Row[{"raw Spearman \[Rho] = ", r3@spRP,
+         ";  partial (freq-controlled) \[Rho] = ", r3@partial}], 11.5, Red], Scaled[{0.5, 0.06}]]}],
    "PNG", ImageResolution -> 130];
 Print["Wrote docs/images/law_innovation.png"];
+
+(* ---- export every quoted statistic so the notebook prose can read it ---- *)
+Export[FileNameJoin[{dataDir, "laws.json"}], <|
+   "nContentWords" -> Length@content,
+   "conformity" -> <|"slope" -> r3@slopeC, "pearson" -> r3@rC, "spearman" -> r3@spCF|>,
+   "innovation" -> <|"rawSpearman" -> r3@spRP, "rateVsFreqSpearman" -> r3@spRF,
+     "polyVsFreqSpearman" -> r3@spPF, "partialSpearman" -> r3@partial|>
+|>, "JSON"];
+Print["Wrote data/laws.json"];
 Print["\nDONE."];

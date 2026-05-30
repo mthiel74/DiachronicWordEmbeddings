@@ -1,0 +1,14 @@
+{
+	"nContentWords":11332,
+	"conformity":{
+		"slope":-0.123,
+		"pearson":-0.85,
+		"spearman":-0.9400000000000001
+	},
+	"innovation":{
+		"rawSpearman":-0.312,
+		"rateVsFreqSpearman":-0.9400000000000001,
+		"polyVsFreqSpearman":0.335,
+		"partialSpearman":9.000000000000001e-3
+	}
+}

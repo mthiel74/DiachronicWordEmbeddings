@@ -78,6 +78,9 @@ align = Import[FileNameJoin[{dataDir, "alignment.json"}], "RawJSON"];
 arow[dec_] := SelectFirst[align["rows"], #["decade"] == dec &];
 nf[x_, d_: 2] := ToString@NumberForm[N[x], {d + 1, d}];
 a1800 = arow["1800"]; a1900 = arow["1900"];
+laws = Import[FileNameJoin[{dataDir, "laws.json"}], "RawJSON"];
+lawConf = laws["conformity"]; lawInno = laws["innovation"];
+nContent = laws["nContentWords"];
 
 (* ---------- assemble cell list ---------- *)
 $cells = {};
@@ -102,11 +105,13 @@ push @ abstract[{
   "with ", bold["orthogonal Procrustes alignment"], ", then trace individual words ",
   "as ", bold["trajectories"], " through a 2-D projection of that shared space."}];
 push @ abstract[{"The drifting paths are the heart of the post (and \[Section]5 turns ",
-  "them into an interactive explorer). We then recover, from the same aligned ",
-  "embeddings, the two ", ital["statistical laws of semantic change"],
-  " of Hamilton, Leskovec & Jurafsky (2016): frequent words drift more slowly, and ",
-  "polysemous words drift faster. Everything is computed in the Wolfram Language; the ",
-  "code and data products are in the companion repository."}];
+  "them into an interactive explorer). We then test, on the same aligned embeddings, the ",
+  "two ", ital["statistical laws of semantic change"], " of Hamilton, Leskovec & Jurafsky ",
+  "(2016): the law of conformity (frequent words drift more slowly) replicates cleanly, ",
+  "while the law of innovation (polysemous words drift faster) turns out to be a frequency ",
+  "confound in this corpus \[Dash] a useful reminder to control before concluding. ",
+  "Everything is computed in the Wolfram Language; the code and data are in the companion ",
+  "repository."}];
 
 (* ---- 1 ---- *)
 push @ hd1["1. The idea: words as moving points"];
@@ -217,8 +222,9 @@ push @ takeaway[{"Read a trajectory by its ", ital["endpoints and their neighbou
 push @ hd1["5. Explore all fourteen words"];
 push @ para[{"Rather than print fourteen separate plots, the construction above is wired ",
    "into one interactive ", mono["Manipulate"], ". Pick a word, scrub the time slider to ",
-   "reveal the path decade by decade, and toggle the neighbour labels. (In the live ",
-   "notebook this is fully interactive; a static web preview shows one state.)"}];
+   "reveal the path decade by decade, and toggle the neighbour labels. The static image ",
+   "below shows one state (", ital["gay"], ", full path); evaluate the code cell beneath ",
+   "it in the live notebook for the interactive version."}];
 push @ para[{"A few worth visiting: ", ital["broadcast"], " (agricultural ", ital["sow / ",
    "seed / scatter"], " \[Rule] ", ital["radio / television / bbc"], "); ", ital["computer"],
    " (a V from human surnames through ", ital["electronic / circuits"], " to ",
@@ -238,45 +244,71 @@ trajClean = Association @ Table[w -> mkRec[traj[w]], {w, wordsOrder}];
 compressed = Compress[trajClean];
 Print["embedded trajData compressed size: ", StringLength[compressed], " chars"];
 
-explorerCode = StringJoin[
-  "(* Precomputed 2-D trajectory coordinates (from data/trajectories.json):\n",
-  "   word -> <|\"decades\", \"path\", \"neighbors\"|>.  Self-contained. *)\n",
-  "trajData = Uncompress[", ToString[compressed, InputForm], "];\n",
-  "wordList = ", ToString[wordsOrder, InputForm], ";\n\n",
-  "timeColor[t_] := Blend[{RGBColor[0.13, 0.34, 0.68], RGBColor[0.85, 0.16, 0.11]}, t];\n\n",
-  "drawWord[w_, yearMax_, showLabels_] := Module[\n",
-  "   {r = trajData[w], ds, path, nbrs, n, fr, shown, last},\n",
-  "   ds = r[\"decades\"]; path = r[\"path\"]; nbrs = r[\"neighbors\"]; n = Length[ds];\n",
-  "   fr[i_] := (ToExpression[ds[[i]]] - 1800)/190.;\n",
-  "   shown = Select[Range[n], ToExpression[ds[[#]]] <= yearMax &];\n",
-  "   Graphics[{\n",
-  "      If[showLabels, {GrayLevel[0.5],\n",
-  "         (Text[Style[#[[1]], Italic, 10], #[[2]]] & /@ nbrs)}, {}],\n",
-  "      If[Length[shown] >= 2, Table[{timeColor[fr[i]], Opacity[0.5], Thickness[0.006],\n",
-  "         Line[{path[[i]], path[[i + 1]]}]}, {i, Most[shown]}], {}], Opacity[1],\n",
-  "      Table[{timeColor[fr[i]], EdgeForm[White], PointSize[0.022], Point[path[[i]]]},\n",
-  "         {i, shown}],\n",
-  "      If[shown =!= {}, last = Last[shown];\n",
-  "         {Text[Style[StringTake[ds[[1]], -2] <> \"s\", Bold, 11, timeColor[fr[1]]],\n",
-  "            path[[1]], {0, -1.7}],\n",
-  "          Text[Style[StringTake[ds[[last]], -2] <> \"s\", Bold, 13, timeColor[fr[last]]],\n",
-  "            path[[last]], {0, -1.7}]}, {}]},\n",
-  "    PlotLabel -> Style[w, 16, Bold, FontFamily -> \"Helvetica\"],\n",
-  "    PlotRange -> CoordinateBounds[Join[path, nbrs[[All, 2]]], Scaled[0.12]],\n",
-  "    ImageSize -> 560, AspectRatio -> 0.85, Background -> White]];"
-];
+(* static preview of the explorer (gay, full path) -- so the rendered page /
+   web view always shows a real plot even though the live Manipulate below is
+   only realised when a reader evaluates it. *)
+deCol[t_] := Blend[{RGBColor[0.13, 0.34, 0.68], RGBColor[0.85, 0.16, 0.11]}, t];
+previewDraw[w_] := Module[{r = trajClean[w], ds, path, nbrs, n, fr},
+   ds = r["decades"]; path = r["path"]; nbrs = r["neighbors"]; n = Length[ds];
+   fr[i_] := (ToExpression[ds[[i]]] - 1800)/190.;
+   Graphics[{
+      {GrayLevel[0.5], Text[Style[#[[1]], Italic, 10], #[[2]]] & /@ nbrs},
+      Table[{deCol[fr[i]], Opacity[0.5], Thickness[0.006],
+         Line[{path[[i]], path[[i + 1]]}]}, {i, n - 1}], Opacity[1],
+      Table[{deCol[fr[i]], EdgeForm[White], PointSize[0.022], Point[path[[i]]]}, {i, n}],
+      Text[Style[StringTake[ds[[1]], -2] <> "s", Bold, 11, deCol[0]], path[[1]], {0, -1.7}],
+      Text[Style[StringTake[ds[[-1]], -2] <> "s", Bold, 13, deCol[1]], path[[-1]], {0, -1.7}]},
+    PlotLabel -> Style[w, 16, Bold, FontFamily -> "Helvetica"],
+    PlotRange -> CoordinateBounds[Join[path, nbrs[[All, 2]]], Scaled[0.12]],
+    ImageSize -> 560, AspectRatio -> 0.85, Background -> White]];
+Export[FileNameJoin[{imgDir, "explorer_preview.png"}], previewDraw["gay"],
+   "PNG", ImageResolution -> 130];
+Print["wrote docs/images/explorer_preview.png"];
 
+(* ONE self-contained Manipulate. All data + helpers live in Initialization,
+   so the result renders even with no prior cell evaluated. A single Input
+   cell (not split across cells) avoids the Syntax::sntxi that NotebookEvaluate
+   threw on multi-statement string cells. *)
 manipCode = StringJoin[
   "Manipulate[\n",
-  "  drawWord[word, yearMax, neighbourLabels],\n",
-  "  {{word, \"gay\", \"word\"}, wordList},\n",
-  "  {{yearMax, 1990, \"reveal decades up to\"}, 1800, 1990, 10, Appearance -> \"Labeled\"},\n",
-  "  {{neighbourLabels, True, \"neighbour labels\"}, {True, False}},\n",
-  "  ControlPlacement -> Top, SaveDefinitions -> True]"
+  " deDraw[word, yearMax, neighbourLabels],\n",
+  " {{word, \"gay\", \"word\"}, deWords},\n",
+  " {{yearMax, 1990, \"reveal decades up to\"}, 1800, 1990, 10, Appearance -> \"Labeled\"},\n",
+  " {{neighbourLabels, True, \"neighbour labels\"}, {True, False}},\n",
+  " ControlPlacement -> Top, SaveDefinitions -> True,\n",
+  " Initialization :> (\n",
+  "  deData = Uncompress[", ToString[compressed, InputForm], "];\n",
+  "  deWords = ", ToString[wordsOrder, InputForm], ";\n",
+  "  deCol[t_] := Blend[{RGBColor[0.13, 0.34, 0.68], RGBColor[0.85, 0.16, 0.11]}, t];\n",
+  "  deDraw[w_, yearMax_, showLabels_] := Module[\n",
+  "    {r = deData[w], ds, path, nbrs, n, fr, shown, last},\n",
+  "    ds = r[\"decades\"]; path = r[\"path\"]; nbrs = r[\"neighbors\"]; n = Length[ds];\n",
+  "    fr[i_] := (ToExpression[ds[[i]]] - 1800)/190.;\n",
+  "    shown = Select[Range[n], ToExpression[ds[[#]]] <= yearMax &];\n",
+  "    Graphics[{\n",
+  "       If[showLabels, {GrayLevel[0.5],\n",
+  "          (Text[Style[#[[1]], Italic, 10], #[[2]]] & /@ nbrs)}, {}],\n",
+  "       If[Length[shown] >= 2, Table[{deCol[fr[i]], Opacity[0.5], Thickness[0.006],\n",
+  "          Line[{path[[i]], path[[i + 1]]}]}, {i, Most[shown]}], {}], Opacity[1],\n",
+  "       Table[{deCol[fr[i]], EdgeForm[White], PointSize[0.022], Point[path[[i]]]},\n",
+  "          {i, shown}],\n",
+  "       If[shown =!= {}, last = Last[shown];\n",
+  "          {Text[Style[StringTake[ds[[1]], -2] <> \"s\", Bold, 11, deCol[fr[1]]],\n",
+  "             path[[1]], {0, -1.7}],\n",
+  "           Text[Style[StringTake[ds[[last]], -2] <> \"s\", Bold, 13, deCol[fr[last]]],\n",
+  "             path[[last]], {0, -1.7}]}, {}]},\n",
+  "     PlotLabel -> Style[w, 16, Bold, FontFamily -> \"Helvetica\"],\n",
+  "     PlotRange -> CoordinateBounds[Join[path, nbrs[[All, 2]]], Scaled[0.12]],\n",
+  "     ImageSize -> 560, AspectRatio -> 0.85, Background -> White]];\n",
+  "  )]"
 ];
 
-push @ Cell[explorerCode, "Input", CellMargins -> {{50, 30}, {6, 6}}, FontSize -> 10];
-push @ Cell[manipCode, "Input", CellMargins -> {{50, 30}, {6, 6}}, FontSize -> 11];
+push @ imgCell["explorer_preview.png", 560];
+push @ caption[{"One state of the \[Section]5 explorer (", ital["gay"],
+   ", full 1800s\[Dash]1990s path). The code cell below reproduces the full interactive ",
+   mono["Manipulate"], " when evaluated."}];
+push @ Cell[manipCode, "Input", CellMargins -> {{50, 30}, {6, 6}}, FontSize -> 11,
+   Evaluatable -> True, InitializationCell -> False];
 
 (* ---- 6 ---- *)
 push @ hd1["6. Nearest-neighbour drift tables"];
@@ -306,34 +338,49 @@ push @ takeaway[{"Trajectories can be cross-checked against plain word lists. Wh
 
 (* ---- 7 ---- *)
 push @ hd1["7. Two statistical laws of semantic change"];
-push @ para[{"Hamilton, Leskovec & Jurafsky (2016) report two regularities that hold ",
-   "across languages and corpora. Both fall out of the same aligned embeddings, measured ",
-   "over the ", bold["8,806"], " dictionary content words present in every decade ",
-   "(function words and archaic/foreign tokens removed via a stoplist and WordNet ",
-   "membership). A word's ", ital["rate of change"], " is the mean cosine distance ",
-   "between its aligned vectors in consecutive decades."}];
-push @ hd2["The law of conformity"];
-push @ para[{bold["More frequent words change more slowly."], " Plotting log change-rate ",
-   "against a frequency proxy gives a clear negative trend (slope \[TildeTilde] ",
-   "\[Minus]0.045, Pearson r \[TildeTilde] \[Minus]0.21). ", ital["Why:"],
-   " a high-frequency word appears in a huge range of contexts, so its vector is an ",
-   "average over many uses and is statistically well-anchored; rare words are estimated ",
-   "from little data and are free to wander."}];
+push @ para[{"Hamilton, Leskovec & Jurafsky (2016) propose two regularities of semantic ",
+   "change. Both can be tested directly on the aligned embeddings, measured over the ",
+   bold[ToString[nContent]], " dictionary content words present in every decade (function ",
+   "words and archaic/foreign tokens removed via a stoplist and ", mono["WordData"],
+   " membership). A word's ", ital["rate of change"], " is the mean cosine distance ",
+   "between its aligned vectors in consecutive decades; its ", ital["frequency"],
+   " is proxied by its mean rank, and its ", ital["polysemy"],
+   " by its number of WordNet senses. Re-deriving the laws independently is also a good ",
+   "way to watch a confound masquerade as a result."}];
+push @ hd2["The law of conformity \[Dash] holds"];
+push @ para[{bold["More frequent words change more slowly."], " Change-rate falls steeply ",
+   "with frequency (Spearman \[Rho] = ", nf[lawConf["spearman"]], ", slope ",
+   nf[lawConf["slope"]], " in log-rate). ", ital["Why:"], " a high-frequency word is seen ",
+   "in a huge range of contexts, so its vector is an average over many uses and is ",
+   "statistically well-anchored. Part of the strength is also methodological \[Dash] rare ",
+   "words are estimated from little data, so their vectors are noisier and ", ital["look"],
+   " like they move more \[Dash] which is itself worth stating plainly."}];
 push @ imgCell["law_conformity.png", 560];
 push @ caption[{"Rate of semantic change vs. frequency (\[Minus]log mean rank). Red ",
-   "markers are decile means; the trend is the per-word regression."}];
-push @ hd2["The law of innovation"];
-push @ para[{bold["More polysemous words change faster."], " Using each word's number of ",
-   "WordNet senses (from the Wolfram Language ", mono["WordData"], " knowledgebase) as a ",
-   "polysemy measure, change-rate rises with polysemy (Spearman \[Rho] \[TildeTilde] ",
-   "0.20). ", ital["Why:"], " a word that already spans several senses sits near several ",
-   "neighbourhoods at once, giving any new usage more directions in which to pull it."}];
+   "markers are decile means."}];
+push @ hd2["The law of innovation \[Dash] a cautionary tale"];
+push @ para[{"The published law says ", bold["more polysemous words change faster"],
+   ". In this corpus the ", ital["raw"], " correlation comes out the wrong way: change-",
+   "rate vs. polysemy has Spearman \[Rho] = ", nf[lawInno["rawSpearman"]],
+   " \[Dash] negative. The culprit is a ", bold["confound"], ": polysemous words tend to ",
+   "be frequent (\[Rho] = ", nf[lawInno["polyVsFreqSpearman"]],
+   "), and frequency strongly suppresses change. In the raw comparison the frequency ",
+   "effect simply dominates \[Dash] a textbook Simpson's paradox."}];
+push @ para[{"Controlling for frequency (partial Spearman correlation, holding frequency ",
+   "rank fixed) the spurious negative trend vanishes \[Dash] but it does not turn ",
+   "convincingly positive either: partial \[Rho] = ", nf[lawInno["partialSpearman"]],
+   ", essentially zero. ", bold["So in the Google-N-grams eng-all corpus, with WordNet ",
+   "sense counts as the polysemy measure, the law of innovation does not replicate."],
+   " That is a more honest \[Dash] and more useful \[Dash] result than forcing the sign: ",
+   "the law may need a different corpus, a better polysemy measure, or the original ",
+   "authors' frequency-and-polysemy-matched controls to surface."}];
 push @ imgCell["law_innovation.png", 560];
-push @ caption[{"Rate of semantic change vs. number of WordNet senses; red markers are ",
-   "per-sense-count means."}];
-push @ para[{"The effect sizes are modest \[Dash] one corpus, English only, and a rank-",
-   "based frequency proxy \[Dash] but both signs reproduce the published laws, from an ",
-   "independent re-implementation."}];
+push @ caption[{"The raw polysemy trend (blue) slopes the \"wrong\" way only because ",
+   "polysemous words are frequent; the frequency-controlled residual (red) is flat. Raw ",
+   "Spearman ", nf[lawInno["rawSpearman"]], ", partial ", nf[lawInno["partialSpearman"]], "."}];
+push @ takeaway[{"Conformity replicates cleanly; innovation does not survive a frequency ",
+   "control here. A large raw correlation is easy to get and easy to misread \[Dash] ",
+   "always ask what else moves with your variable before naming an effect."}];
 
 (* ---- 8 ---- *)
 push @ hd1["8. The most-drifted words \[Dash] and a caveat"];
@@ -397,10 +444,13 @@ push @ refItem[{"J.-B. Michel et al. (2011). ",
 (* ---- save: real notebook via the front end; evaluate so the Manipulate
    in \[Section]5 is baked in live. ---- *)
 Print["assembled ", Length@$cells, " cells; building notebook ..."];
+(* No NotebookEvaluate: every figure + table is already boxed at build time,
+   and the \[Section]5 Manipulate is left as runnable source (its result is
+   previewed by explorer_preview.png). This avoids the Syntax::sntxi that
+   NotebookEvaluate raised on the long Manipulate Input cell. *)
 UsingFrontEnd @ Module[{doc},
    doc = CreateDocument[$cells, Visible -> False,
       StyleDefinitions -> "Default.nb", WindowSize -> {840, 900}];
-   NotebookEvaluate[doc, InsertResults -> True];
    NotebookSave[doc, outNb];
    Export[outPdf, doc, "PDF"];
    NotebookClose[doc];
