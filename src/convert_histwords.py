@@ -54,7 +54,7 @@ TARGETS = [
     # headline six
     "gay", "broadcast", "awful", "queer", "literally", "computer",
     # curated classics (kept for clean, striking trajectories)
-    "terrific", "guy", "media", "fun", "cell", "nice",
+    "terrific", "guy", "media", "fun", "cell", "nice", "mouse", "web",
 ]
 PRESENT_NORM = 0.5     # a row counts as "present" if ||v|| > this (real rows are ~1.0)
 

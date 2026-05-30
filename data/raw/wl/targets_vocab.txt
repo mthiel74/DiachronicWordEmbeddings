@@ -10,3 +10,5 @@ media
 fun
 cell
 nice
+mouse
+web

@@ -66,8 +66,8 @@ imgCell[file_, w_: 680] := Module[{path = FileNameJoin[{imgDir, file}]},
      Cell["[missing figure: " <> file <> "]", "Text"]]];
 
 (* ---------- assemble ---------- *)
-nb = CreateDocument[{}, Visible -> False];
-push[c_] := NotebookWrite[nb, c];
+$cells = {};
+push[c_] := AppendTo[$cells, c];
 
 push @ title["Diachronic Word Embeddings"];
 push @ subtitle["200 Years of Semantic Drift, Traced Through a Word-Embedding Space"];
@@ -183,19 +183,29 @@ push @ caption[{ital["terrific"], " ameliorates from ",
 
 push @ imgCell["traj_media.png", 560];
 push @ caption[{ital["media"], " starts as a laboratory plural (",
-   ital["bacteria, culture, agar, broth"], ") and becomes ",
-   ital["newspapers, television, press, journalism"], "."}];
+   ital["agar, culture, opacities, refractive"], ") and becomes ",
+   ital["newspapers, television, coverage, publicity"], "."}];
+
+push @ imgCell["traj_mouse.png", 560];
+push @ caption[{ital["mouse"], " keeps its old company \[Dash] ",
+   ital["rat, cat, squirrel, weasel"], " \[Dash] then in the final decades grows ",
+   "a second cluster of ", ital["cursor, click, keyboard, pointer, button"], "."}];
+
+push @ imgCell["traj_web.png", 560];
+push @ caption[{ital["web"], " runs from the spider's ",
+   ital["threads, woven, weave, mesh"], " to the ",
+   ital["www, url, html, browser, server, internet"], " of the 1990s."}];
 
 (* ---- 5 ---- *)
 push @ hd1["5. The full gallery"];
-push @ para[{"The same construction for all twelve words. Alongside the six above: ",
+push @ para[{"The same construction for all fourteen words. Alongside those above: ",
    ital["awful"], " (awe \[Rule] very bad), ", ital["queer"], " (odd \[Rule] LGBTQ), ",
    ital["literally"], " (exactly \[Rule] intensifier), ", ital["fun"],
    " (jest/mischief \[Rule] enjoyment), ", ital["cell"],
    " (prison \[Rule] biology \[Rule] battery) and ", ital["nice"],
    " (fastidious \[Rule] pleasant)."}];
 push @ imgCell["traj_grid.png", 720];
-push @ caption[{"Twelve English words drifting through their own neighbourhoods, ",
+push @ caption[{"Fourteen English words drifting through their own neighbourhoods, ",
    "1800s (blue) to 1990s (red)."}];
 
 (* ---- 6 ---- *)
@@ -222,7 +232,7 @@ nbTable = Grid[
 push @ Cell[BoxData @ ToBoxes @ Style[nbTable, 10], "Output", ShowCellLabel -> False,
    TextAlignment -> Center, CellMargins -> {{40, 40}, {10, 14}}];
 push @ caption[{"Top-5 cosine nearest neighbours by decade. The full table for all ",
-   "twelve words is in ", mono["data/neighbors.json"], "."}];
+   "fourteen words is in ", mono["data/neighbors.json"], "."}];
 
 (* ---- 7 ---- *)
 push @ hd1["7. Two statistical laws of semantic change"];
@@ -297,10 +307,25 @@ push @ refItem[{"J.-B. Michel et al. (2011). ",
    ital["Quantitative Analysis of Culture Using Millions of Digitized Books."],
    " Science 331. (The Google N-grams corpus.)"}];
 
-(* ---- save ---- *)
-SetOptions[nb, PrintingStyleEnvironment -> "Printout"];
-NotebookSave[nb, outNb];
-Print["wrote ", outNb];
-Export[outPdf, nb, "PDF"];
-Print["wrote ", outPdf];
-NotebookClose[nb];
+(* ---- save: build one Notebook[] expression, then write both .nb and
+   .pdf through the front end (wolframscript provides one via UsingFrontEnd).
+   The plain Export[outNb, nbExpr] path returned $Failed under headless
+   wolframscript, so we drive an actual notebook object instead. ---- *)
+nbExpr = Notebook[$cells, StyleDefinitions -> "Default.nb",
+   WindowSize -> {840, 900}, WindowMargins -> Automatic];
+
+UsingFrontEnd @ Module[{doc},
+   doc = CreateDocument[$cells, Visible -> False,
+      StyleDefinitions -> "Default.nb", WindowSize -> {840, 900}];
+   NotebookSave[doc, outNb];
+   Export[outPdf, doc, "PDF"];
+   NotebookClose[doc];
+];
+
+ok[f_] := FileExistsQ[f] && FileByteCount[f] > 20000;
+Print["cells: ", Length@$cells];
+Print[If[ok[outNb], "wrote ", "FAILED "], outNb, "  ",
+   If[FileExistsQ[outNb], Row[{FileByteCount[outNb], " bytes"}], ""]];
+Print[If[ok[outPdf], "wrote ", "FAILED "], outPdf, "  ",
+   If[FileExistsQ[outPdf], Row[{FileByteCount[outPdf], " bytes"}], ""]];
+If[! (ok[outNb] && ok[outPdf]), Exit[1]];
