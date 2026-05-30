@@ -32,6 +32,13 @@ dataDir  = FileNameJoin[{repoRoot, "data"}];
 outNb    = FileNameJoin[{repoRoot, "community", "diachronic_embeddings.nb"}];
 outPdf   = FileNameJoin[{repoRoot, "community", "diachronic_embeddings.pdf"}];
 
+(* Load the package in THIS (build) kernel before building any code-cell boxes,
+   so that parsing "deHero[]" etc. resolves to DiachronicEmbeddings`deHero on
+   the context path and does NOT intern a competing Global` symbol. That Global
+   duplicate was shadowing the package definitions when NotebookEvaluate ran in
+   the same kernel, leaving the outputs displayed as raw InputForm boxes. *)
+Get[FileNameJoin[{repoRoot, "wolfram", "DiachronicEmbeddings.wl"}]];
+
 (* ---------- prose cell helpers ---------- *)
 title[t_]    := Cell[t, "Title"];
 subtitle[t_] := Cell[t, "Subtitle"];
@@ -54,12 +61,22 @@ takeaway[s_] := Cell[TextData[Flatten@{bold["Takeaway.  "], s}], "Text",
 displayMath[expr_] := Cell[BoxData @ FormBox[expr, TraditionalForm],
    "DisplayFormula", CellMargins -> {{80, 50}, {8, 8}}];
 
-(* A code cell: just the function call. The string is parsed to real input
-   boxes in the kernel (ToExpression[..., MakeBoxes]) so it is a clean,
-   syntax-highlighted, evaluatable Input cell (a raw-string Input cell renders
-   as an unevaluated red box). NotebookEvaluate (save block) runs it. *)
-codeCell[code_String] := Cell[BoxData @ ToExpression[code, InputForm, MakeBoxes],
+(* An input-only cell showing a function call as clean, syntax-highlighted
+   boxes (used for the Setup Get, whose output is Null). *)
+inputCell[code_String] := Cell[BoxData @ ToExpression[code, InputForm, MakeBoxes],
    "Input", CellMargins -> {{50, 30}, {8, 8}}, FontSize -> 12];
+
+(* A call + its output. We do NOT use NotebookEvaluate (headless, it yields
+   textual OutputForm rather than typeset graphics). Instead we evaluate the
+   call HERE in the build kernel -- the package is loaded above -- and embed the
+   RESULT's typeset boxes via ToBoxes. The Input cell still shows only the
+   function call; the Output cell shows the live figure/table/Manipulate
+   (Graphics -> GraphicsBox, Grid -> GridBox, Manipulate -> DynamicModuleBox).
+   Returns a {input, output} pair; push flattens lists. *)
+codeCell[code_String] := {
+   inputCell[code],
+   Cell[BoxData @ ToBoxes @ ToExpression[code], "Output",
+      ShowCellLabel -> False, CellMargins -> {{50, 30}, {8, 14}}]};
 
 (* ---------- numbers for the prose, read from the committed data ---------- *)
 align = Import[FileNameJoin[{dataDir, "alignment.json"}], "RawJSON"];
@@ -72,6 +89,7 @@ nContent = laws["nContentWords"];
 
 (* ---------- assemble cells ---------- *)
 $cells = {};
+push[c_List] := ($cells = Join[$cells, c]);
 push[c_] := AppendTo[$cells, c];
 
 push @ title["Diachronic Word Embeddings"];
@@ -84,7 +102,7 @@ push @ para[{"All of this notebook's code lives in the package ",
    "loads the package, which in turn reads the small committed data products in ",
    mono["data/"], " (the 1.6 GB raw HistWords embeddings are not needed). Every figure ",
    "and table further down is then produced by a single call to a package function."}];
-push @ codeCell[
+push @ inputCell[
    "Get[FileNameJoin[{If[$Notebooks && Quiet[NotebookDirectory[]] =!= $Failed, " <>
    "ParentDirectory[NotebookDirectory[]], " <> ToString[repoRoot, InputForm] <>
    "], \"wolfram\", \"DiachronicEmbeddings.wl\"}]]"];
@@ -356,13 +374,13 @@ push @ refItem[{"J.-B. Michel et al. (2011). ",
    ital["Quantitative Analysis of Culture Using Millions of Digitized Books."],
    " Science 331. (The Google N-grams corpus.)"}];
 
-(* ---- save: create the notebook, EVALUATE it so every function-call cell
-   produces its output live, then save + export PDF. ---- *)
+(* ---- save: outputs are already typeset boxes (evaluated above in this
+   kernel), so we just create + save + export. No NotebookEvaluate -- headless
+   it produces textual OutputForm rather than typeset graphics. ---- *)
 Print["assembled ", Length@$cells, " cells; building notebook ..."];
 UsingFrontEnd @ Module[{doc},
    doc = CreateDocument[$cells, Visible -> False,
       StyleDefinitions -> "Default.nb", WindowSize -> {840, 900}];
-   NotebookEvaluate[doc, InsertResults -> True];
    NotebookSave[doc, outNb];
    Export[outPdf, doc, "PDF"];
    NotebookClose[doc];
