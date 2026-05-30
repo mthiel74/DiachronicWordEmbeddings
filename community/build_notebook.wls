@@ -40,9 +40,11 @@ hd2[t_]      := Cell[t, "Subsection"];
 para[s_]     := Cell[TextData[s], "Text", CellMargins -> {{50, 50}, {6, 6}}];
 abstract[s_] := Cell[TextData[s], "Text", FontSize -> 14,
    CellMargins -> {{60, 60}, {8, 10}}, Background -> RGBColor[0.96, 0.97, 1.0]];
-bold[s_] := StyleBox[s, FontWeight -> Bold];
-ital[s_] := StyleBox[s, FontSlant -> Italic];
-mono[s_] := StyleBox[s, FontFamily -> "Courier"];
+(* variadic + StringJoin: tolerate accidental multi-string calls like
+   ital["a, ", "b"] which otherwise stay unevaluated and corrupt the cell. *)
+bold[s__String] := StyleBox[StringJoin[s], FontWeight -> Bold];
+ital[s__String] := StyleBox[StringJoin[s], FontSlant -> Italic];
+mono[s__String] := StyleBox[StringJoin[s], FontFamily -> "Courier"];
 item[s_] := Cell[TextData[s], "Item", CellMargins -> {{66, 50}, {3, 3}}];
 caption[s_] := Cell[TextData[Flatten@{bold["Figure. "], s}], "Caption",
    CellMargins -> {{55, 55}, {2, 16}}];
@@ -457,7 +459,6 @@ Print["assembled ", Length@$cells, " cells; building notebook ..."];
 UsingFrontEnd @ Module[{doc},
    doc = CreateDocument[$cells, Visible -> False,
       StyleDefinitions -> "Default.nb", WindowSize -> {840, 900}];
-   NotebookEvaluate[doc, InsertResults -> True];
    NotebookSave[doc, outNb];
    Export[outPdf, doc, "PDF"];
    NotebookClose[doc];
