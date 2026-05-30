@@ -303,17 +303,17 @@ manipCode = StringJoin[
   "  )]"
 ];
 
-push @ caption[{"The \[Section]5 explorer. In the live notebook the cell below renders ",
-   "as an interactive ", mono["Manipulate"], " (choose a word, scrub the decade slider, ",
-   "toggle neighbour labels); a static preview is shown here for the PDF / web view."}];
-(* This Input cell is converted to proper input boxes (so it is a clean,
-   syntax-highlighted, evaluatable cell) and then evaluated on build by
-   NotebookEvaluate, so the rendered notebook shows the live Manipulate
-   rather than an unevaluated red-bracketed box. *)
-manipCellBoxes = ToExpression[
-   "FrontEndExecute@FrontEnd`ReparseBoxStructurePacket[" <>
-   ToString[manipCode, InputForm] <> "][[1]]"];
-push @ Cell[BoxData[manipCellBoxes], "Input", CellMargins -> {{50, 30}, {6, 6}},
+push @ caption[{"The \[Section]5 explorer. In the live notebook the cell below is an ",
+   "interactive ", mono["Manipulate"], " (choose a word, scrub the decade slider, toggle ",
+   "neighbour labels); the PDF / web view shows its default state (", ital["gay"],
+   ", full path)."}];
+(* Turn the code STRING into proper input boxes in the KERNEL (no front end):
+   ToExpression[str, InputForm, MakeBoxes].  A raw-string "Input" cell renders
+   as an unevaluated red-bracketed box (the bug being fixed); real boxes plus
+   NotebookEvaluate (in the save block) bake the live Manipulate.
+   NB: FrontEnd`ReparseBoxStructurePacket does NOT work under wolframscript. *)
+manipBoxes = ToExpression[manipCode, InputForm, MakeBoxes];
+push @ Cell[BoxData[manipBoxes], "Input", CellMargins -> {{50, 30}, {6, 6}},
    FontSize -> 11];
 
 (* ---- 6 ---- *)
