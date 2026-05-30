@@ -50,7 +50,12 @@ DECADES = [str(y) for y in range(1800, 2000, 10)]
 DIM = 300
 ANCHOR_K = 5000        # shared high-frequency alignment anchors
 NEIGHBOR_N = 50000     # per-decade neighbour-search pool size (capped by coverage)
-TARGETS = ["gay", "broadcast", "awful", "queer", "literally", "computer"]
+TARGETS = [
+    # headline six
+    "gay", "broadcast", "awful", "queer", "literally", "computer",
+    # curated classics (kept for clean, striking trajectories)
+    "terrific", "guy", "media", "fun", "cell", "nice",
+]
 PRESENT_NORM = 0.5     # a row counts as "present" if ||v|| > this (real rows are ~1.0)
 
 

@@ -31,6 +31,7 @@ Get @ FileNameJoin[{DirectoryName[$InputFileName], "load_embeddings.wl"}];
 
 ref      = "1990";
 decades  = $deDecades;
+minSpan  = 5;     (* skip words present in fewer than this many decades *)
 targets  = deTargetVocab[];
 imgDir   = FileNameJoin[{$deRepoRoot, "docs", "images"}];
 dataDir  = FileNameJoin[{$deRepoRoot, "data"}];
@@ -138,8 +139,10 @@ plotWord[w_] := Module[
    ImageSize -> 580, PlotRangePadding -> Scaled[0.09], Background -> White]
 ];
 
-Print["Rendering per-word figures ..."];
-figs = Association @ Table[w -> plotWord[w], {w, targets}];
+renderTargets = Select[targets,
+   Count[decades, d_ /; alignedTarget[{#, d}] =!= Null] >= minSpan &];
+Print["Rendering per-word figures (", Length@renderTargets, " of ", Length@targets, ") ..."];
+figs = Association @ Table[w -> plotWord[w], {w, renderTargets}];
 Do[Export[FileNameJoin[{imgDir, "traj_" <> w <> ".png"}],
      Labeled[figs[w], timeLegend, Bottom], "PNG", ImageResolution -> 130];
    Print["  traj_", w, ".png"], {w, targets}];
