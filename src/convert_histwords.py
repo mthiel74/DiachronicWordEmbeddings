@@ -104,7 +104,11 @@ def main():
     def worst_rank(w):
         return max(index_of[dec][w] for dec in DECADES)
 
-    anchors = sorted(common, key=worst_rank)[:ANCHOR_K]
+    # Deterministic: break worst_rank ties alphabetically. `common` is a set
+    # whose iteration order varies between Python runs (hash randomization),
+    # so without the secondary key the boundary anchors (and hence every
+    # downstream Procrustes rotation) would differ slightly run-to-run.
+    anchors = sorted(common, key=lambda w: (worst_rank(w), w))[:ANCHOR_K]
     write_vocab(os.path.join(OUT, "anchors_vocab.txt"), anchors)
     write_vocab(os.path.join(OUT, "targets_vocab.txt"), TARGETS)
     print(f"Anchors: {len(anchors)} (max worst-rank {worst_rank(anchors[-1])})")
