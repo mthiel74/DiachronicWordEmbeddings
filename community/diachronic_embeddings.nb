@@ -10,21 +10,21 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    321556,       5758]
-NotebookOptionsPosition[    313897,       5647]
-NotebookOutlinePosition[    314294,       5663]
-CellTagsIndexPosition[    314251,       5660]
+NotebookDataLength[    321558,       5758]
+NotebookOptionsPosition[    313899,       5647]
+NotebookOutlinePosition[    314296,       5663]
+CellTagsIndexPosition[    314253,       5660]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["Diachronic Word Embeddings", "Title",ExpressionUUID->"0c318adc-1c6e-46c4-a89a-b03ce871a607"],
+Cell["Diachronic Word Embeddings", "Title",ExpressionUUID->"23b6f900-c877-4815-9d8d-3e8f07b27f07"],
 
 Cell["\<\
 200 Years of Semantic Drift, Traced Through a Word-Embedding Space\
-\>", "Subtitle",ExpressionUUID->"b1e6dfd8-8ea2-4b8c-aadf-80f906cd3420"],
+\>", "Subtitle",ExpressionUUID->"81dfe4c4-4026-4cb5-9abc-62f61d019978"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -1551,12 +1551,12 @@ AOB/7Z82QioO
        "ImageWidth" -> 720, "ImageLength" -> 479, "XResolution" -> 120, 
         "YResolution" -> 120, "ResolutionUnit" -> "Inch", "Software" -> 
         "Created with the Wolfram Language : www.wolfram.com", "DateTime" -> 
-        DateObject[{2026, 5, 30, 9, 20, 35.}, "Instant", "Gregorian", 1.], 
+        DateObject[{2026, 5, 30, 9, 29, 52.}, "Instant", "Gregorian", 1.], 
         "TimeZoneOffset" -> 1|>, 
       "Comments" -> {
        "Software" -> "Created with the Wolfram Language : www.wolfram.com", 
         "Creation Time" -> 
-        DateObject[{2026, 5, 30, 9, 20, 35.}, "Instant", "Gregorian", 
+        DateObject[{2026, 5, 30, 9, 29, 52.}, "Instant", "Gregorian", 
           None]}|>],
    Selectable->False],
   DefaultBaseStyle->"ImageGraphics",
@@ -1565,7 +1565,7 @@ AOB/7Z82QioO
   PlotRange->{{0, 432.}, {0, 287.4}}]], "Output",
  CellMargins->{{50, 50}, {10, 14}},
  ShowCellLabel->False,
- TextAlignment->Center,ExpressionUUID->"fc4fe477-01f3-439f-8b49-2a848a1e4bcc"],
+ TextAlignment->Center,ExpressionUUID->"3193e7bc-5d20-4d10-b3aa-98eef3bdbdc3"],
 
 Cell[TextData[{
  StyleBox["Figure. ",
@@ -1580,7 +1580,7 @@ of its ",
 interactively."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"c40bd938-1e35-4e70-834a-32de66ecce6a"],
+  16}},ExpressionUUID->"60876b76-f856-4624-80f2-e9140fa5c643"],
 
 Cell[TextData[{
  "Word meanings move. ",
@@ -1614,7 +1614,7 @@ frame ",
  CellMargins->{{60, 60}, {8, 10}},
  FontSize->14,
  Background->RGBColor[
-  0.96, 0.97, 1.],ExpressionUUID->"5dc3e60c-c288-47c3-9c68-efa3e7cbfcae"],
+  0.96, 0.97, 1.],ExpressionUUID->"52ff47de-9a00-4f2b-ab6d-6ab71b596ed9"],
 
 Cell[TextData[{
  "The drifting paths are the heart of the post (and \[Section]5 turns ",
@@ -1631,11 +1631,11 @@ Language; the ",
  CellMargins->{{60, 60}, {8, 10}},
  FontSize->14,
  Background->RGBColor[
-  0.96, 0.97, 1.],ExpressionUUID->"673e90d4-0c88-4d10-8fe2-a88a88a9474a"],
+  0.96, 0.97, 1.],ExpressionUUID->"10f7d383-129f-491e-9856-17bd7079d3bf"],
 
 Cell[CellGroupData[{
 
-Cell["1. The idea: words as moving points", "Section",ExpressionUUID->"6b035fd4-94cb-404b-a85b-7a582826cc72"],
+Cell["1. The idea: words as moving points", "Section",ExpressionUUID->"05832148-fb9a-491c-ab81-79b82641e2ff"],
 
 Cell[TextData[{
  "A ",
@@ -1661,7 +1661,7 @@ similarity of ",
  "."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"2f7da043-ae7b-455a-9fe3-fc5b51c5ea68"],
+  6}},ExpressionUUID->"43f5b94e-33bd-4993-812d-12e89363fe8c"],
 
 Cell[TextData[{
  "Now train one embedding on text from the 1850s and another on text from ",
@@ -1679,11 +1679,11 @@ neighbourhood ",
  " in the 1990s. If we can line the two maps up, that change becomes a \
 displacement "
 }], "we can draw \[Dash] and across twenty decades, a path.", \
-"Text",ExpressionUUID->"b0fbd35c-4e2b-4855-aa53-acefebf72f79"],
+"Text",ExpressionUUID->"08dfcf3a-8e69-4b8d-9c11-e0d2ed99986c"],
 
 Cell[BoxData[
  CellMargins -> {{50, 50}, {6, 6}}], "Input",
- CellLabel->" In[1]:=",ExpressionUUID->"b9737e31-ddb0-48c8-a39c-aed09f229c07"],
+ CellLabel->" In[1]:=",ExpressionUUID->"19014282-957d-4f9e-8f5e-f4902481e2f9"],
 
 Cell[TextData[{
  StyleBox["Takeaway.  ",
@@ -1700,12 +1700,12 @@ measuring and ",
  CellFrameColor->RGBColor[0.35, 0.6, 0.4],
  FontSize->12,
  Background->RGBColor[
-  0.93, 0.97, 0.93],ExpressionUUID->"c9ab1fea-6e59-4df5-82e3-2c7d76112fcd"]
+  0.93, 0.97, 0.93],ExpressionUUID->"5b3e3b46-a339-45d2-a6fc-33f7ae24bf3d"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["2. The data: HistWords decade embeddings", "Section",ExpressionUUID->"5cc01602-9ef1-4655-a760-6764b83578ce"],
+Cell["2. The data: HistWords decade embeddings", "Section",ExpressionUUID->"d0dbf8b4-5830-4f3f-8c91-4a42404ce77d"],
 
 Cell[TextData[{
  "We use the ",
@@ -1727,7 +1727,7 @@ float32 ",
  "binaries, and everything downstream is Wolfram Language."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"ae1e8bfa-5cf2-4d64-af6b-7d19bb64752b"],
+  6}},ExpressionUUID->"a47b604f-c81a-4a4f-9b6b-b100cfb8b6f2"],
 
 Cell[TextData[{
  "Coverage varies by word. Of the fourteen we track, ",
@@ -1763,12 +1763,12 @@ sense) ",
 segments."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"914d6f35-c5d3-4203-b227-19c9322684e1"]
+  6}},ExpressionUUID->"fd043275-ae6c-4033-ba2b-1384a8b08e75"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["3. Why the decades must be aligned", "Section",ExpressionUUID->"c21756bb-474b-4eaa-93e3-1157430564a5"],
+Cell["3. Why the decades must be aligned", "Section",ExpressionUUID->"5bd60b1c-6244-4629-91c9-737ee0c59c72"],
 
 Cell["\<\
 Each decade's embedding is trained independently, so its coordinate axes are \
@@ -1779,7 +1779,7 @@ space, so nothing pins down a shared orientation.) Before a word can be \
 tracked through time, the decades must be rotated into a common frame.\
 \>", "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"b7b46359-b4c1-4b64-a0af-63455060a7d0"],
+  6}},ExpressionUUID->"a7beb23a-d777-454f-9d11-a7377f7e023e"],
 
 Cell[TextData[{
  "We use ",
@@ -1800,7 +1800,7 @@ decade, for ",
  " minimising"
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"4877172c-b51d-4caf-9fdf-e7e9608f4bc4"],
+  6}},ExpressionUUID->"ac6e57d7-3685-440d-b6a0-7e83556c9bf0"],
 
 Cell[BoxData[
  FormBox[
@@ -1817,7 +1817,7 @@ Cell[BoxData[
     SuperscriptBox["R", "T"], "R", "=", "I"}]}], 
   TraditionalForm]], "DisplayFormula",
  CellMargins->{{80, 50}, {8, 
-  8}},ExpressionUUID->"533c5f59-d4eb-47b4-83fa-0633c90e6659"],
+  8}},ExpressionUUID->"53828792-a07e-4b65-b955-8e26cc3ff193"],
 
 Cell[TextData[{
  "This has a closed form from a singular value decomposition: if ",
@@ -1852,7 +1852,7 @@ each ",
  "decade's own native space; alignment is needed only to compare frames.)"
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"d19a9a46-473f-40b9-9dd1-0cb4527fcef9"],
+  6}},ExpressionUUID->"f637416b-6bd5-4465-ae41-a6412f421d42"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -3023,12 +3023,12 @@ J2QOpV96evq7774LHayoqIAyFhcXBwQEFBQU9PX1ff755xA4Hx+fzMxMLDx1
        "ImageWidth" -> 600, "ImageLength" -> 413, "XResolution" -> 130, 
         "YResolution" -> 130, "ResolutionUnit" -> "Inch", "Software" -> 
         "Created with the Wolfram Language : www.wolfram.com", "DateTime" -> 
-        DateObject[{2026, 5, 30, 9, 20, 35.}, "Instant", "Gregorian", 1.], 
+        DateObject[{2026, 5, 30, 9, 29, 52.}, "Instant", "Gregorian", 1.], 
         "TimeZoneOffset" -> 1|>, 
       "Comments" -> {
        "Software" -> "Created with the Wolfram Language : www.wolfram.com", 
         "Creation Time" -> 
-        DateObject[{2026, 5, 30, 9, 20, 35.}, "Instant", "Gregorian", 
+        DateObject[{2026, 5, 30, 9, 29, 52.}, "Instant", "Gregorian", 
           None]}|>],
    Selectable->False],
   DefaultBaseStyle->"ImageGraphics",
@@ -3037,7 +3037,7 @@ J2QOpV96evq7774LHayoqIAyFhcXBwQEFBQU9PX1ff755xA4Hx+fzMxMLDx1
   PlotRange->{{0, 332.3076923076923}, {0, 228.73846153846154`}}]], "Output",
  CellMargins->{{50, 50}, {10, 14}},
  ShowCellLabel->False,
- TextAlignment->Center,ExpressionUUID->"73e5ed2b-4870-4911-a378-3cb98f194ae4"],
+ TextAlignment->Center,ExpressionUUID->"55ba9a69-4551-44c6-bc7e-6ef3b374eff2"],
 
 Cell[TextData[{
  StyleBox["Figure. ",
@@ -3048,7 +3048,7 @@ curve at ",
  "every decade; both necessarily reach 1.0 at the 1990s reference."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"b93cd4be-17b8-45bf-a101-3986269fe510"],
+  16}},ExpressionUUID->"d5a64044-5263-45bb-bbe4-e54c8d42ae63"],
 
 Cell["\<\
 How far from comparable are the raw spaces? The rotation that best aligns the \
@@ -3062,7 +3062,7 @@ essential, not cosmetic \[Dash] and the required rotation then shrinks \
 smoothly toward the present.\
 \>", "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"e28b0c14-69fe-4b07-a12d-7e17d982bfcb"],
+  6}},ExpressionUUID->"9eaed74e-2b2b-4bb7-80e1-1a92d37773d4"],
 
 Cell["\<\
 Aligning lifts the mean anchor-word cosine to the 1990s at every decade \
@@ -3074,7 +3074,7 @@ frame erodes over a century, which is exactly why distant decades must be \
 re-aligned.\
 \>", "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"a1c7800d-4dfa-4aad-a6bb-0e2728a2ef65"],
+  6}},ExpressionUUID->"2223c55b-70b9-4b46-8e9e-541895c0dd4f"],
 
 Cell[TextData[{
  StyleBox["Takeaway.  ",
@@ -3089,12 +3089,12 @@ makes them ",
  CellFrameColor->RGBColor[0.35, 0.6, 0.4],
  FontSize->12,
  Background->RGBColor[
-  0.93, 0.97, 0.93],ExpressionUUID->"a41374e1-2383-49c3-8cc5-48f7491f96b1"]
+  0.93, 0.97, 0.93],ExpressionUUID->"d1067017-e1a4-4ed9-8299-ed6f44727190"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["4. How to read a trajectory", "Section",ExpressionUUID->"87733634-f6e2-44cb-8cd0-95b7e34c0a70"],
+Cell["4. How to read a trajectory", "Section",ExpressionUUID->"29180c25-deb9-42e6-be42-0952d8efef47"],
 
 Cell["\<\
 For one word we collect its aligned vector in every decade it occurs, gather \
@@ -3104,7 +3104,7 @@ threads between an early-meaning cluster and a late-meaning cluster; colour \
 runs from blue (1800s) to red (1990s).\
 \>", "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"abad7e4b-7a0c-4817-a833-5225872f9ea3"],
+  6}},ExpressionUUID->"e485430d-14a4-4ea1-a8f8-318fd6fd5118"],
 
 Cell[TextData[{
  StyleBox["What the projection does and does not say.",
@@ -3124,11 +3124,11 @@ signal is ",
  "travels between them",
  " \[Dash] both of which come straight from the high-"
 }], "dimensional cosine geometry, not the projection.", \
-"Text",ExpressionUUID->"1bc83853-0c5e-4dfe-a411-e3d41dbec33a"],
+"Text",ExpressionUUID->"16f5d77f-8446-48fb-8630-00dc4bc8181a"],
 
 Cell[BoxData[
  CellMargins -> {{50, 50}, {6, 6}}], "Input",
- CellLabel->" In[1]:=",ExpressionUUID->"a5de7e45-0a7d-470a-9aad-38da77e05c9d"],
+ CellLabel->" In[1]:=",ExpressionUUID->"3fb80081-a621-4831-ae77-d224d58c6537"],
 
 Cell[TextData[{
  StyleBox["Figure. ",
@@ -3144,11 +3144,11 @@ Cell[TextData[{
   FontSlant->Italic],
  " by the 1990s \[Dash] a "
 }], "two-century meaning change rendered as a single sweep across the page.", \
-"Caption",ExpressionUUID->"e4775c35-ce06-43cb-84e7-750201b05716"],
+"Caption",ExpressionUUID->"b7e0dbfb-6edc-4dcd-9417-c788df8328a6"],
 
 Cell[BoxData[
  CellMargins -> {{55, 55}, {2, 16}}], "Input",
- CellLabel->" In[1]:=",ExpressionUUID->"be25e777-f05e-45ea-a244-aa8d39d8595b"],
+ CellLabel->" In[1]:=",ExpressionUUID->"d70e1beb-bee9-472f-a095-282158e95144"],
 
 Cell[TextData[{
  StyleBox["Takeaway.  ",
@@ -3165,12 +3165,12 @@ curve is ",
  CellFrameColor->RGBColor[0.35, 0.6, 0.4],
  FontSize->12,
  Background->RGBColor[
-  0.93, 0.97, 0.93],ExpressionUUID->"f5c65074-4541-4f5f-958e-8c24d8e9b3f0"]
+  0.93, 0.97, 0.93],ExpressionUUID->"aaac59cc-c806-492b-8838-7dd9d5794ade"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["5. Explore all fourteen words", "Section",ExpressionUUID->"3169f2fb-180d-4931-89ca-ddbd6aa87bb7"],
+Cell["5. Explore all fourteen words", "Section",ExpressionUUID->"02a0b554-47a0-4433-8337-e60a152efad2"],
 
 Cell[TextData[{
  "Rather than print fourteen separate plots, the construction above is wired ",
@@ -3183,7 +3183,7 @@ live ",
  "notebook this is fully interactive; a static web preview shows one state.)"
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"43211ea8-0f3e-4121-bb5f-e403d79b6ab7"],
+  6}},ExpressionUUID->"d80f696e-1e55-4842-a4a0-1ce09ea1ec35"],
 
 Cell[TextData[{
  "A few worth visiting: ",
@@ -3231,11 +3231,11 @@ Cell[TextData[{
  " (the Guy Fawkes effigy \[Rule] ",
  StyleBox["fellow / chap / dude",
   FontSlant->Italic]
-}], ").", "Text",ExpressionUUID->"c683cd54-0a62-4e0d-ba16-3dd5037ff815"],
+}], ").", "Text",ExpressionUUID->"a1ccd742-d853-4fc6-9e47-cc4bc0e7e4bf"],
 
 Cell[BoxData[
  CellMargins -> {{50, 50}, {6, 6}}], "Input",
- CellLabel->" In[1]:=",ExpressionUUID->"ecb85d4a-b45b-4915-926b-bded8fc737d6"],
+ CellLabel->" In[1]:=",ExpressionUUID->"ecc4f00a-7ba7-45c7-af99-308fb01b7715"],
 
 Cell["\<\
 (* Precomputed 2-D trajectory coordinates (from data/trajectories.json):
@@ -3426,7 +3426,7 @@ timeColor[fr[last]]],
 \>", "Input",
  CellMargins->{{50, 30}, {6, 6}},
  FontSize->10,
- CellLabel->" In[1]:=",ExpressionUUID->"32538dcd-5e58-4b3a-9f7e-594424339baa"],
+ CellLabel->" In[1]:=",ExpressionUUID->"0a055819-b0cf-4a4c-855e-1c70f7e8be23"],
 
 Cell[CellGroupData[{
 
@@ -3441,7 +3441,7 @@ Manipulate[
 \>", "Input",
  CellMargins->{{50, 30}, {6, 6}},
  FontSize->11,
- CellLabel->" In[8]:=",ExpressionUUID->"2c3c4d94-ea46-45a7-bc62-299e2b85812a"],
+ CellLabel->" In[8]:=",ExpressionUUID->"23dae005-08fa-4277-bf4f-1b904b21b0e9"],
 
 Cell[OutputFormData["\<\
 Manipulate[drawWord[word, yearMax, neighbourLabels], 
@@ -3456,14 +3456,14 @@ Manipulate[drawWord[word, yearMax, neighbourLabels],
  
 >    {True, False}}, ControlPlacement -> Top, SaveDefinitions -> True]\
 \>"], "Output",
- CellChangeTimes->{3.989118038160967*^9},
- CellLabel->" Out[8]=",ExpressionUUID->"f47649fd-a64c-4e8e-b6ca-831537afc8e2"]
+ CellChangeTimes->{3.9891185951779327`*^9},
+ CellLabel->" Out[8]=",ExpressionUUID->"807ea979-213e-45bf-a09f-04bd099a189e"]
 }, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["6. Nearest-neighbour drift tables", "Section",ExpressionUUID->"b7fad0e4-bf6f-49fa-a3ce-3eabbe099fd3"],
+Cell["6. Nearest-neighbour drift tables", "Section",ExpressionUUID->"36b4f0df-cb10-4db1-9f07-e0bc5595c5cc"],
 
 Cell["\<\
 The trajectories are the geometry of a simpler fact: the list of a word's \
@@ -3472,7 +3472,7 @@ by cosine similarity in each decade's own native space. Sampled every fifty \
 years:\
 \>", "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"25226856-72d6-48da-99cc-d48c61c274fc"],
+  6}},ExpressionUUID->"fbac72a8-1e80-4203-80f9-33dc57a212fc"],
 
 Cell[BoxData[
  StyleBox[
@@ -3577,7 +3577,7 @@ curious\"\>", "\<\"strange, funny, lesbian, perverse, gay\"\>"}
   FontSize->10]], "Output",
  CellMargins->{{40, 40}, {10, 14}},
  ShowCellLabel->False,
- TextAlignment->Center,ExpressionUUID->"d2659b61-e5ca-4cf8-afd5-e684ea93620e"],
+ TextAlignment->Center,ExpressionUUID->"27911ea1-66dc-493f-b24c-ea24f1bf0d91"],
 
 Cell[TextData[{
  StyleBox["Figure. ",
@@ -3589,7 +3589,7 @@ Cell[TextData[{
  "."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"1336e134-753e-4f4f-b105-f15f8f1f29c8"],
+  16}},ExpressionUUID->"5c04f86a-6f88-4906-8908-d541663f43dd"],
 
 Cell[TextData[{
  StyleBox["Takeaway.  ",
@@ -3611,12 +3611,12 @@ Cell[TextData[{
  CellFrameColor->RGBColor[0.35, 0.6, 0.4],
  FontSize->12,
  Background->RGBColor[
-  0.93, 0.97, 0.93],ExpressionUUID->"50c80831-7bf3-4314-9d20-8d9bf63c734f"]
+  0.93, 0.97, 0.93],ExpressionUUID->"3a4eb46e-f776-424e-b042-d4d912ab8c13"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["7. Two statistical laws of semantic change", "Section",ExpressionUUID->"23993ddd-7907-48cb-abb8-b1ed71556f54"],
+Cell["7. Two statistical laws of semantic change", "Section",ExpressionUUID->"27e0effa-a614-410b-8f0c-d589a372eb7f"],
 
 Cell[TextData[{
  "Hamilton, Leskovec & Jurafsky (2016) report two regularities that hold ",
@@ -3635,11 +3635,11 @@ WordNet ",
  "between its aligned vectors in consecutive decades."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"f0c6efdf-77eb-4183-95af-8768fb646ec3"],
+  6}},ExpressionUUID->"380e6c18-f4ed-4e83-b129-a3f94e3e4da9"],
 
 Cell[CellGroupData[{
 
-Cell["The law of conformity", "Subsection",ExpressionUUID->"adc649b6-c190-48c6-92ce-bcd6975ab0e4"],
+Cell["The law of conformity", "Subsection",ExpressionUUID->"8e07f79d-ed68-40e9-a60c-6d4c1c6aa548"],
 
 Cell[TextData[{
  StyleBox["More frequent words change more slowly.",
@@ -3657,7 +3657,7 @@ estimated ",
  "from little data and are free to wander."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"94498e6e-b715-466f-b234-cabd512532d7"],
+  6}},ExpressionUUID->"4f932f12-ec31-4814-98c2-8ba6f48f5a8b"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -4182,12 +4182,12 @@ sHhhJQ87t8adwazvtOH/G5n+rQjCShVm3jvVPTKFsGMstlVkJOrA/wevS1Ry
        "ImageWidth" -> 560, "ImageLength" -> 368, "XResolution" -> 130, 
         "YResolution" -> 130, "ResolutionUnit" -> "Inch", "Software" -> 
         "Created with the Wolfram Language : www.wolfram.com", "DateTime" -> 
-        DateObject[{2026, 5, 30, 9, 20, 35.}, "Instant", "Gregorian", 1.], 
+        DateObject[{2026, 5, 30, 9, 29, 52.}, "Instant", "Gregorian", 1.], 
         "TimeZoneOffset" -> 1|>, 
       "Comments" -> {
        "Software" -> "Created with the Wolfram Language : www.wolfram.com", 
         "Creation Time" -> 
-        DateObject[{2026, 5, 30, 9, 20, 35.}, "Instant", "Gregorian", 
+        DateObject[{2026, 5, 30, 9, 29, 52.}, "Instant", "Gregorian", 
           None]}|>],
    Selectable->False],
   DefaultBaseStyle->"ImageGraphics",
@@ -4196,7 +4196,7 @@ sHhhJQ87t8adwazvtOH/G5n+rQjCShVm3jvVPTKFsGMstlVkJOrA/wevS1Ry
   PlotRange->{{0, 310.15384615384613`}, {0, 203.8153846153846}}]], "Output",
  CellMargins->{{50, 50}, {10, 14}},
  ShowCellLabel->False,
- TextAlignment->Center,ExpressionUUID->"221d449a-ad09-444a-8729-96fbff391250"],
+ TextAlignment->Center,ExpressionUUID->"302ffcf6-bbd7-42a7-bfbe-8201d35c3ac9"],
 
 Cell[TextData[{
  StyleBox["Figure. ",
@@ -4205,12 +4205,12 @@ Cell[TextData[{
  "markers are decile means; the trend is the per-word regression."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"ee7e77db-320c-414a-8786-a3049823a3e8"]
+  16}},ExpressionUUID->"55958547-1c4e-4652-acf6-6389c9a672f6"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["The law of innovation", "Subsection",ExpressionUUID->"2639581d-646f-4df1-8021-42853b22233a"],
+Cell["The law of innovation", "Subsection",ExpressionUUID->"43a301b2-836a-4a12-a639-f0ed3706b6bd"],
 
 Cell[TextData[{
  StyleBox["More polysemous words change faster.",
@@ -4230,7 +4230,7 @@ Cell[TextData[{
 pull it."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"acb345ab-acae-412d-ac87-ec092665e9c1"],
+  6}},ExpressionUUID->"342ecff1-5ab2-4282-8c88-a939f4f5aceb"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -4690,12 +4690,12 @@ Blbab5WqRnDCavKMpA+rydM+1ulN6ESt8/8B90PHkQ==
        "ImageWidth" -> 560, "ImageLength" -> 369, "XResolution" -> 130, 
         "YResolution" -> 130, "ResolutionUnit" -> "Inch", "Software" -> 
         "Created with the Wolfram Language : www.wolfram.com", "DateTime" -> 
-        DateObject[{2026, 5, 30, 9, 20, 35.}, "Instant", "Gregorian", 1.], 
+        DateObject[{2026, 5, 30, 9, 29, 52.}, "Instant", "Gregorian", 1.], 
         "TimeZoneOffset" -> 1|>, 
       "Comments" -> {
        "Software" -> "Created with the Wolfram Language : www.wolfram.com", 
         "Creation Time" -> 
-        DateObject[{2026, 5, 30, 9, 20, 35.}, "Instant", "Gregorian", 
+        DateObject[{2026, 5, 30, 9, 29, 52.}, "Instant", "Gregorian", 
           None]}|>],
    Selectable->False],
   DefaultBaseStyle->"ImageGraphics",
@@ -4705,7 +4705,7 @@ Blbab5WqRnDCavKMpA+rydM+1ulN6ESt8/8B90PHkQ==
 
  CellMargins->{{50, 50}, {10, 14}},
  ShowCellLabel->False,
- TextAlignment->Center,ExpressionUUID->"a4553434-7ff4-4c7d-a161-f8b420da2dd6"],
+ TextAlignment->Center,ExpressionUUID->"c43e8b24-2a0f-4857-811a-b0a04e834138"],
 
 Cell[TextData[{
  StyleBox["Figure. ",
@@ -4714,7 +4714,7 @@ Cell[TextData[{
  "per-sense-count means."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"624a47c6-ca6f-4eb0-a675-56caac0e4ff9"],
+  16}},ExpressionUUID->"178adb9d-a562-4359-ab71-5c14ed90b6d6"],
 
 Cell["\<\
 The effect sizes are modest \[Dash] one corpus, English only, and a \
@@ -4722,13 +4722,13 @@ rank-based frequency proxy \[Dash] but both signs reproduce the published \
 laws, from an independent re-implementation.\
 \>", "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"5b6cabed-e6a0-48fb-a3f5-66a20930ff93"]
+  6}},ExpressionUUID->"5b6d7d95-0c30-4e65-9d7e-343f4cbe0f78"]
 }, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["8. The most-drifted words \[Dash] and a caveat", "Section",ExpressionUUID->"67499c04-b88c-4a79-b469-7d6b5b54068e"],
+Cell["8. The most-drifted words \[Dash] and a caveat", "Section",ExpressionUUID->"fea3f326-7cc2-4405-b3c2-05a0bf680af9"],
 
 Cell[TextData[{
  "Ranking every stable content word by how far it moved between its 1800s and \
@@ -4761,7 +4761,7 @@ end and ",
  "lexicography begins."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"7aa683c0-1054-4a9f-b2be-a9c2dde89541"],
+  6}},ExpressionUUID->"e484aefe-0a10-471c-bc02-5f29784aef24"],
 
 Cell[BoxData[
  GraphicsBox[
@@ -5503,12 +5503,12 @@ B8B3Znc=
        "ImageWidth" -> 560, "ImageLength" -> 667, "XResolution" -> 130, 
         "YResolution" -> 130, "ResolutionUnit" -> "Inch", "Software" -> 
         "Created with the Wolfram Language : www.wolfram.com", "DateTime" -> 
-        DateObject[{2026, 5, 30, 8, 39, 57.}, "Instant", "Gregorian", 1.], 
+        DateObject[{2026, 5, 30, 9, 29, 53.}, "Instant", "Gregorian", 1.], 
         "TimeZoneOffset" -> 1|>, 
       "Comments" -> {
        "Software" -> "Created with the Wolfram Language : www.wolfram.com", 
         "Creation Time" -> 
-        DateObject[{2026, 5, 30, 8, 39, 57.}, "Instant", "Gregorian", 
+        DateObject[{2026, 5, 30, 9, 29, 53.}, "Instant", "Gregorian", 
           None]}|>],
    Selectable->False],
   DefaultBaseStyle->"ImageGraphics",
@@ -5517,7 +5517,7 @@ B8B3Znc=
   PlotRange->{{0, 310.15384615384613`}, {0, 369.4153846153846}}]], "Output",
  CellMargins->{{50, 50}, {10, 14}},
  ShowCellLabel->False,
- TextAlignment->Center,ExpressionUUID->"3826257f-2569-4752-9f8f-af852877358f"],
+ TextAlignment->Center,ExpressionUUID->"8430cbb9-1475-467e-ae6e-4cba495f6500"],
 
 Cell[TextData[{
  StyleBox["Figure. ",
@@ -5529,7 +5529,7 @@ Cell[TextData[{
  "."
 }], "Caption",
  CellMargins->{{55, 55}, {2, 
-  16}},ExpressionUUID->"22d608d2-1020-43ff-86ed-ad34aa5271c7"],
+  16}},ExpressionUUID->"9ac737ce-8aa9-4257-8e71-678c88c3a3a2"],
 
 Cell[TextData[{
  StyleBox["Takeaway.  ",
@@ -5548,19 +5548,19 @@ judgement."
  CellFrameColor->RGBColor[0.35, 0.6, 0.4],
  FontSize->12,
  Background->RGBColor[
-  0.93, 0.97, 0.93],ExpressionUUID->"fefb1941-3e6b-4d82-9572-0bf50ea19da5"]
+  0.93, 0.97, 0.93],ExpressionUUID->"07028c3d-ea5e-4f3e-b5cb-c5b901f8db58"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["9. Methods and reproduction", "Section",ExpressionUUID->"090958e8-cc2e-4bcb-a32c-c8a1fa26a8cf"],
+Cell["9. Methods and reproduction", "Section",ExpressionUUID->"bb434549-ba1d-47c3-b9c1-b226c53110fe"],
 
 Cell["\<\
 The science is pure Wolfram Language; the only Python is a format shim for \
 the NumPy/pickle files. Five steps:\
 \>", "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"7544a131-b99f-471f-9248-15794f08ea9a"],
+  6}},ExpressionUUID->"84433754-5d1c-49c4-ad9e-5da5904a9bf2"],
 
 Cell[TextData[{
  StyleBox["wolframscript -file wolfram/fetch_data.wls",
@@ -5568,7 +5568,7 @@ Cell[TextData[{
  "  \[Dash] download + unzip the HistWords eng-all SGNS embeddings"
 }], "Item",
  CellMargins->{{66, 50}, {3, 
-  3}},ExpressionUUID->"01dfc192-f918-49be-b1d3-3f38439bd7bc"],
+  3}},ExpressionUUID->"9316d151-12dc-4019-9973-8944d2eac47e"],
 
 Cell[TextData[{
  StyleBox["python3 src/convert_histwords.py",
@@ -5577,7 +5577,7 @@ Cell[TextData[{
 pools)"
 }], "Item",
  CellMargins->{{66, 50}, {3, 
-  3}},ExpressionUUID->"0faa5a5f-1915-406b-955d-08cd01008b26"],
+  3}},ExpressionUUID->"92183ef5-a97d-49f2-baac-af0247a4fb58"],
 
 Cell[TextData[{
  StyleBox["wolframscript -file wolfram/trajectories.wls",
@@ -5585,7 +5585,7 @@ Cell[TextData[{
  "  \[Dash] Procrustes alignment, projection, the trajectory figures + JSON"
 }], "Item",
  CellMargins->{{66, 50}, {3, 
-  3}},ExpressionUUID->"c0e1ea42-5ab0-406f-849e-aeb429f9ab59"],
+  3}},ExpressionUUID->"bfd1a280-9540-47f4-a73d-fac67a4ecb1e"],
 
 Cell[TextData[{
  StyleBox["wolframscript -file wolfram/laws_and_drift.wls",
@@ -5593,7 +5593,7 @@ Cell[TextData[{
  "  \[Dash] drift leaderboard + the two statistical laws"
 }], "Item",
  CellMargins->{{66, 50}, {3, 
-  3}},ExpressionUUID->"306a1644-5720-44e6-973a-0429ea83ba57"],
+  3}},ExpressionUUID->"5eb8aee2-01e5-4781-9052-a80fea1a71bc"],
 
 Cell[TextData[{
  StyleBox["wolframscript -file wolfram/alignment.wls",
@@ -5604,7 +5604,7 @@ Cell[TextData[{
  "  \[Dash] the alignment diagnostic and the cover animation"
 }], "Item",
  CellMargins->{{66, 50}, {3, 
-  3}},ExpressionUUID->"7c103dd9-15a4-4bee-84f3-48e52986794a"],
+  3}},ExpressionUUID->"e7a7a044-aa42-48d6-8b99-f713a6ce5c52"],
 
 Cell[TextData[{
  "Repository: ",
@@ -5619,12 +5619,12 @@ coordinates, so ",
  "the notebook is self-contained."
 }], "Text",
  CellMargins->{{50, 50}, {6, 
-  6}},ExpressionUUID->"fc914ce6-f2cc-4c72-8e52-11a8d51a812a"]
+  6}},ExpressionUUID->"29fc23b8-0ef6-409b-b56f-d5019d19b630"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["10. References", "Section",ExpressionUUID->"73692324-f8f1-45e8-ab2e-c2b1f9360405"],
+Cell["10. References", "Section",ExpressionUUID->"5642cad6-894d-4345-b3c2-1b9ac5be2173"],
 
 Cell[TextData[{
  "W. L. Hamilton, J. Leskovec, D. Jurafsky (2016). ",
@@ -5634,14 +5634,14 @@ Change.",
  " ACL 2016. arXiv:1605.09096."
 }], "Text",
  CellMargins->{{60, 50}, {3, 3}},
- FontSize->11,ExpressionUUID->"ff443e87-190d-4682-873a-e1ba1dc3b5bc"],
+ FontSize->11,ExpressionUUID->"79f406c4-69e2-4cf2-bf20-e3e04a5e80e3"],
 
 Cell["\<\
 HistWords project and data: https://nlp.stanford.edu/projects/histwords/ \
 (Stanford NLP).\
 \>", "Text",
  CellMargins->{{60, 50}, {3, 3}},
- FontSize->11,ExpressionUUID->"8ac8994e-04a1-42dd-b015-5b6e09806f6f"]
+ FontSize->11,ExpressionUUID->"50c43539-361b-49bd-9872-3be5814fdec6"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -5649,7 +5649,7 @@ WindowSize->{808, 904},
 WindowMargins->{{460, Automatic}, {Automatic, 50}},
 FrontEndVersion->"15.0 for Mac OS X ARM (64-bit) (October 27, 2025)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"574b6982-9b09-42ae-86d1-a41f5dea5168"
+ExpressionUUID->"95dbc384-5a7b-41a0-89be-f26c0e5e3ff8"
 ]
 (* End of Notebook Content *)
 
@@ -5663,101 +5663,101 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[576, 22, 98, 0, 70, "Title",ExpressionUUID->"0c318adc-1c6e-46c4-a89a-b03ce871a607"],
-Cell[677, 24, 149, 2, 70, "Subtitle",ExpressionUUID->"b1e6dfd8-8ea2-4b8c-aadf-80f906cd3420"],
-Cell[829, 28, 93297, 1539, 70, "Output",ExpressionUUID->"fc4fe477-01f3-439f-8b49-2a848a1e4bcc"],
-Cell[94129, 1569, 521, 13, 70, "Caption",ExpressionUUID->"c40bd938-1e35-4e70-834a-32de66ecce6a"],
-Cell[94653, 1584, 1004, 32, 70, "Text",ExpressionUUID->"5dc3e60c-c288-47c3-9c68-efa3e7cbfcae"],
-Cell[95660, 1618, 659, 15, 70, "Text",ExpressionUUID->"673e90d4-0c88-4d10-8fe2-a88a88a9474a"],
+Cell[576, 22, 98, 0, 70, "Title",ExpressionUUID->"23b6f900-c877-4815-9d8d-3e8f07b27f07"],
+Cell[677, 24, 149, 2, 70, "Subtitle",ExpressionUUID->"81dfe4c4-4026-4cb5-9abc-62f61d019978"],
+Cell[829, 28, 93297, 1539, 70, "Output",ExpressionUUID->"3193e7bc-5d20-4d10-b3aa-98eef3bdbdc3"],
+Cell[94129, 1569, 521, 13, 70, "Caption",ExpressionUUID->"60876b76-f856-4624-80f2-e9140fa5c643"],
+Cell[94653, 1584, 1004, 32, 70, "Text",ExpressionUUID->"52ff47de-9a00-4f2b-ab6d-6ab71b596ed9"],
+Cell[95660, 1618, 659, 15, 70, "Text",ExpressionUUID->"10f7d383-129f-491e-9856-17bd7079d3bf"],
 Cell[CellGroupData[{
-Cell[96344, 1637, 109, 0, 70, "Section",ExpressionUUID->"6b035fd4-94cb-404b-a85b-7a582826cc72"],
-Cell[96456, 1639, 637, 24, 70, "Text",ExpressionUUID->"2f7da043-ae7b-455a-9fe3-fc5b51c5ea68"],
-Cell[97096, 1665, 608, 16, 70, "we can draw \[Dash] and across twenty decades, a path.",ExpressionUUID->"b0fbd35c-4e2b-4855-aa53-acefebf72f79"],
-Cell[97707, 1683, 138, 2, 70, "Input",ExpressionUUID->"b9737e31-ddb0-48c8-a39c-aed09f229c07"],
-Cell[97848, 1687, 498, 15, 70, "Text",ExpressionUUID->"c9ab1fea-6e59-4df5-82e3-2c7d76112fcd"]
+Cell[96344, 1637, 109, 0, 70, "Section",ExpressionUUID->"05832148-fb9a-491c-ab81-79b82641e2ff"],
+Cell[96456, 1639, 637, 24, 70, "Text",ExpressionUUID->"43f5b94e-33bd-4993-812d-12e89363fe8c"],
+Cell[97096, 1665, 608, 16, 70, "we can draw \[Dash] and across twenty decades, a path.",ExpressionUUID->"08dfcf3a-8e69-4b8d-9c11-e0d2ed99986c"],
+Cell[97707, 1683, 138, 2, 70, "Input",ExpressionUUID->"19014282-957d-4f9e-8f5e-f4902481e2f9"],
+Cell[97848, 1687, 498, 15, 70, "Text",ExpressionUUID->"5b3e3b46-a339-45d2-a6fc-33f7ae24bf3d"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[98383, 1707, 114, 0, 70, "Section",ExpressionUUID->"5cc01602-9ef1-4655-a760-6764b83578ce"],
-Cell[98500, 1709, 812, 20, 70, "Text",ExpressionUUID->"ae1e8bfa-5cf2-4d64-af6b-7d19bb64752b"],
-Cell[99315, 1731, 850, 34, 70, "Text",ExpressionUUID->"914d6f35-c5d3-4203-b227-19c9322684e1"]
+Cell[98383, 1707, 114, 0, 70, "Section",ExpressionUUID->"d0dbf8b4-5830-4f3f-8c91-4a42404ce77d"],
+Cell[98500, 1709, 812, 20, 70, "Text",ExpressionUUID->"a47b604f-c81a-4a4f-9b6b-b100cfb8b6f2"],
+Cell[99315, 1731, 850, 34, 70, "Text",ExpressionUUID->"fd043275-ae6c-4033-ba2b-1384a8b08e75"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[100202, 1770, 108, 0, 70, "Section",ExpressionUUID->"c21756bb-474b-4eaa-93e3-1157430564a5"],
-Cell[100313, 1772, 569, 9, 70, "Text",ExpressionUUID->"b7b46359-b4c1-4b64-a0af-63455060a7d0"],
-Cell[100885, 1783, 519, 19, 70, "Text",ExpressionUUID->"4877172c-b51d-4caf-9fdf-e7e9608f4bc4"],
-Cell[101407, 1804, 511, 15, 70, "DisplayFormula",ExpressionUUID->"533c5f59-d4eb-47b4-83fa-0633c90e6659"],
-Cell[101921, 1821, 956, 33, 70, "Text",ExpressionUUID->"d19a9a46-473f-40b9-9dd1-0cb4527fcef9"],
-Cell[102880, 1856, 71690, 1183, 70, "Output",ExpressionUUID->"73e5ed2b-4870-4911-a378-3cb98f194ae4"],
-Cell[174573, 3041, 396, 9, 70, "Caption",ExpressionUUID->"b93cd4be-17b8-45bf-a101-3986269fe510"],
-Cell[174972, 3052, 748, 12, 70, "Text",ExpressionUUID->"e28b0c14-69fe-4b07-a12d-7e17d982bfcb"],
-Cell[175723, 3066, 583, 10, 70, "Text",ExpressionUUID->"a1c7800d-4dfa-4aad-a6bb-0e2728a2ef65"],
-Cell[176309, 3078, 524, 13, 70, "Text",ExpressionUUID->"a41374e1-2383-49c3-8cc5-48f7491f96b1"]
+Cell[100202, 1770, 108, 0, 70, "Section",ExpressionUUID->"5bd60b1c-6244-4629-91c9-737ee0c59c72"],
+Cell[100313, 1772, 569, 9, 70, "Text",ExpressionUUID->"a7beb23a-d777-454f-9d11-a7377f7e023e"],
+Cell[100885, 1783, 519, 19, 70, "Text",ExpressionUUID->"ac6e57d7-3685-440d-b6a0-7e83556c9bf0"],
+Cell[101407, 1804, 511, 15, 70, "DisplayFormula",ExpressionUUID->"53828792-a07e-4b65-b955-8e26cc3ff193"],
+Cell[101921, 1821, 956, 33, 70, "Text",ExpressionUUID->"f637416b-6bd5-4465-ae41-a6412f421d42"],
+Cell[102880, 1856, 71690, 1183, 70, "Output",ExpressionUUID->"55ba9a69-4551-44c6-bc7e-6ef3b374eff2"],
+Cell[174573, 3041, 396, 9, 70, "Caption",ExpressionUUID->"d5a64044-5263-45bb-bbe4-e54c8d42ae63"],
+Cell[174972, 3052, 748, 12, 70, "Text",ExpressionUUID->"9eaed74e-2b2b-4bb7-80e1-1a92d37773d4"],
+Cell[175723, 3066, 583, 10, 70, "Text",ExpressionUUID->"2223c55b-70b9-4b46-8e9e-541895c0dd4f"],
+Cell[176309, 3078, 524, 13, 70, "Text",ExpressionUUID->"d1067017-e1a4-4ed9-8299-ed6f44727190"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[176870, 3096, 101, 0, 70, "Section",ExpressionUUID->"87733634-f6e2-44cb-8cd0-95b7e34c0a70"],
-Cell[176974, 3098, 467, 8, 70, "Text",ExpressionUUID->"abad7e4b-7a0c-4817-a833-5225872f9ea3"],
-Cell[177444, 3108, 726, 18, 70, "dimensional cosine geometry, not the projection.",ExpressionUUID->"1bc83853-0c5e-4dfe-a411-e3d41dbec33a"],
-Cell[178173, 3128, 138, 2, 70, "Input",ExpressionUUID->"a5de7e45-0a7d-470a-9aad-38da77e05c9d"],
-Cell[178314, 3132, 501, 14, 70, "two-century meaning change rendered as a single sweep across the page.",ExpressionUUID->"e4775c35-ce06-43cb-84e7-750201b05716"],
-Cell[178818, 3148, 139, 2, 70, "Input",ExpressionUUID->"be25e777-f05e-45ea-a244-aa8d39d8595b"],
-Cell[178960, 3152, 507, 15, 70, "Text",ExpressionUUID->"f5c65074-4541-4f5f-958e-8c24d8e9b3f0"]
+Cell[176870, 3096, 101, 0, 70, "Section",ExpressionUUID->"29180c25-deb9-42e6-be42-0952d8efef47"],
+Cell[176974, 3098, 467, 8, 70, "Text",ExpressionUUID->"e485430d-14a4-4ea1-a8f8-318fd6fd5118"],
+Cell[177444, 3108, 726, 18, 70, "dimensional cosine geometry, not the projection.",ExpressionUUID->"16f5d77f-8446-48fb-8630-00dc4bc8181a"],
+Cell[178173, 3128, 138, 2, 70, "Input",ExpressionUUID->"3fb80081-a621-4831-ae77-d224d58c6537"],
+Cell[178314, 3132, 501, 14, 70, "two-century meaning change rendered as a single sweep across the page.",ExpressionUUID->"b7e0dbfb-6edc-4dcd-9417-c788df8328a6"],
+Cell[178818, 3148, 139, 2, 70, "Input",ExpressionUUID->"d70e1beb-bee9-472f-a095-282158e95144"],
+Cell[178960, 3152, 507, 15, 70, "Text",ExpressionUUID->"aaac59cc-c806-492b-8838-7dd9d5794ade"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[179504, 3172, 103, 0, 70, "Section",ExpressionUUID->"3169f2fb-180d-4931-89ca-ddbd6aa87bb7"],
-Cell[179610, 3174, 485, 11, 70, "Text",ExpressionUUID->"43211ea8-0f3e-4121-bb5f-e403d79b6ab7"],
-Cell[180098, 3187, 1113, 46, 70, ").",ExpressionUUID->"c683cd54-0a62-4e0d-ba16-3dd5037ff815"],
-Cell[181214, 3235, 138, 2, 70, "Input",ExpressionUUID->"ecb85d4a-b45b-4915-926b-bded8fc737d6"],
-Cell[181355, 3239, 11691, 189, 70, "Input",ExpressionUUID->"32538dcd-5e58-4b3a-9f7e-594424339baa"],
+Cell[179504, 3172, 103, 0, 70, "Section",ExpressionUUID->"02a0b554-47a0-4433-8337-e60a152efad2"],
+Cell[179610, 3174, 485, 11, 70, "Text",ExpressionUUID->"d80f696e-1e55-4842-a4a0-1ce09ea1ec35"],
+Cell[180098, 3187, 1113, 46, 70, ").",ExpressionUUID->"a1ccd742-d853-4fc6-9e47-cc4bc0e7e4bf"],
+Cell[181214, 3235, 138, 2, 70, "Input",ExpressionUUID->"ecc4f00a-7ba7-45c7-af99-308fb01b7715"],
+Cell[181355, 3239, 11691, 189, 70, "Input",ExpressionUUID->"0a055819-b0cf-4a4c-855e-1c70f7e8be23"],
 Cell[CellGroupData[{
-Cell[193071, 3432, 459, 11, 113, "Input",ExpressionUUID->"2c3c4d94-ea46-45a7-bc62-299e2b85812a"],
-Cell[193533, 3445, 569, 14, 146, "Output",ExpressionUUID->"f47649fd-a64c-4e8e-b6ca-831537afc8e2"]
+Cell[193071, 3432, 459, 11, 113, "Input",ExpressionUUID->"23dae005-08fa-4277-bf4f-1b904b21b0e9"],
+Cell[193533, 3445, 571, 14, 146, "Output",ExpressionUUID->"807ea979-213e-45bf-a09f-04bd099a189e"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[194151, 3465, 107, 0, 70, "Section",ExpressionUUID->"b7fad0e4-bf6f-49fa-a3ce-3eabbe099fd3"],
-Cell[194261, 3467, 355, 7, 70, "Text",ExpressionUUID->"25226856-72d6-48da-99cc-d48c61c274fc"],
-Cell[194619, 3476, 3890, 103, 70, "Output",ExpressionUUID->"d2659b61-e5ca-4cf8-afd5-e684ea93620e"],
-Cell[198512, 3581, 327, 10, 70, "Caption",ExpressionUUID->"1336e134-753e-4f4f-b105-f15f8f1f29c8"],
-Cell[198842, 3593, 607, 20, 70, "Text",ExpressionUUID->"50c80831-7bf3-4314-9d20-8d9bf63c734f"]
+Cell[194153, 3465, 107, 0, 70, "Section",ExpressionUUID->"36b4f0df-cb10-4db1-9f07-e0bc5595c5cc"],
+Cell[194263, 3467, 355, 7, 70, "Text",ExpressionUUID->"fbac72a8-1e80-4203-80f9-33dc57a212fc"],
+Cell[194621, 3476, 3890, 103, 70, "Output",ExpressionUUID->"27911ea1-66dc-493f-b24c-ea24f1bf0d91"],
+Cell[198514, 3581, 327, 10, 70, "Caption",ExpressionUUID->"5c04f86a-6f88-4906-8908-d541663f43dd"],
+Cell[198844, 3593, 607, 20, 70, "Text",ExpressionUUID->"3a4eb46e-f776-424e-b042-d4d912ab8c13"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[199486, 3618, 116, 0, 70, "Section",ExpressionUUID->"23993ddd-7907-48cb-abb8-b1ed71556f54"],
-Cell[199605, 3620, 647, 17, 70, "Text",ExpressionUUID->"f0c6efdf-77eb-4183-95af-8768fb646ec3"],
+Cell[199488, 3618, 116, 0, 70, "Section",ExpressionUUID->"27e0effa-a614-410b-8f0c-d589a372eb7f"],
+Cell[199607, 3620, 647, 17, 70, "Text",ExpressionUUID->"380e6c18-f4ed-4e83-b129-a3f94e3e4da9"],
 Cell[CellGroupData[{
-Cell[200277, 3641, 98, 0, 70, "Subsection",ExpressionUUID->"adc649b6-c190-48c6-92ce-bcd6975ab0e4"],
-Cell[200378, 3643, 628, 16, 70, "Text",ExpressionUUID->"94498e6e-b715-466f-b234-cabd512532d7"],
-Cell[201009, 3661, 32244, 537, 70, "Output",ExpressionUUID->"221d449a-ad09-444a-8729-96fbff391250"],
-Cell[233256, 4200, 305, 7, 70, "Caption",ExpressionUUID->"ee7e77db-320c-414a-8786-a3049823a3e8"]
+Cell[200279, 3641, 98, 0, 70, "Subsection",ExpressionUUID->"8e07f79d-ed68-40e9-a60c-6d4c1c6aa548"],
+Cell[200380, 3643, 628, 16, 70, "Text",ExpressionUUID->"4f932f12-ec31-4814-98c2-8ba6f48f5a8b"],
+Cell[201011, 3661, 32244, 537, 70, "Output",ExpressionUUID->"302ffcf6-bbd7-42a7-bfbe-8201d35c3ac9"],
+Cell[233258, 4200, 305, 7, 70, "Caption",ExpressionUUID->"55958547-1c4e-4652-acf6-6389c9a672f6"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[233598, 4212, 98, 0, 70, "Subsection",ExpressionUUID->"2639581d-646f-4df1-8021-42853b22233a"],
-Cell[233699, 4214, 637, 18, 70, "Text",ExpressionUUID->"acb345ab-acae-412d-ac87-ec092665e9c1"],
-Cell[234339, 4234, 28331, 473, 70, "Output",ExpressionUUID->"a4553434-7ff4-4c7d-a161-f8b420da2dd6"],
-Cell[262673, 4709, 267, 7, 70, "Caption",ExpressionUUID->"624a47c6-ca6f-4eb0-a675-56caac0e4ff9"],
-Cell[262943, 4718, 306, 6, 70, "Text",ExpressionUUID->"5b6cabed-e6a0-48fb-a3f5-66a20930ff93"]
+Cell[233600, 4212, 98, 0, 70, "Subsection",ExpressionUUID->"43a301b2-836a-4a12-a639-f0ed3706b6bd"],
+Cell[233701, 4214, 637, 18, 70, "Text",ExpressionUUID->"342ecff1-5ab2-4282-8c88-a939f4f5aceb"],
+Cell[234341, 4234, 28331, 473, 70, "Output",ExpressionUUID->"c43e8b24-2a0f-4857-811a-b0a04e834138"],
+Cell[262675, 4709, 267, 7, 70, "Caption",ExpressionUUID->"178adb9d-a562-4359-ab71-5c14ed90b6d6"],
+Cell[262945, 4718, 306, 6, 70, "Text",ExpressionUUID->"5b6d7d95-0c30-4e65-9d7e-343f4cbe0f78"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[263298, 4730, 120, 0, 70, "Section",ExpressionUUID->"67499c04-b88c-4a79-b469-7d6b5b54068e"],
-Cell[263421, 4732, 1072, 31, 70, "Text",ExpressionUUID->"7aa683c0-1054-4a9f-b2be-a9c2dde89541"],
-Cell[264496, 4765, 45489, 754, 70, "Output",ExpressionUUID->"3826257f-2569-4752-9f8f-af852877358f"],
-Cell[309988, 5521, 321, 10, 70, "Caption",ExpressionUUID->"22d608d2-1020-43ff-86ed-ad34aa5271c7"],
-Cell[310312, 5533, 559, 17, 70, "Text",ExpressionUUID->"fefb1941-3e6b-4d82-9572-0bf50ea19da5"]
+Cell[263300, 4730, 120, 0, 70, "Section",ExpressionUUID->"fea3f326-7cc2-4405-b3c2-05a0bf680af9"],
+Cell[263423, 4732, 1072, 31, 70, "Text",ExpressionUUID->"e484aefe-0a10-471c-bc02-5f29784aef24"],
+Cell[264498, 4765, 45489, 754, 70, "Output",ExpressionUUID->"8430cbb9-1475-467e-ae6e-4cba495f6500"],
+Cell[309990, 5521, 321, 10, 70, "Caption",ExpressionUUID->"9ac737ce-8aa9-4257-8e71-678c88c3a3a2"],
+Cell[310314, 5533, 559, 17, 70, "Text",ExpressionUUID->"07028c3d-ea5e-4f3e-b5cb-c5b901f8db58"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[310908, 5555, 101, 0, 70, "Section",ExpressionUUID->"090958e8-cc2e-4bcb-a32c-c8a1fa26a8cf"],
-Cell[311012, 5557, 228, 5, 70, "Text",ExpressionUUID->"7544a131-b99f-471f-9248-15794f08ea9a"],
-Cell[311243, 5564, 269, 6, 70, "Item",ExpressionUUID->"01dfc192-f918-49be-b1d3-3f38439bd7bc"],
-Cell[311515, 5572, 275, 7, 70, "Item",ExpressionUUID->"0faa5a5f-1915-406b-955d-08cd01008b26"],
-Cell[311793, 5581, 280, 6, 70, "Item",ExpressionUUID->"c0e1ea42-5ab0-406f-849e-aeb429f9ab59"],
-Cell[312076, 5589, 263, 6, 70, "Item",ExpressionUUID->"306a1644-5720-44e6-973a-0429ea83ba57"],
-Cell[312342, 5597, 328, 9, 70, "Item",ExpressionUUID->"7c103dd9-15a4-4bee-84f3-48e52986794a"],
-Cell[312673, 5608, 522, 13, 70, "Text",ExpressionUUID->"fc914ce6-f2cc-4c72-8e52-11a8d51a812a"]
+Cell[310910, 5555, 101, 0, 70, "Section",ExpressionUUID->"bb434549-ba1d-47c3-b9c1-b226c53110fe"],
+Cell[311014, 5557, 228, 5, 70, "Text",ExpressionUUID->"84433754-5d1c-49c4-ad9e-5da5904a9bf2"],
+Cell[311245, 5564, 269, 6, 70, "Item",ExpressionUUID->"9316d151-12dc-4019-9973-8944d2eac47e"],
+Cell[311517, 5572, 275, 7, 70, "Item",ExpressionUUID->"92183ef5-a97d-49f2-baac-af0247a4fb58"],
+Cell[311795, 5581, 280, 6, 70, "Item",ExpressionUUID->"bfd1a280-9540-47f4-a73d-fac67a4ecb1e"],
+Cell[312078, 5589, 263, 6, 70, "Item",ExpressionUUID->"5eb8aee2-01e5-4781-9052-a80fea1a71bc"],
+Cell[312344, 5597, 328, 9, 70, "Item",ExpressionUUID->"e7a7a044-aa42-48d6-8b99-f713a6ce5c52"],
+Cell[312675, 5608, 522, 13, 70, "Text",ExpressionUUID->"29fc23b8-0ef6-409b-b56f-d5019d19b630"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[313232, 5626, 88, 0, 70, "Section",ExpressionUUID->"73692324-f8f1-45e8-ab2e-c2b1f9360405"],
-Cell[313323, 5628, 325, 8, 70, "Text",ExpressionUUID->"ff443e87-190d-4682-873a-e1ba1dc3b5bc"],
-Cell[313651, 5638, 218, 5, 70, "Text",ExpressionUUID->"8ac8994e-04a1-42dd-b015-5b6e09806f6f"]
+Cell[313234, 5626, 88, 0, 70, "Section",ExpressionUUID->"5642cad6-894d-4345-b3c2-1b9ac5be2173"],
+Cell[313325, 5628, 325, 8, 70, "Text",ExpressionUUID->"79f406c4-69e2-4cf2-bf20-e3e04a5e80e3"],
+Cell[313653, 5638, 218, 5, 70, "Text",ExpressionUUID->"50c43539-361b-49bd-9872-3be5814fdec6"]
 }, Open  ]]
 }, Open  ]]
 }

@@ -64,14 +64,25 @@ Print["Building common vocabulary ..."];
 poolVocabs = Association @ Table[d -> deNeighborPool[d]["vocab"], {d, decades}];
 common = Fold[Intersection, poolVocabs[First@decades], Values@poolVocabs];
 
-(* ---- content-word filter + polysemy (one WordData pass) ---- *)
+(* ---- content-word filter + polysemy (one WordData pass) ----
+   WordData's first calls can return unevaluated while the paclet loads; we
+   must NOT memoize that as 0 (a silent failure once produced empty law
+   plots). So: pre-warm, cache only successful integer results, and guard. *)
 Print["Filtering to content words via WordData (", Length@common, " candidates) ..."];
-senseCount[w_] := senseCount[w] = Quiet @ Module[{s = WordData[w, "Senses"]},
-    If[ListQ[s], Length[s], 0]];
+Do[WordData["computer", "Senses"], 3];   (* pre-warm the paclet *)
+If[! ListQ[WordData["computer", "Senses"]],
+   Print["FATAL: WordData unavailable (computer/Senses not a list). Aborting."];
+   Exit[1]];
+senseCount[w_] := Module[{s = Quiet @ WordData[w, "Senses"]},
+    If[ListQ[s], senseCount[w] = Length[s], 0]];   (* cache hits only *)
 alphaQ[w_] := StringMatchQ[w, RegularExpression["[a-z]+"]] && StringLength[w] >= 3;
 contentQ[w_] := alphaQ[w] && ! TrueQ[stopQ[w]] && senseCount[w] > 0;
 content = Select[common, contentQ];
 Print["Content words kept: ", Length@content];
+If[Length[content] < 1000,
+   Print["FATAL: only ", Length@content, " content words (expected ~8800). ",
+     "WordData likely flaky this run. Aborting so no empty plots are written."];
+   Exit[1]];
 
 (* ---- single pass: aligned vectors -> rate, endpoint drift, frequency ---- *)
 Print["Pass over decades: change rate + endpoint drift + frequency ..."];
