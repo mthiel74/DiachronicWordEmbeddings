@@ -104,6 +104,11 @@ push[c_] := AppendTo[$cells, c];
 
 push @ title["Diachronic Word Embeddings"];
 push @ subtitle["200 Years of Semantic Drift, Traced Through a Word-Embedding Space"];
+push @ Cell[TextData[{StyleBox["Marco Thiel", FontSlant -> Italic],
+   "   \[Bullet]   ",
+   StyleBox["github.com/mthiel74/DiachronicWordEmbeddings", FontFamily -> "Courier"]}],
+   "Text", FontSize -> 12, FontColor -> GrayLevel[0.45],
+   CellMargins -> {{50, 50}, {4, 10}}];
 
 (* ---- Setup: import the package ---- *)
 push @ hd1["Setup"];
@@ -252,8 +257,9 @@ push @ takeaway[{"Read a trajectory by its ", ital["endpoints and their neighbou
 push @ hd1["5. Explore all fourteen words"];
 push @ para[{"Rather than print fourteen separate plots, the same construction is wired ",
    "into one interactive ", mono["Manipulate"], ". Pick a word, scrub the time slider to ",
-   "reveal the path decade by decade, and toggle the neighbour labels. (In the live ",
-   "notebook this is fully interactive; the static view shows ", ital["gay"],
+   "reveal the path decade by decade, and toggle the neighbour labels. (Opened in the ",
+   "Wolfram notebook the controls are live immediately \[Dash] no need to re-evaluate; a ",
+   "static export such as the PDF shows a single frame, ", ital["gay"],
    " with its full path.)"}];
 push @ codeCell["deExplorer[]"];
 push @ para[{"A few worth visiting: ", ital["broadcast"], " (agricultural ",
@@ -264,6 +270,15 @@ push @ para[{"A few worth visiting: ", ital["broadcast"], " (agricultural ",
    " (spider \[Rule] ", ital["www / browser / server"], "); ", ital["terrific"],
    " and ", ital["awful"], " (the two halves of a terror-to-praise swap); and ",
    ital["guy"], " (the Guy Fawkes effigy \[Rule] ", ital["fellow / chap / dude"], ")."}];
+push @ para[{"Not every famous case shows up cleanly, and the explorer is honest about ",
+   "that. ", ital["literally"], " is the textbook example of a meaning change \[Dash] the ",
+   "modern hyperbolic intensifier \[Dash] yet in this corpus its neighbours stay anchored ",
+   "to ", ital["literal, figuratively, metaphorically"], " across all twenty decades, with ",
+   "only a faint late drift toward ", ital["thousands, hundreds, utterly"],
+   ". The intensifier sense is mostly a spoken-register phenomenon that the edited-book ",
+   "Google N-grams corpus barely records, so the embedding has little to latch onto. A ",
+   "real reminder that ", bold["absence of measured drift is not absence of change"],
+   " \[Dash] only absence of evidence ", ital["in this corpus"], "."}];
 
 (* ---- 6 ---- *)
 push @ hd1["6. Nearest-neighbour drift tables"];

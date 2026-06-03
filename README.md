@@ -12,7 +12,9 @@ computer** — each tell a compact cognitive-historical story:
 - **broadcast** — *to scatter seed by hand* → *to transmit a signal*
 - **awful** — *awe-inspiring, solemn* → *terrible, very bad*
 - **queer** — *strange, peculiar* → *(reclaimed) LGBTQ identity*
-- **literally** — *word-for-word, exactly* → *intensifier ("figuratively")*
+- **literally** — *word-for-word, exactly*; the modern intensifier sense is
+  largely spoken and barely surfaces in the book corpus — a deliberate
+  cautionary case (see §5 of the notebook)
 - **computer** — *a person who computes* → *an electronic machine*
 
 The visuals — the path of a word drifting across a 2-D projection of
