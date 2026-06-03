@@ -1,5 +1,8 @@
 # ---- Bulk / regenerable data (NOT committed) ----
-data/raw/                 # HistWords zip + unzipped .npy/.pkl + intermediate matrices
+# HistWords zip + unzipped .npy/.pkl + intermediate matrices and vocab.
+# (An inline comment on the same line as a pattern is NOT a comment in
+#  .gitignore -- it becomes part of the pattern -- so keep comments above.)
+data/raw/
 *.zip
 *.npy
 *.pkl

@@ -36,8 +36,18 @@ outPdf   = FileNameJoin[{repoRoot, "community", "diachronic_embeddings.pdf"}];
    so that parsing "deHero[]" etc. resolves to DiachronicEmbeddings`deHero on
    the context path and does NOT intern a competing Global` symbol. That Global
    duplicate was shadowing the package definitions when NotebookEvaluate ran in
-   the same kernel, leaving the outputs displayed as raw InputForm boxes. *)
-Get[FileNameJoin[{repoRoot, "wolfram", "DiachronicEmbeddings.wl"}]];
+   the same kernel, leaving the outputs displayed as raw InputForm boxes.
+
+   We load the SELF-CONTAINED community package (community/DiachronicEmbeddings.wl,
+   produced by bundle_package.wls with the data/ products embedded inline) -- the
+   exact file a reader uploads next to the notebook -- so the baked-in outputs are
+   identical to what a reader regenerates from just the two uploaded files. *)
+bundle = FileNameJoin[{repoRoot, "community", "DiachronicEmbeddings.wl"}];
+If[! FileExistsQ[bundle],
+   Print["building self-contained package first ..."];
+   RunProcess[{"wolframscript", "-file",
+      FileNameJoin[{repoRoot, "community", "bundle_package.wls"}]}]];
+Get[bundle];
 
 (* ---------- prose cell helpers ---------- *)
 title[t_]    := Cell[t, "Title"];
@@ -97,15 +107,14 @@ push @ subtitle["200 Years of Semantic Drift, Traced Through a Word-Embedding Sp
 
 (* ---- Setup: import the package ---- *)
 push @ hd1["Setup"];
-push @ para[{"All of this notebook's code lives in the package ",
-   mono["wolfram/DiachronicEmbeddings.wl"], ". Evaluate the cell below first; it ",
-   "loads the package, which in turn reads the small committed data products in ",
-   mono["data/"], " (the 1.6 GB raw HistWords embeddings are not needed). Every figure ",
-   "and table further down is then produced by a single call to a package function."}];
+push @ para[{"This notebook needs exactly one companion file: the package ",
+   mono["DiachronicEmbeddings.wl"], ", which holds all of the code ", ital["and"],
+   " the small derived data it draws on (so no separate downloads, and not the ",
+   "1.6 GB of raw HistWords embeddings). Put that file in the ", bold["same folder"],
+   " as this notebook, then evaluate the cell below; every figure and table further ",
+   "down is then a single call to one of the package's functions."}];
 push @ inputCell[
-   "Get[FileNameJoin[{If[$Notebooks && Quiet[NotebookDirectory[]] =!= $Failed, " <>
-   "ParentDirectory[NotebookDirectory[]], " <> ToString[repoRoot, InputForm] <>
-   "], \"wolfram\", \"DiachronicEmbeddings.wl\"}]]"];
+   "Get[FileNameJoin[{NotebookDirectory[], \"DiachronicEmbeddings.wl\"}]]"];
 
 (* ---- cover ---- *)
 push @ codeCell["deHero[]"];
@@ -338,11 +347,15 @@ push @ takeaway[{"Embeddings are a powerful detector of ", ital["that"],
 
 (* ---- 9 ---- *)
 push @ hd1["9. Methods and reproduction"];
-push @ para[{"All notebook code is in ", mono["wolfram/DiachronicEmbeddings.wl"],
-   "; each output above is a single call to one of its functions, drawing from the small ",
-   "committed data products in ", mono["data/"], ". To regenerate those products from ",
-   "scratch (the science is pure Wolfram Language; the only Python is a NumPy/pickle ",
-   "format shim):"}];
+push @ para[{"Every output above is a single call to a function in the companion package ",
+   mono["DiachronicEmbeddings.wl"], " attached alongside this notebook. That one file is ",
+   "self-contained: it carries both the code and the small derived data products it draws ",
+   "on, so the notebook runs from just the two uploaded files. (In the source repository ",
+   "the same code lives un-bundled as ", mono["wolfram/DiachronicEmbeddings.wl"],
+   " with the data split out under ", mono["data/"], "; ", mono["community/bundle_package.wls"],
+   " is what folds the two together into the uploadable file.) To regenerate the data ",
+   "products from scratch (the science is pure Wolfram Language; the only Python is a ",
+   "NumPy/pickle format shim):"}];
 push @ item[{mono["wolframscript -file wolfram/fetch_data.wls"],
    "  \[Dash] download + unzip the HistWords eng-all SGNS embeddings"}];
 push @ item[{mono["python3 src/convert_histwords.py"],
@@ -356,7 +369,35 @@ push @ item[{mono["wolframscript -file wolfram/alignment.wls"],
 push @ para[{"Repository: ", mono["github.com/mthiel74/DiachronicWordEmbeddings"], "."}];
 
 (* ---- 10 ---- *)
-push @ hd1["10. References"];
+push @ hd1["10. Data, licensing, and acknowledgements"];
+push @ para[{"This notebook builds entirely on freely-reusable data, and redistributes ",
+   "only small ", ital["derived"], " products of it \[Dash] 2-D trajectory coordinates, ",
+   "nearest-neighbour word lists, and the alignment and law statistics."}];
+push @ item[{bold["HistWords embeddings. "],
+   "The per-decade SGNS vectors are from the HistWords project (Hamilton, Leskovec & ",
+   "Jurafsky), released into the ", bold["public domain"], " under the Open Data Commons ",
+   "Public Domain Dedication and License (PDDL) v1.0. Redistribution of the embeddings and ",
+   "of products derived from them is therefore unrestricted; as the project requests, the ",
+   "source paper is cited below."}];
+push @ item[{bold["Google Books N-grams. "],
+   "Those embeddings were trained on the Google Books Ngram ", mono["eng-all"],
+   " corpus, released by Google under the ", bold["Creative Commons Attribution 3.0"],
+   " (CC BY 3.0) licence (Google Books Ngram Viewer, ", mono["books.google.com/ngrams"], ")."}];
+push @ item[{bold["WordNet. "], "The polysemy measure in \[Section]7 uses WordNet sense ",
+   "counts via ", mono["WordData"], ". WordNet is \[Copyright] Princeton University, ",
+   "made available under a permissive free licence (attribution)."}];
+push @ item[{bold["This notebook's code. "],
+   "The package ", mono["DiachronicEmbeddings.wl"], " and the rest of the companion ",
+   "repository are released into the ", bold["public domain (The Unlicense)"],
+   " \[Dash] reuse, modify, or sell freely, with no conditions and no attribution ",
+   "required. No HistWords source code is redistributed here \[Dash] only the public-",
+   "domain data products \[Dash] so the HistWords tools' Apache-2.0 licence does not apply."}];
+push @ para[{"In short: the data carries no copyright restriction, the corpus and WordNet ",
+   "ask only for attribution (given here), and the code is MIT. The post is free to read, ",
+   "run, and build on."}];
+
+(* ---- 11 ---- *)
+push @ hd1["11. References"];
 push @ refItem[{"W. L. Hamilton, J. Leskovec, D. Jurafsky (2016). ",
    ital["Diachronic Word Embeddings Reveal Statistical Laws of Semantic Change."],
    " ACL 2016. arXiv:1605.09096."}];
